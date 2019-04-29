@@ -3,8 +3,26 @@
 <button (click)="click()">Click</button>
 
 <div *ngFor="let movie of avalibleMovies">
+  <div class="product">
+    <img src="{{ movie.imageUrl }}">
+    <a routerLink="/details/{{ movie.id }}" routerLinkActive="active">
+      <h2>{{ movie.name }}</h2>
+    </a>
+    <p>{{ movie.description }}</p>
+    <p>{{ movie.price }} :-</p>
 
-  <p>{{ movie.name }}</p>
+    <!-- <form action="">
 
- 
+      <input type="number" #productAmount />
+      <button value="Add to cart" (click)="addToCart({ movie.name })">Add to cart</button>
+      <button (click)="addToCart();">Add to cart</button>
+      , amount: productAmount.value, id: movie.id, price: movie.price}
+        amount: productAmout.value, name: movie.name, price:movie.price
+      productAmount.value = ''; 
+
+      <button (click)="sendMessage()">Send message</button>
+
+    </form> -->
+
+  </div>
 </div>
