@@ -7,5 +7,4 @@ import { ShowProductsComponent } from 'src/app/show-products/show-products.compo
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'webbshop-jakob-edeus';
 }

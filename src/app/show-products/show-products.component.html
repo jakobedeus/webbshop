@@ -1,17 +1,11 @@
-<p>Show products work!</p>
+<div *ngFor="let movie of avalibleMovies" class="product">
 
-<button (click)="click()">Click</button>
+  <img src="{{ movie.imageUrl }}">
+    <h2>{{ movie.name }}</h2>
+  <p>{{ movie.description }}</p>
+  <p>{{ movie.price }} :-</p>
 
-<div *ngFor="let movie of avalibleMovies">
-  <div class="product">
-    <img src="{{ movie.imageUrl }}">
-    <a routerLink="/details/{{ movie.id }}" routerLinkActive="active">
-      <h2>{{ movie.name }}</h2>
-    </a>
-    <p>{{ movie.description }}</p>
-    <p>{{ movie.price }} :-</p>
-
-    <!-- <form action="">
+  <!-- <form action="">
 
       <input type="number" #productAmount />
       <button value="Add to cart" (click)="addToCart({ movie.name })">Add to cart</button>
@@ -24,5 +18,4 @@
 
     </form> -->
 
-  </div>
 </div>

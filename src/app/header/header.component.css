@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgb(34, 34, 34);
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 1em .6em 0 .6em;
+}
+
+button {
+    cursor: pointer;
+}
+
+header a{
+    color: white;
+}
