@@ -14,6 +14,9 @@ import { ShowProductsComponent } from './show-products/show-products.component';
     BrowserModule,
     AppRoutingModule
   ],
+  exports: [
+    ShowProductsComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

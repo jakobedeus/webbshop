@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShowProductsComponent } from './show-products.component';
-import { IMovie } from '../interface/IMovies';
-import { MockDataService } from '../mock-data.service';
+// import { IMovie } from '../interface/IMovies';
+// import { MockDataService } from '../mock-data.service';
 
 describe('ShowProductsComponent', () => {
   let component: ShowProductsComponent;
@@ -25,13 +25,14 @@ describe('ShowProductsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create a list of 4 movies', () => {
-    expect(component.movies.length).toEqual(4);
-  });
+  // it('should create a list of 4 movies', () => {
+  //   expect(component.test).toEqual([1, 2, 3, 4]);
+  // });
 
   // it('should create a list of 4 movies', () => {
   //   fixture = TestBed.createComponent(ShowProductsComponent);
   //   component = fixture.componentInstance;
-  //   expect(component.movies).toContain(Array);
+  //   expect(component.avalibleMovies.length).toBe(4);
   // });
+
 });
