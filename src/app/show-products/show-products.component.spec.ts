@@ -1,8 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShowProductsComponent } from './show-products.component';
+import { ProductPresentationComponent } from '../product-presentation/product-presentation.component';
+import { DataService } from '../services/data.service';
+import { MockDataService } from '../services/mock-data.service';
+import { HttpClientModule } from '@angular/common/http';
 // import { IMovie } from '../interface/IMovies';
 // import { MockDataService } from '../mock-data.service';
+
 
 describe('ShowProductsComponent', () => {
   let component: ShowProductsComponent;
@@ -10,8 +15,9 @@ describe('ShowProductsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowProductsComponent ]
+      declarations: [ ShowProductsComponent, ProductPresentationComponent ]
     })
+    .overrideComponent(ShowProductsComponent, { set: { providers: [ {provide: DataService, useClass: MockDataService}]}})
     .compileComponents();
   }));
 
@@ -25,14 +31,10 @@ describe('ShowProductsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should create a list of 4 movies', () => {
-  //   expect(component.test).toEqual([1, 2, 3, 4]);
-  // });
-
   it('should create a list of 4 movies', () => {
     fixture = TestBed.createComponent(ShowProductsComponent);
     component = fixture.componentInstance;
-    expect(component.avalibleMovies.length).toBe(4);
+    expect(component.movies.length).toBe(4);
   });
 
 });
