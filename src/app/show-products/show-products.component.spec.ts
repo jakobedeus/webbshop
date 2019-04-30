@@ -4,9 +4,6 @@ import { ShowProductsComponent } from './show-products.component';
 import { ProductPresentationComponent } from '../product-presentation/product-presentation.component';
 import { DataService } from '../services/data.service';
 import { MockDataService } from '../services/mock-data.service';
-import { HttpClientModule } from '@angular/common/http';
-// import { IMovie } from '../interface/IMovies';
-// import { MockDataService } from '../mock-data.service';
 
 
 describe('ShowProductsComponent', () => {
