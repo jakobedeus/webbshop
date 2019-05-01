@@ -1,0 +1,36 @@
+.product {
+    width: 200px;
+    background: rgb(33, 33, 33);
+    flex: 1;
+    margin: 1.4em;
+    overflow: hidden;
+
+}
+
+.product img {
+    object-fit: cover;
+    transition: transform .3s;
+    cursor: pointer;
+}
+
+.product img:hover {
+    transform: scale(1.1); 
+    z-index: 1;
+    width: 300px;
+}
+
+.productInfo {
+    padding: .4em 0;
+    text-align: center;
+    color: white;
+}
+
+.productInfo button {
+    margin-left: 1em;
+    background-color: orange;
+    border: none;
+    color: black;
+    padding: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+}
