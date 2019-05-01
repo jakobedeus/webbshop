@@ -1,5 +1,7 @@
-.product {
-    width: 300px;
-    border: 1px solid red;
-    flex: 1;
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10vh;
 }

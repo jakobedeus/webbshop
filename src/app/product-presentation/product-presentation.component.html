@@ -1,10 +1,8 @@
-<p>Hej</p>
-<div class="product" >
-  <img src="{{ movie.imageUrl }}">
-    <h2>{{ movie.name }}</h2>
-  <p>{{ movie.description }}</p>
-  <p>{{ movie.price }} :-</p>
-  <!-- <form action="">
+<div class="product">
+  <img src="{{ movie.imageUrl }}"  style="width:200px;height:300px">
+  <div class="productInfo">
+    <p>{{ movie.price }} :-
+    <!-- <form action="">
       <input type="number" #productAmount />
       <button value="Add to cart" (click)="addToCart({ movie.name })">Add to cart</button>
       <button (click)="addToCart();">Add to cart</button>
@@ -13,4 +11,6 @@
       productAmount.value = ''; 
       <button (click)="sendMessage()">Send message</button>
     </form> -->
+    <button>Add to cart</button></p>
+  </div>
 </div>
