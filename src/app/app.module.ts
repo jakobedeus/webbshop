@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { ProductPresentationComponent } from './product-presentation/product-presentation.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
+import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,15 @@ import { MainComponent } from './main/main.component';
     ShowProductsComponent,
     HeaderComponent,
     ProductPresentationComponent,
-    MainComponent
+    MainComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
