@@ -1,0 +1,17 @@
+<div class="filter">
+    <div class="categorySelectContainer">
+        <label for="categorySelect">Category:</label>
+        <select name="categorySelect" id=""></select>
+    </div>
+
+    <div class="searchContainer">
+        <form action="">
+            <input type="text" id="">
+            <button>Search</button>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <app-product-presentation [movie]="movie" *ngFor="let movie of movies">
+    </app-product-presentation>
+</div>

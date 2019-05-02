@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 75%;
+    margin: 6vh auto;
+}
+
+.filter {
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 14vh auto 0 auto;
+}
