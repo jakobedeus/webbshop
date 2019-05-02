@@ -30,14 +30,6 @@ describe('ProductPresentationComponent', () => {
     expect(testHostComponent).toBeTruthy();
   });
 
-  // it('should create a movie', () => {
-  //   expect(testHostComponent.setInput).toBeTruthy();
-  // });
-
-  // it('should create a div with text hej', () => {
-  //   expect(testHostFixture.nativeElement.querySelector('div').innerText).toContain('Hej');
-  // });
-
   @Component({
     selector:'host-component',
     template: '<app-product-presentation movie="movie"></app-product-presentation>'
