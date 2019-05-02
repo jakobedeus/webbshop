@@ -8,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   title = 'webbshop-jakob-edeus';
 
+  cart: boolean = false;
+
+  toggleCart() {
+    document.getElementById("cart").classList.toggle("showCart");
+    this.cart = true;
+  }
+  
   constructor() { }
 
   ngOnInit() {
