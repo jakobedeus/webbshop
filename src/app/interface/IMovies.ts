@@ -6,5 +6,4 @@ export interface IMovie {
     added: number;
     imageUrl: string;
     id: number;
-    productCategory: any[];
 }
