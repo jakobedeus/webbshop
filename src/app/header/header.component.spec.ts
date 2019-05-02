@@ -22,4 +22,10 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should toggle cart', () => {
+    expect(component.cart).toBeFalsy();
+    component.toggleCart();
+    expect(component.cart).toBeTruthy();
+  });
 });

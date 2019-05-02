@@ -7,13 +7,13 @@
 <nav>
   <ul>
     <li>
-      <button>Cart</button>
+      <button id="toggleCartButton" (click)="toggleCart()">Cart</button>
     </li>
   </ul>
 </nav>
-<div id="cart_container">
-  <p>Your items:</p>
-  <!-- <button id="pay">Pay</button> -->
+<div id="cart">
+  <p>My movie cart</p>
+  <button id="pay">Pay</button>
   <br />
   <!-- <button (click)="removeAll()">Remove all</button> -->
 </div>

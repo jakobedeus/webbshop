@@ -23,6 +23,24 @@ button {
     cursor: pointer;
 }
 
+#cart {
+    display: none;
+    background-color: white;
+    color: black;
+    position: fixed;
+    z-index: 2;
+    top: 9vh;
+    right: 10%;
+    padding: .2em 1em;
+    border: 1px solid black;
+    border-radius: 4px;
+    min-width: 200px;
+}
+
+.showCart  {
+    display: block !important;
+}
+
 header a{
     color: white;
 }
