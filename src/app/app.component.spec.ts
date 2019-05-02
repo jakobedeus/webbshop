@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ShowProductsComponent } from './show-products/show-products.component';
 import { ProductPresentationComponent } from './product-presentation/product-presentation.component';
+import { MoviesComponent } from './movies/movies.component';
 
 
 describe('AppComponent', () => {
@@ -17,7 +18,8 @@ describe('AppComponent', () => {
         AppComponent,
         HeaderComponent,
         ShowProductsComponent,
-        ProductPresentationComponent
+        ProductPresentationComponent,
+        MoviesComponent
       ],
     }).compileComponents();
   }));
