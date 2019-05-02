@@ -24,6 +24,8 @@ export class ShowProductsComponent implements OnInit {
 
   movies: IMovie[];
 
+
+
   ngOnInit() {
    
     // error: err => console.log("error: " + error),
