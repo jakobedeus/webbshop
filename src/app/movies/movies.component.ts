@@ -12,12 +12,18 @@ import { DataService } from '../services/data.service';
 export class MoviesComponent implements OnInit {
   movies: IMovie[];
 
-  constructor() { 
-  }
+  constructor(private route: ActivatedRoute) { }
 
-
+  getMovies() {
+    this.getMovies(); Array<IMovie>
+  ()}
 
   ngOnInit(){
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      console.log(id);
+      return id;
+     });
 
   }
 
