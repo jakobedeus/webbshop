@@ -1,7 +1,8 @@
 <div class="filter">
     <div class="categorySelectContainer">
-        <label for="categorySelect">Category:</label>
-        <select name="categorySelect" id=""></select>
+        <!-- <label for="categorySelect">Category:</label>
+        <select name="categorySelect" id=""></select> -->
+        <p style="color:white;" *ngFor="let category of categories">{{ category.name }} = {{ category.id }}</p>
     </div>
 
     <div class="searchContainer">
@@ -11,7 +12,10 @@
         </form>
     </div>
 </div>
-<div class="container">
-    <app-product-presentation [movie]="movie" *ngFor="let movie of movies">
-    </app-product-presentation>
-</div>
+<!-- <div class="container"> -->
+    
+    <div class="categoryContainer">
+        <app-product-presentation [movie]="movie" *ngFor="let movie of movies">
+        </app-product-presentation>
+    </div>
+<!--  -->

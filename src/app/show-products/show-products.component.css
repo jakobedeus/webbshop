@@ -1,4 +1,13 @@
-.container {
+/* .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 75%;
+    margin: 6vh auto;
+} */
+
+.categoryContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

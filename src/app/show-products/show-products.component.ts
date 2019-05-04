@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { IMovie } from '../interface/IMovies';
 import { MockDataService } from '../services/mock-data.service';
 import { DataService } from '../services/data.service';
+import { ICategory } from '../interface/ICategory';
 
 @Component({
   selector: 'app-show-products',
@@ -19,15 +20,14 @@ export class ShowProductsComponent implements OnInit {
   // }
 
   constructor(service: DataService) { 
-    service.getData().subscribe((data) => { this.movies = data; });
+    service.getProductData().subscribe((productData) => { this.movies = productData; });
+    service.getCategoryData().subscribe((categoryData) => { this.categories = categoryData; });
   }
 
   movies: IMovie[];
-
-
+  categories: ICategory[];
 
   ngOnInit() {
-   
     // error: err => console.log("error: " + error),
     // complete: () => console.log("Complete")
   }

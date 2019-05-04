@@ -36,4 +36,10 @@ describe('ShowProductsComponent', () => {
     expect(component.movies.length).toBe(4);
   });
 
+  it('should create 4 categories', () => {
+    fixture = TestBed.createComponent(ShowProductsComponent);
+    component = fixture.componentInstance;
+    expect(component.categories.length).toBe(4);
+  });
+
 });
