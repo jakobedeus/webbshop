@@ -12,6 +12,10 @@ export class ProductPresentationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    var movieCategory = this.movie.productCategory;
+
+    console.log(movieCategory);
   }
 
 }
