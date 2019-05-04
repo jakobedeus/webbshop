@@ -4,6 +4,7 @@ import { MainComponent } from './main.component';
 import { ShowProductsComponent } from '../show-products/show-products.component';
 import { ProductPresentationComponent } from '../product-presentation/product-presentation.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 
 
@@ -14,7 +15,7 @@ describe('MainComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MainComponent, ShowProductsComponent, ProductPresentationComponent ],
-      imports: [HttpClientModule]
+      imports: [HttpClientModule, RouterTestingModule]
     })
     .compileComponents();
   }));

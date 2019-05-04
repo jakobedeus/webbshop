@@ -1,8 +1,8 @@
 <div class="product">
-  <!-- <a routerLink="/movies/{{ movie.id }}" routerLinkActive="active"><img src="{{ movie.imageUrl }}"  style="width:200px;height:300px"></a> -->
-  <img src="{{ movie.imageUrl }}"  style="width:200px;height:300px">
+  <a routerLink="/movies/{{ movie.id }}"><img src="{{ movie.imageUrl }}"  style="width:200px;height:300px"></a>
   <div class="productInfo">
     <p>{{ movie.id }}</p>
+    <p>{{ movie.productCategory }}</p>
     <p>{{ movie.price }} :-
     <!-- <form action="">
       <input type="number" #productAmount />
