@@ -27,6 +27,11 @@ export class ShowProductsComponent implements OnInit {
   movies: IMovie[];
   categories: ICategory[];
 
+
+  category5: true;
+
+
+
   ngOnInit() {
     // error: err => console.log("error: " + error),
     // complete: () => console.log("Complete")

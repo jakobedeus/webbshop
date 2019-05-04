@@ -2,7 +2,7 @@
   <a routerLink="/movies/{{ movie.id }}"><img src="{{ movie.imageUrl }}"  style="width:200px;height:300px"></a>
   <div class="productInfo">
     <p>{{ movie.id }}</p>
-    <p *ngFor="let category of movie.productCategory">{{ category.categoryId }}</p>
+    <p>Category : <span *ngFor="let category of movie.productCategory"> {{ category.categoryId }}</span></p>
     <p>{{ movie.price }} :-
     <!-- <form action="">
       <input type="number" #productAmount />
