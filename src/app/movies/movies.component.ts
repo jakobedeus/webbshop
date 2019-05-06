@@ -10,21 +10,21 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-  movies: IMovie[];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private service: DataService) {}
 
-  getMovies() {
-    this.getMovies(); Array<IMovie>
-  ()}
+  movie: IMovie;
 
-  ngOnInit(){
-    this.route.params.subscribe(params => {
-      const id = params['id'];
-      console.log(id);
+
+  ngOnInit() {
+
+    this.route.paramMap.subscribe(pmap => {
+      const id = pmap.get('id');
+      this.service.getSingleProductData(id).subscribe((singleProductData) => { this.movie = singleProductData; });
      });
-
   }
+
+  
 
 
 

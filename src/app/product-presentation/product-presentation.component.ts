@@ -7,7 +7,7 @@ import { IMovie } from '../interface/IMovies';
   styleUrls: ['./product-presentation.component.css']
 })
 export class ProductPresentationComponent implements OnInit {
-  @Input() movie: IMovie;
+  @Input() movie: IMovie[];
 
   constructor() { }
 
