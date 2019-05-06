@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IDataService } from '../interface/IDataService';
 import { Observable } from 'rxjs';
@@ -13,6 +13,10 @@ export class DataService implements IDataService{
 
   getProductData(): Observable<IMovie[]> {
     return this.http.get<IMovie[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/products');
+  }
+
+  getSingleProductData(id): Observable<IMovie> {
+    return this.http.get<IMovie>('https://medieinstitutet-wie-products.azurewebsites.net/api/products/' + id);
   }
 
   getCategoryData(): Observable<ICategory[]> {
