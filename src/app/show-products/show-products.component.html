@@ -3,6 +3,9 @@
         <!-- <label for="categorySelect">Category:</label>
         <select name="categorySelect" id=""></select> -->
         <p style="color:white;" *ngFor="let category of categories">{{ category.name }} = {{ category.id }}</p>
+        <!-- <p>
+            {{ categories[0].name }}, {{ categories[1].name }}, {{ categories[2].name }}, {{ categories[3].name }}
+        </p> -->
     </div>
 
     <div class="searchContainer">
@@ -11,10 +14,13 @@
             <button>Search</button>
         </form>
     </div>
+    <button (click)="loopCategory()">Loopa</button>
 </div>
 
-<h2 style="color:white;">Action</h2>
+<!-- <h2 style="color:white;">{{ categories[0].name}} </h2> -->
 <div class="categoryContainer">
+    <!-- *ngIf="category.categoryId === 5" -->
+    <!-- *ngIf="categories[0].id === category.categoryId" -->
     <app-product-presentation [movie]="movie" *ngFor="let movie of movies">
     </app-product-presentation>
 </div>

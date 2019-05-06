@@ -22,7 +22,6 @@ export class MoviesComponent implements OnInit {
     this.route.params.subscribe(params => {
       const id = params['id'];
       console.log(id);
-      return id;
      });
 
   }
