@@ -1,7 +1,9 @@
 import { IMovie } from './IMovies';
 import { Observable } from "rxjs";
+import { ICategory } from './ICategory';
 
 export interface IDataService {
-    getData(): Observable<IMovie[]>;
+  getProductData(): Observable<IMovie[]>;
+  getCategoryData(): Observable<ICategory[]>;
   }
   

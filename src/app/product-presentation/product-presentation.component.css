@@ -9,15 +9,15 @@
 
 .product img {
     object-fit: cover;
-    transition: transform .3s;
+    /* transition: transform .3s; */
     cursor: pointer;
 }
 
-.product img:hover {
+/* .product img:hover {
     transform: scale(1.1); 
     z-index: 1;
     width: 300px;
-}
+} */
 
 .productInfo {
     padding: .4em 0;
