@@ -14,6 +14,15 @@
             <button>Search</button>
         </form>
     </div> -->
+    <form>
+        <label for="category">Category: </label>
+        <!--  ng-model="selectedName" ng-options="category for category in categories" -->
+        <!-- onchange="getCategory()" -->
+        <select  id="mySelect">
+            <option [value]="all" selected name="category">All</option>
+            <option [value]="category.id" *ngFor="let category of categories" name="category">{{category.name}}</option>
+        </select>
+    </form>
     <button (click)="loopCategory()">Loopa</button>
 </div>
 

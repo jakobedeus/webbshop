@@ -23,14 +23,14 @@ import { MoviesComponent } from './movies/movies.component';
     ProductPresentationComponent,
     MainComponent,
     PageNotFoundComponent,
-    MoviesComponent
+    MoviesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
