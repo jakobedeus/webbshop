@@ -1,0 +1,34 @@
+.singleProduct {
+    color: white;
+    width: 75%;
+    margin: 16vh auto 0 auto;
+    display: flex;
+}
+
+
+.singleProductInfo {
+    padding: 2em;
+    flex: 1;
+}
+
+
+.singleProductImg {
+    height: 80vh;
+    flex: 1;
+}
+
+
+.singleProductImg img {
+    height: 100%;
+}
+
+
+.singleProductInfo button {
+    margin-left: 1em;
+    background-color: orange;
+    border: none;
+    color: black;
+    padding: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+}
