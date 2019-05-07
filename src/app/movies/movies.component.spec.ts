@@ -18,7 +18,7 @@ describe('MoviesComponent', () => {
       declarations: [ MoviesComponent ],
       imports:[RouterTestingModule, HttpClientModule],
       providers: [
-        {provide: activatedRoute, usevalue: activatedRoute},
+        {provide: activatedRoute, useValue: activatedRoute},
         {provide: DataService, useClass: MockDataService}]
     })
     .compileComponents();
