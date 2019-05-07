@@ -1,4 +1,6 @@
 <div class="product">
+  <p>{{ message }}</p>
+  <button (click)="addToCart()" class="button">Add to Cart</button>
   <a [routerLink]="['/movies', movie.id]"><img src="{{ movie.imageUrl }}"  style="width:200px;height:300px"></a>
   <div class="productInfo">
     <p>Category : <span *ngFor="let category of movie.productCategory"> {{ category.categoryId }}</span></p>
