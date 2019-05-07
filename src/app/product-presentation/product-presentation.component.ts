@@ -19,7 +19,7 @@ export class ProductPresentationComponent implements OnInit {
     this.data.currentMessage.subscribe(message => this.message = message);
   }
 
-  addToCart() {
+  newMessage() {
     this.data.changeMessage("New message");
   }
 
