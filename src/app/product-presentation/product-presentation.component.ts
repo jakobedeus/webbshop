@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IMovie } from '../interface/IMovies';
+import { InteractionService } from '../services/interaction.service';
 
 @Component({
   selector: 'app-product-presentation',
@@ -9,10 +10,17 @@ import { IMovie } from '../interface/IMovies';
 export class ProductPresentationComponent implements OnInit {
   @Input() movie: IMovie[];
 
-  constructor() { }
+  message: string;
+
+  constructor(private data: InteractionService) { }
 
 
   ngOnInit() {
+    this.data.currentMessage.subscribe(message => this.message = message);
+  }
+
+  addToCart() {
+    this.data.changeMessage("New message");
   }
 
 }
