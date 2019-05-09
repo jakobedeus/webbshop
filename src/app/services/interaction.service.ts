@@ -1,18 +1,22 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { ICart } from '../interface/ICart';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InteractionService {
 
-  private messageSource = new BehaviorSubject<string>("Default message");
-  currentMessage = this.messageSource.asObservable();
+  private cart = new BehaviorSubject<ICart[]>([]);
+  currentCart = this.cart.asObservable();
 
   constructor() { }
 
-  changeMessage(message:string) {
-    this.messageSource.next(message);
+  changeMessage(cartItem:ICart[]) {
+    this.cart.next([]);
+
+    console.log(cartItem);
+
 
   }
 }
