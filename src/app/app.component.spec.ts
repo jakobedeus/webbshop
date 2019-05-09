@@ -6,6 +6,8 @@ import { HeaderComponent } from './header/header.component';
 import { ShowProductsComponent } from './show-products/show-products.component';
 import { ProductPresentationComponent } from './product-presentation/product-presentation.component';
 import { MoviesComponent } from './movies/movies.component';
+import { ShowCartComponent } from './show-cart/show-cart.component';
+import { CartPresentationComponent } from './cart-presentation/cart-presentation.component';
 
 
 describe('AppComponent', () => {
@@ -19,7 +21,9 @@ describe('AppComponent', () => {
         HeaderComponent,
         ShowProductsComponent,
         ProductPresentationComponent,
-        MoviesComponent
+        MoviesComponent,
+        ShowCartComponent,
+        CartPresentationComponent
       ],
     }).compileComponents();
   }));

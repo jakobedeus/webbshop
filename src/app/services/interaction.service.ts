@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { IMovie } from '../interface/IMovies';
 import { ICart } from '../interface/ICart';
 
 @Injectable({
@@ -7,16 +8,16 @@ import { ICart } from '../interface/ICart';
 })
 export class InteractionService {
 
-  private cart = new BehaviorSubject<ICart[]>([]);
-  currentCart = this.cart.asObservable();
+  private cartSource = new BehaviorSubject<IMovie[]>([]);
+  currentCart = this.cartSource.asObservable();
+  private cart : ICart[] = [];
 
   constructor() { }
+  
 
-  changeMessage(cartItem:ICart[]) {
-    this.cart.next([]);
-
-    console.log(cartItem);
-
-
+  newCart(movie) {
+    this.cart.push(movie);
+    this.cartSource.next(this.cart);
+    localStorage.setItem("cart", JSON.stringify(this.cart));
   }
 }

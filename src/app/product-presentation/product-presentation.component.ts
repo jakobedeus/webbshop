@@ -11,20 +11,16 @@ import { ICart } from '../interface/ICart';
 export class ProductPresentationComponent implements OnInit {
   @Input() movie: IMovie[];
 
-  
-
-  constructor(private data: InteractionService) { }
+  constructor(private cartData: InteractionService) { }
   
   cartItem: ICart[];
 
   ngOnInit() {
-    this.data.currentCart.subscribe(cartItem => this.cartItem = cartItem);
+    this.cartData.currentCart.subscribe(cartItem => this.cartItem = cartItem);
   }
 
-  newMessage() {
-    this.data.changeMessage([
-      { name: 'Batman in action', description: 'Drama', year: 1993, price: 10, added: 6, imageUrl: 'https://www.munchkin.com/media/catalog/product/3/1/31001_white_hot_safety_bath_ducky.jpg', id: 1, productCategory :[{"categoryId":7,"category":null}]}
-    ]);
+  addToCart(movie) {
+    this.cartData.newCart(movie);
   }
 
 }
