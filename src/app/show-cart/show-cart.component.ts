@@ -27,22 +27,25 @@ export class ShowCartComponent implements OnInit {
 
     let addedMovie = false;
 
-    for(let i = 0; i < this.cartItems.length; i++) {
-    
-      if(movieToAdd.id == this.cartItems[i].movie.id) {
-        
+    for (let i = 0; i < this.cartItems.length; i++) {
+
+      if (movieToAdd.id == this.cartItems[i].movie.id) {
+
         this.cartItems[i].amount++;
- 
+
         addedMovie = true;
-      } 
+      }
+    }
+
+    if (addedMovie === false) {
+
+      this.cartItems.push({ movie: movieToAdd, amount: 1 });
+    }
   }
 
-  if(addedMovie === false) {
 
-    this.cartItems.push({ movie: movieToAdd, amount: 1 });
-
+  removeFromCart(id) {
     
   }
-}
 
 }
