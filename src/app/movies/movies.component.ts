@@ -14,27 +14,30 @@ import { ICart } from '../interface/ICart';
 })
 export class MoviesComponent implements OnInit {
 
+  cartItems: IMovie[];
+
   constructor(private route: ActivatedRoute, service: DataService, private cartData: InteractionService) {
     this.route.paramMap.subscribe(pmap => {
       const id = pmap.get('id');
       service.getSingleProductData(id).subscribe((singleProductData) => { this.movie = singleProductData; });
-      this.cartData.currentCart.subscribe(cartItems => this.cartItems = cartItems);
+      // this.cartData.cartSource$.subscribe(cartItems => this.cartItems = cartItems);
      });
 
   }
 
-  cartItems: ICart[];
 
   movie: IMovie;
-
 
   ngOnInit() {
 
     
   }
 
-  addToCart(movie) {
-    this.cartData.newCart(movie);
+  addMovieToCart(movie) {
+    document.getElementById("cart").classList.add("showCart");
+
+    this.cartData.sendMovie(movie);
+
   }
 
   

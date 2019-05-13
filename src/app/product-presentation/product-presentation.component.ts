@@ -16,11 +16,14 @@ export class ProductPresentationComponent implements OnInit {
   cartItem: ICart[];
 
   ngOnInit() {
-    this.cartData.currentCart.subscribe(cartItem => this.cartItem = cartItem);
+    
   }
 
-  addToCart(movie) {
-    this.cartData.newCart(movie);
+  addMovieToCart(movie) {
+    document.getElementById("cart").classList.add("showCart");
+
+    this.cartData.sendMovie(movie);
+
   }
 
 }

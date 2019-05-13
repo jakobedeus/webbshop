@@ -1,12 +1,12 @@
 <div class="product">
   <p *ngFor="let cartItem of cart">{{ cartItem }}</p>
-  <a [routerLink]="['/movies', movie.id]"><img src="{{ movie.imageUrl }}"  style="width:200px;height:300px"></a>
+  <a [routerLink]="['/movies', movie.id]"><img src="{{ movie.imageUrl }}" style="width:200px;height:300px"></a>
   <div class="productInfo">
-    <p>Category : <span *ngFor="let category of movie.productCategory"> {{ category.categoryId }}</span></p>
+    <!-- <p>Category : <span *ngFor="let category of movie.productCategory"> {{ category.categoryId }}</span></p> -->
     <!-- <p>{{ categoryID.name }}</p> -->
-    <p>{{ movie.price }} :-
+    <p>{{ movie.price }} :-</p>
 
-    <!-- <form action="">
+      <!-- <form action="">
       <input type="number" #productAmount />
       <button value="Add to cart" (click)="addToCart({ movie.name })">Add to cart</button>
       <button (click)="addToCart();">Add to cart</button>
@@ -15,6 +15,16 @@
       productAmount.value = ''; 
       <button (click)="sendMessage()">Send message</button>
     </form> -->
-    <button (click)="addToCart(movie)">Add to cart</button></p>
+
+      <form action="" id="addMovieToCartForm">
+        <!-- <select name="amountSelect" #productAmount>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select> -->
+        <button (click)="addMovieToCart(movie)">Add to cart</button>
+      </form>
   </div>
 </div>

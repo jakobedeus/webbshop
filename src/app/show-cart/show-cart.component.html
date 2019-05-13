@@ -1,7 +1,10 @@
 <p>My movie cart</p>
 <button id="pay">Pay</button>
 <br />
+
+<div *ngFor="let item of cartItems">
+   <p>{{ item.movie.name }}</p>
+   <p>{{ item.amount }}</p>
+</div>
+
 <app-cart-presentation [cartItem]="cartItem" *ngFor="let cartItem of cartItems"></app-cart-presentation>
-<!-- <div *ngFor="let cartItem of cartItems">
-  <p>{{ cartItem.name }}</p>
-</div> -->

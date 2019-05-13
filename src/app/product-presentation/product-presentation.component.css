@@ -34,3 +34,7 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+form {
+    display: flex;
+}

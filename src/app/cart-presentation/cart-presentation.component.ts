@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ICart } from '../interface/ICart';
+import { InteractionService } from '../services/interaction.service';
+import { IMovie } from '../interface/IMovies';
 
 @Component({
   selector: 'app-cart-presentation',
@@ -8,18 +10,18 @@ import { ICart } from '../interface/ICart';
 })
 export class CartPresentationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cartData: InteractionService) { }
 
-  @Input() cartItem: ICart[];
+  @Input() cartItem: ICart[] = [];
 
-  ngOnInit() {
 
-    // for(var i = 0;this.cartItem.length; i++) {
-      
-    // }
+  ngOnInit() { 
+
+    
+
+    
   }
 
-  
 
   
 }
