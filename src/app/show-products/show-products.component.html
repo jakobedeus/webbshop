@@ -16,6 +16,7 @@
 <p> {{ newVal }}</p>
 <p> {{ movieCategoryId }}</p>
 <div class="categoryContainer">
+    <!--  *ngIf="categories[0].id === 5" -->
     <!--  *ngIf="{{newVal}} === {{ movieCategoryId }}" -->
     <!-- *ngIf="categories[0].id === category.categoryId" -->
     <app-product-presentation [movie]="movie" *ngFor="let movie of movies">

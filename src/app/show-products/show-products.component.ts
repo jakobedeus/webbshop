@@ -26,7 +26,10 @@ export class ShowProductsComponent implements OnInit {
   //   console.log(x);
   // }
 
-
+  cat5: true;
+  cat6: true;
+  cat7: true;
+  cat8: true;
 
 
   loopCategory(event) {
@@ -50,7 +53,7 @@ export class ShowProductsComponent implements OnInit {
           // if (categoryID.id == movieCategoryId) {
             if (this.newVal == this.movieCategoryId) {
 
-            console.log(this.movies[a].name);
+            // console.log(this.movies[a].name);
 
             var movieCategoryFeed = this.movies[a].name;
 
