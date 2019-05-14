@@ -13,6 +13,8 @@ import { MainComponent } from './main/main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MoviesComponent } from './movies/movies.component';
+import { ShowCartComponent } from './show-cart/show-cart.component';
+import { CartPresentationComponent } from './cart-presentation/cart-presentation.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { MoviesComponent } from './movies/movies.component';
     MainComponent,
     PageNotFoundComponent,
     MoviesComponent,
+    ShowCartComponent,
+    CartPresentationComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<p>My movie cart</p>
+<button id="pay">Pay</button>
+<br />
+
+<div *ngFor="let item of cartItems">
+   <p>{{ item.movie.name }}</p>
+   <p>{{ item.amount }}</p>
+   <button (click)="removeFromCart(item.movie)">Remove item</button>
+</div>
+
+<!-- <app-cart-presentation [cartItem]="cartItem" *ngFor="let cartItem of cartItems"></app-cart-presentation> -->

@@ -1,6 +1,7 @@
 <header>
   <h1>
-    <a href="/">Angular movies</a>
+    <a routerLink="/">Angular movies</a>
+    <base>
   </h1>
   <nav>
     <ul>
@@ -10,9 +11,6 @@
     </ul>
   </nav>
   <div id="cart">
-    <p>My movie cart</p>
-    <button id="pay">Pay</button>
-    <br />
-    <!-- <button (click)="removeAll()">Remove all</button> -->
+    <app-show-cart></app-show-cart>
   </div>
 </header>

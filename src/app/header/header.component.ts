@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InteractionService } from '../services/interaction.service';
 
 @Component({
   selector: 'app-header',
@@ -18,6 +19,10 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+
+
+    
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IMovie } from '../interface/IMovies';
 import { InteractionService } from '../services/interaction.service';
+import { ICart } from '../interface/ICart';
 
 @Component({
   selector: 'app-product-presentation',
@@ -10,17 +11,19 @@ import { InteractionService } from '../services/interaction.service';
 export class ProductPresentationComponent implements OnInit {
   @Input() movie: IMovie[];
 
-  message: string;
-
-  constructor(private data: InteractionService) { }
-
+  constructor(private cartData: InteractionService) { }
+  
+  cartItem: ICart[];
 
   ngOnInit() {
-    this.data.currentMessage.subscribe(message => this.message = message);
+    
   }
 
-  addToCart() {
-    this.data.changeMessage("New message");
+  addMovieToCart(movie) {
+    document.getElementById("cart").classList.add("showCart");
+
+    this.cartData.sendMovie(movie);
+
   }
 
 }
