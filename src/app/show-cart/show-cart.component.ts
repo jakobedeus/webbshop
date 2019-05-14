@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ICart } from '../interface/ICart';
 import { InteractionService } from '../services/interaction.service';
-import { BehaviorSubject } from 'rxjs';
 import { IMovie } from '../interface/IMovies';
 
 @Component({
@@ -44,8 +43,22 @@ export class ShowCartComponent implements OnInit {
   }
 
 
-  removeFromCart(id) {
-    
+  removeFromCart(movieToRemove: IMovie) {
+
+    for (let i = 0; i < this.cartItems.length; i++) {
+
+      if (movieToRemove.id == this.cartItems[i].movie.id) {
+        if (this.cartItems[i].amount > 1) {
+
+          this.cartItems[i].amount--;
+
+        } else {
+          this.cartItems.splice(i, 1)
+        }
+      }
+
+    }
+
   }
 
 }
