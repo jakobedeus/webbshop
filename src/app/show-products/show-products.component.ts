@@ -27,6 +27,7 @@ export class ShowProductsComponent implements OnInit {
 
   loopCategory() {
 
+
     for (var i = 0; i < this.categories.length; i++) {
       var categoryID = this.categories[i];
 
@@ -41,8 +42,12 @@ export class ShowProductsComponent implements OnInit {
           // console.log("CategoryId from movie: " + movieCategoryId);
 
           if (categoryID.id == movieCategoryId) {
-            var moviesCategory = this.movies[a].name;
             console.log(this.movies[a].name + ": " + categoryID.name);
+
+            // this.movies.push({name: categoryID.id, id: this.movies[i].id})
+            // var movieCategoryFinal = this.movies[a].name  + categoryID.name;
+
+            // console.log(this.categories);
           }
         }
       };
