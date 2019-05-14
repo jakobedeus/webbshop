@@ -1,35 +1,22 @@
 <div class="filter">
-    <div class="categorySelectContainer">
-        <!-- <label for="categorySelect">Category:</label>
-        <select name="categorySelect" id=""></select> -->
-        <!-- <p style="color:white;" *ngFor="let category of categories">{{ category.name }} = {{ category.id }}</p> -->
-        <!-- <p>
-            {{ categories[0].name }}, {{ categories[1].name }}, {{ categories[2].name }}, {{ categories[3].name }}
-        </p> -->
-    </div>
-
-    <!-- <div class="searchContainer">
-        <form action="">
-            <input type="text" id="">
-            <button>Search</button>
-        </form>
-    </div> -->
     <form>
         <label for="category">Category: </label>
         <!--  ng-model="selectedName" ng-options="category for category in categories" -->
         <!-- onchange="getCategory()" -->
-        <select  id="mySelect">
-            <option [value]="all" selected name="category">All</option>
+        <select id="mySelect" (change)="loopCategory($event);" >
+            <!-- <option [value]="all" selected name="category">All</option> -->
             <option [value]="category.id" *ngFor="let category of categories" name="category">{{category.name}}</option>
-        </select>
-        <button (click)="loopCategory()">Loopa</button>
+        </select>   
+        <!-- <button (click)="loopCategory()">Loopa</button> -->
     </form>
     
 </div>
 
 <!-- <h2 style="color:white;">{{ categories[0].name}} </h2> -->
+<p> {{ newVal }}</p>
+<p> {{ movieCategoryId }}</p>
 <div class="categoryContainer">
-    <!-- *ngIf="category.categoryId === 5" -->
+    <!--  *ngIf="{{newVal}} === {{ movieCategoryId }}" -->
     <!-- *ngIf="categories[0].id === category.categoryId" -->
     <app-product-presentation [movie]="movie" *ngFor="let movie of movies">
     </app-product-presentation>

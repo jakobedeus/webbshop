@@ -7,6 +7,7 @@ import { ICategory } from '../interface/ICategory';
 @Injectable({
   providedIn: 'root'
 })
+
 export class MockDataService implements IDataService{
 
   constructor() { }
@@ -20,7 +21,6 @@ export class MockDataService implements IDataService{
 
   movie: IMovie =
     { name: 'Batman in love', description: 'Drama', year: 1993, price: 10, added: 6, imageUrl: 'https://www.munchkin.com/media/catalog/product/3/1/31001_white_hot_safety_bath_ducky.jpg', id: 1, productCategory :[{"categoryId":7,"category":null}]}
-    
   ;
 
   categories: ICategory[] = [
@@ -41,6 +41,4 @@ export class MockDataService implements IDataService{
   getCategoryData(): Observable<ICategory[]> {
     return of(this.categories);
   }
-
-
 }
