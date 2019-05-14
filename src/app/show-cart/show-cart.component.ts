@@ -28,7 +28,7 @@ export class ShowCartComponent implements OnInit {
 
     for (let i = 0; i < this.cartItems.length; i++) {
 
-      if (movieToAdd.id == this.cartItems[i].movie.id) {
+      if (movieToAdd.id === this.cartItems[i].movie.id) {
 
         this.cartItems[i].amount++;
 
@@ -47,7 +47,7 @@ export class ShowCartComponent implements OnInit {
 
     for (let i = 0; i < this.cartItems.length; i++) {
 
-      if (movieToRemove.id == this.cartItems[i].movie.id) {
+      if (movieToRemove.id === this.cartItems[i].movie.id) {
         if (this.cartItems[i].amount > 1) {
 
           this.cartItems[i].amount--;

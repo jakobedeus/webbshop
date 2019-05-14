@@ -17,10 +17,52 @@ export class CartPresentationComponent implements OnInit {
 
   ngOnInit() { 
 
-    
+    // this.cartData.cartSource$.subscribe(
+    //   cartItem => {
+    //     this.addToCart(cartItem)
+    //   })
 
     
   }
+
+  // addToCart(movieToAdd: IMovie) {
+
+  //   let addedMovie = false;
+
+  //   for (let i = 0; i < this.cartItem.length; i++) {
+
+  //     if (movieToAdd.id === this.cartItem[i].movie.id) {
+
+  //       this.cartItem[i].amount++;
+
+  //       addedMovie = true;
+  //     }
+  //   }
+
+  //   if (addedMovie === false) {
+
+  //     this.cartItem.push({ movie: movieToAdd, amount: 1 });
+  //   }
+  // }
+
+
+  // removeFromCart(movieToRemove: IMovie) {
+
+  //   for (let i = 0; i < this.cartItem.length; i++) {
+
+  //     if (movieToRemove.id === this.cartItem[i].movie.id) {
+  //       if (this.cartItem[i].amount > 1) {
+
+  //         this.cartItem[i].amount--;
+
+  //       } else {
+  //         this.cartItem.splice(i, 1)
+  //       }
+  //     }
+
+  //   }
+
+  // }
 
 
   
