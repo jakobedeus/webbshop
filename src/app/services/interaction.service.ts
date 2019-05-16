@@ -9,7 +9,6 @@ import { ICart } from '../interface/ICart';
 })
 export class InteractionService {
 
-
   private cartSource = new Subject<IMovie>();
   
   cartSource$ = this.cartSource.asObservable();
@@ -18,23 +17,7 @@ export class InteractionService {
     
   }
 
-
   sendMovie(movie: IMovie) {
     this.cartSource.next(movie);
-  }
+  } 
 }
-
-    // if( movie.id === this.cart.id) {
-    //   var newAmount = cartFromStorage.amount + amount;
-    //   this.cart.push(newAmount);
-    //   this.cartSource.next(this.cart);
-    // } else {
-    //   this.cart.push(movie, amount);
-    //   this.cartSource.next(this.cart);
-    // }
-
-    
-
-      // this.cart.push(movie, amount);
-      // this.cartSource.next(this.cart);
- 
