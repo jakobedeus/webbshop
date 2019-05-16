@@ -22,7 +22,7 @@ export class ShowCartComponent implements OnInit {
       })
   }
 
-  totalPrice: number;
+  // totalPrice: number;
 
   addToCart(movieToAdd: IMovie) {
 
@@ -34,6 +34,7 @@ export class ShowCartComponent implements OnInit {
         
         this.cartItems[i].amount++;
         // this.totalPrice = movieToAdd.price * this.cartItems[i].amount;
+        localStorage.setItem("cart", JSON.stringify(this.cartItems));
   
         addedMovie = true;
       }
@@ -42,6 +43,7 @@ export class ShowCartComponent implements OnInit {
     if (addedMovie === false) {
 
       this.cartItems.push({ movie: movieToAdd, amount: 1 });
+      localStorage.setItem("cart", JSON.stringify(this.cartItems));
     }
   }
 
@@ -55,9 +57,11 @@ export class ShowCartComponent implements OnInit {
 
           this.cartItems[i].amount--;
           // this.totalPrice = movieToRemove.price * this.cartItems[i].amount;
+          localStorage.setItem("cart", JSON.stringify(this.cartItems));
 
         } else {
           this.cartItems.splice(i, 1)
+          localStorage.setItem("cart", JSON.stringify(this.cartItems));
         }
       }
 
