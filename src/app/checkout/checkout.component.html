@@ -3,11 +3,14 @@
   <h2>Order</h2>
 
   <ul *ngFor="let item of cartItems">
-    <li>{{ item.movie.name }} x {{ item.amount }} = {{ item.totalPrice }}</li>
+    <li>
+      <p>{{ item.movie.name }} x {{ item.amount }}</p>
+      <p>Price:  {{ item.totalprice }}</p>
+    </li>
 
   </ul>
 
-  <p>Total price of order: </p>
+  <h3><b>Total price of order: </b></h3> 
 
   <form action="">
       <label for="name">Name: </label>

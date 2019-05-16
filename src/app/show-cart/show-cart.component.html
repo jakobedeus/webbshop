@@ -6,11 +6,11 @@
 <br />
 
 <div *ngFor="let cartItem of cartItems">
-   <p>{{ cartItem.movie.name }} x {{ cartItem.amount }} <button (click)="removeFromCart(cartItem.movie)">-</button></p>
-   <!-- <p>{{ cartItem.amount }}</p>
-   <p>{{ totalPrice }}:-</p> -->
-   
+   <p>{{ cartItem.movie.name }} x {{ cartItem.amount }}<button (click)="removeFromCart(cartItem.movie)">-</button></p>
+   <p>Price: {{ cartItem.totalprice}} :-</p>
 </div>
+
+<p><b>Total price: {{ totalCartPrice }}</b></p>
 
 
 <button id="cartBtn" (click)="emptyCart()">Empty cart</button>
