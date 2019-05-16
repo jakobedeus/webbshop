@@ -11,13 +11,6 @@ describe('ShowCartComponent', () => {
   let component: ShowCartComponent;
   let fixture: ComponentFixture<ShowCartComponent>;
 
-  // beforeEach(async(() => {
-  //   TestBed.configureTestingModule({
-  //     declarations: [ ShowCartComponent, CartPresentationComponent, HeaderComponent ]
-  //   })
-  //   .compileComponents();
-  // }));
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ShowCartComponent, CartPresentationComponent ],
@@ -42,6 +35,7 @@ describe('ShowCartComponent', () => {
     component.addToCart({ name: 'Batman in love', description: 'Drama', year: 1993, price: 10, added: 6, imageUrl: 'https://www.munchkin.com/media/catalog/product/3/1/31001_white_hot_safety_bath_ducky.jpg', id: 1, productCategory :[{"categoryId":7,"category":null}]});
     expect(component.cartItems.length).toBe(1);
   });
+
 
   it('should add amount when movie already exists in cart', () => {
     expect(component.cartItems.length).toBe(0);

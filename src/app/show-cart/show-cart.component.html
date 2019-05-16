@@ -2,10 +2,11 @@
 <button id="pay">Pay</button>
 <br />
 
-<div *ngFor="let item of cartItems">
-   <p>{{ item.movie.name }}</p>
-   <p>{{ item.amount }}</p>
-   <button (click)="removeFromCart(item.movie)">Remove item</button>
+<div *ngFor="let cartItem of cartItems">
+   <p>{{ cartItem.movie.name }} x {{ cartItem.amount }}</p>
+   <!-- <p>{{ cartItem.amount }}</p>
+   <p>{{ totalPrice }}:-</p> -->
+   <button (click)="removeFromCart(cartItem.movie)">Remove item</button>
 </div>
 
 <!-- <app-cart-presentation [cartItem]="cartItem" *ngFor="let cartItem of cartItems"></app-cart-presentation> -->
