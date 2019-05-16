@@ -32,13 +32,6 @@ describe('ProductPresentationComponent', () => {
     expect(testHostComponent).toBeTruthy();
   });
 
-  // it('should create 1 cart item', () => {
-  //   expect(testHostComponent.cartItem.length).toBe(0);
-  //   testHostComponent.addToCart({ name: 'Batman in love', description: 'Drama', year: 1993, price: 10, added: 6, imageUrl: 'https://www.munchkin.com/media/catalog/product/3/1/31001_white_hot_safety_bath_ducky.jpg', id: 1, productCategory :[{"categoryId":7,"category":null}]}, 1);
-  //   expect(testHostComponent.cartItem.length).toBe(1);
-  // });
-  
-
   @Component({
     selector:'host-component',
     template: '<app-product-presentation movie="movie"></app-product-presentation>'    

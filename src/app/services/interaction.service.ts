@@ -12,7 +12,6 @@ export class InteractionService {
 
   private cartSource = new Subject<IMovie>();
   
-  cartItem : ICart[] = [];
   cartSource$ = this.cartSource.asObservable();
 
   constructor() { 
