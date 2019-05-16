@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { IMovie } from '../interface/IMovies';
 import { InteractionService } from '../services/interaction.service';
 import { ICart } from '../interface/ICart';
+import { ICategory } from '../interface/ICategory';
 
 @Component({
   selector: 'app-product-presentation',
@@ -25,5 +26,7 @@ export class ProductPresentationComponent implements OnInit {
     this.cartData.sendMovie(movie);
 
   }
+
+
 
 }

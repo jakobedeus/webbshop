@@ -14,7 +14,7 @@ import { ICart } from '../interface/ICart';
 })
 export class MoviesComponent implements OnInit {
 
-  cartItems: IMovie[];
+  // cartItems: IMovie[];
 
   constructor(private route: ActivatedRoute, service: DataService, private cartData: InteractionService) {
     this.route.paramMap.subscribe(pmap => {
@@ -24,24 +24,13 @@ export class MoviesComponent implements OnInit {
      });
 
   }
-
-
   movie: IMovie;
 
   ngOnInit() {
-
-    
   }
 
   addMovieToCart(movie) {
     document.getElementById("cart").classList.add("showCart");
-
     this.cartData.sendMovie(movie);
-
   }
-
-  
-
-
-
 }
