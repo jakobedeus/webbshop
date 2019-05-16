@@ -26,10 +26,10 @@ export class ShowProductsComponent implements OnInit {
   //   console.log(x);
   // }
 
-  cat5: true;
-  cat6: true;
-  cat7: true;
-  cat8: true;
+  // cat5: true;
+  // cat6: true;
+  // cat7: true;
+  // cat8: true;
 
 
   loopCategory(event) {

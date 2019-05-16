@@ -1,0 +1,21 @@
+div {
+    color:black;
+    background: white;
+    width: 40%;
+    margin: 20vh auto 0 auto;
+    padding: 2em;
+    border-radius: 4px;
+}
+
+form {
+    width: 100%;
+
+}
+
+input {
+    width: 100%;
+    margin: 1em 0;
+    padding: 8px 0;
+    border-radius: 2px;
+    border: 1px solid gray;
+}

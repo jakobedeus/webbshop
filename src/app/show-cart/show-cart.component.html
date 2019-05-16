@@ -1,5 +1,8 @@
 <p>My movie cart</p>
+
+<a routerLink="/checkout">
 <button id="pay">Pay</button>
+</a>
 <br />
 
 <div *ngFor="let cartItem of cartItems">
@@ -8,5 +11,8 @@
    <p>{{ totalPrice }}:-</p> -->
    
 </div>
+
+
+<button id="cartBtn" (click)="emptyCart()">Empty cart</button>
 
 <!-- <app-cart-presentation [cartItem]="cartItem" *ngFor="let cartItem of cartItems"></app-cart-presentation> -->
