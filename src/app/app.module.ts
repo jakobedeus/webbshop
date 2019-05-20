@@ -18,6 +18,7 @@ import { CartPresentationComponent } from './cart-presentation/cart-presentation
 import { CheckoutComponent } from './checkout/checkout.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     HttpClientModule,
     FormsModule,
     RouterModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
