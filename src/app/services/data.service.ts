@@ -1,5 +1,5 @@
 import { Injectable, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { IDataService } from '../interface/IDataService';
 import { Observable } from 'rxjs';
 import { IMovie } from '../interface/IMovies';
@@ -10,7 +10,7 @@ import { IOrders } from '../interface/IOrders';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService implements IDataService{
+export class DataService implements IDataService {
   constructor(private http: HttpClient) { }
 
   getProductData(): Observable<IMovie[]> {
@@ -27,5 +27,26 @@ export class DataService implements IDataService{
 
   getOrderData(): Observable<IOrders[]> {
     return this.http.get<IOrders[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders');
+  }
+
+
+  movies: IMovie[];
+  moviesUrl = 'api/movies';
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': 'my-auth-token'
+    })
+  };
+
+  searchMovies(term: string): Observable<IMovie[]> {
+    term = term.trim();
+
+    // Add safe, URL encoded search parameter if there is a search term
+    const options = term ?
+      { params: new HttpParams().set('name', term) } : {};
+
+    return this.http.get<IMovie[]>(this.moviesUrl, options)
   }
 }
