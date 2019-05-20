@@ -17,6 +17,7 @@ import { ShowCartComponent } from './show-cart/show-cart.component';
 import { CartPresentationComponent } from './cart-presentation/cart-presentation.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AdminComponent } from './admin/admin.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -33,6 +34,7 @@ import { AdminComponent } from './admin/admin.component';
     CartPresentationComponent,
     CheckoutComponent,
     AdminComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

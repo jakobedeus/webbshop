@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { IMovie } from '../interface/IMovies';
 import { ICart } from '../interface/ICart';
+import { HttpParams, HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -16,6 +17,7 @@ export class InteractionService {
   constructor() { 
     
   }
+
 
   sendMovie(movie: IMovie) {
     this.cartSource.next(movie);
