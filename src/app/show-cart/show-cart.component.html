@@ -6,7 +6,7 @@
 <br />
 
 <div *ngFor="let cartItem of cartItems">
-   <p>{{ cartItem.movie.name }} x {{ cartItem.amount }}<button (click)="removeFromCart(cartItem.movie)">-</button></p>
+   <p>{{ cartItem.movie.name }} x {{ cartItem.amount }}<button (click)="removeFromCart(cartItem.movie)">-</button><button (click)="addMovieInCart(cartItem.movie)">+</button></p>
    <p>Price: {{ cartItem.totalprice}} :-</p>
 </div>
 

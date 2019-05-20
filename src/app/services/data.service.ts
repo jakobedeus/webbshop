@@ -4,6 +4,7 @@ import { IDataService } from '../interface/IDataService';
 import { Observable } from 'rxjs';
 import { IMovie } from '../interface/IMovies';
 import { ICategory } from '../interface/ICategory';
+import { ICart } from '../interface/ICart';
 
 @Injectable({
   providedIn: 'root'

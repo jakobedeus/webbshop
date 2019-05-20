@@ -12,11 +12,16 @@ export class CheckoutComponent implements OnInit {
 
   cartItems: ICart[] = [];
 
-  totalPrice: number;
+  totalCartPrice: number;
 
   ngOnInit() {
     this.cartItems = JSON.parse(localStorage.getItem("cart"));
+    this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice"));
+  }
 
+
+  submitOrder(totalOrderPrice) {
+    console.log(totalOrderPrice);
     
   }
 

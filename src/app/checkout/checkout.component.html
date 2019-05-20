@@ -5,12 +5,12 @@
   <ul *ngFor="let item of cartItems">
     <li>
       <p>{{ item.movie.name }} x {{ item.amount }}</p>
-      <p>Price:  {{ item.totalprice }}</p>
+      <p>Price:  {{ item.totalprice }}:-</p> 
     </li>
 
   </ul>
 
-  <h3><b>Total price of order: </b></h3> 
+  <h3><b>Total price of order: {{ totalCartPrice }}:- </b></h3> 
 
   <form action="">
       <label for="name">Name: </label>
@@ -26,7 +26,7 @@
       <input type="number" id="phone">
     </form>
 
-  <button>Order</button>
+  <button (click)="submitOrder(totalCartPrice)">Order</button>
 
   <div *ngFor="let price of totalPrice">
     {{ price }}
