@@ -16,6 +16,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { ShowCartComponent } from './show-cart/show-cart.component';
 import { CartPresentationComponent } from './cart-presentation/cart-presentation.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -31,6 +32,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ShowCartComponent,
     CartPresentationComponent,
     CheckoutComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
