@@ -4,10 +4,12 @@ import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MoviesComponent } from './movies/movies.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'admin', component: AdminComponent },
   { path: 'movies/:id', component: MoviesComponent },
   { path: '**', component: PageNotFoundComponent }
 

@@ -24,4 +24,8 @@ export class DataService implements IDataService{
   getCategoryData(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/categories');
   }
+
+  getOrderData(): Observable<IOrders[]> {
+    return this.http.get<IOrders[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders');
+  }
 }
