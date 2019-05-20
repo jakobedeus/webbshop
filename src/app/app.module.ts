@@ -15,6 +15,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MoviesComponent } from './movies/movies.component';
 import { ShowCartComponent } from './show-cart/show-cart.component';
 import { CartPresentationComponent } from './cart-presentation/cart-presentation.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { CartPresentationComponent } from './cart-presentation/cart-presentation
     MoviesComponent,
     ShowCartComponent,
     CartPresentationComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { CartPresentationComponent } from './cart-presentation/cart-presentation
     HttpClientModule,
     FormsModule,
     RouterModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
