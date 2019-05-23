@@ -36,10 +36,6 @@ export class ShowCartComponent implements OnInit {
 
   }
 
-  clearStorage() {
-    localStorage.clear();
-  }
-
   addToCart(movieToAdd: IMovie) {
 
     let addedMovie = false;

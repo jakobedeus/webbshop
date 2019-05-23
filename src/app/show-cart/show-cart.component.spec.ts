@@ -31,11 +31,11 @@ describe('ShowCartComponent', () => {
   });
 
   it('should create 1 item in cart', () => {
-    component.clearStorage();
+    component.emptyCart();
     expect(component.cartItems.length).toBe(0);
     component.addToCart({ name: 'Batman in love', description: 'Drama', year: 1993, price: 10, added: 6, imageUrl: 'https://www.munchkin.com/media/catalog/product/3/1/31001_white_hot_safety_bath_ducky.jpg', id: 1, productCategory :[{"categoryId":7,"category":null}]});
     expect(component.cartItems.length).toBe(1);
-    component.clearStorage();
+    component.emptyCart();
   });
 
 
@@ -44,7 +44,7 @@ describe('ShowCartComponent', () => {
     component.addToCart({ name: 'Batman in love', description: 'Drama', year: 1993, price: 10, added: 6, imageUrl: 'https://www.munchkin.com/media/catalog/product/3/1/31001_white_hot_safety_bath_ducky.jpg', id: 1, productCategory :[{"categoryId":7,"category":null}]});
     component.addToCart({ name: 'Batman in love', description: 'Drama', year: 1993, price: 10, added: 6, imageUrl: 'https://www.munchkin.com/media/catalog/product/3/1/31001_white_hot_safety_bath_ducky.jpg', id: 1, productCategory :[{"categoryId":7,"category":null}]});
     expect(component.cartItems.length).toBe(1);
-    component.clearStorage();
+    component.emptyCart();
   });
 
   it('should remove 1 item in cart', () => {
@@ -53,7 +53,24 @@ describe('ShowCartComponent', () => {
     expect(component.cartItems.length).toBe(1);
     component.removeFromCart({ name: 'Batman in love', description: 'Drama', year: 1993, price: 10, added: 6, imageUrl: 'https://www.munchkin.com/media/catalog/product/3/1/31001_white_hot_safety_bath_ducky.jpg', id: 1, productCategory :[{"categoryId":7,"category":null}]});
     expect(component.cartItems.length).toBe(0);
-    component.clearStorage();
+    component.emptyCart();
+  });
+
+  it('should empty cart', () => {
+    expect(component.cartItems.length).toBe(0);
+    component.addToCart({ name: 'Batman in love', description: 'Drama', year: 1993, price: 10, added: 6, imageUrl: 'https://www.munchkin.com/media/catalog/product/3/1/31001_white_hot_safety_bath_ducky.jpg', id: 1, productCategory :[{"categoryId":7,"category":null}]});
+    expect(component.cartItems.length).toBe(1);
+    component.emptyCart();
+    expect(component.cartItems.length).toBe(0);
+  });
+
+  it('should add and remove movie price in totalprice in localstorage', () => {
+    expect(component.totalCartPrice).toEqual(0);
+    component.addToCart({ name: 'Batman in love', description: 'Drama', year: 1993, price: 10, added: 6, imageUrl: 'https://www.munchkin.com/media/catalog/product/3/1/31001_white_hot_safety_bath_ducky.jpg', id: 1, productCategory :[{"categoryId":7,"category":null}]});
+    expect(component.totalCartPrice).toEqual(10);
+    component.removeFromCart({ name: 'Batman in love', description: 'Drama', year: 1993, price: 10, added: 6, imageUrl: 'https://www.munchkin.com/media/catalog/product/3/1/31001_white_hot_safety_bath_ducky.jpg', id: 1, productCategory :[{"categoryId":7,"category":null}]});
+    expect(component.totalCartPrice).toEqual(0);
+    component.emptyCart();
   });
 
 });
