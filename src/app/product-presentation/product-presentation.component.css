@@ -25,16 +25,6 @@
     color: white;
 }
 
-.productInfo button {
-    margin-left: 1em;
-    background-color: orange;
-    border: none;
-    color: black;
-    padding: 1em;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
 form {
     display: flex;
 }

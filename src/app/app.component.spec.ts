@@ -8,14 +8,14 @@ import { ProductPresentationComponent } from './product-presentation/product-pre
 import { MoviesComponent } from './movies/movies.component';
 import { ShowCartComponent } from './show-cart/show-cart.component';
 import { CartPresentationComponent } from './cart-presentation/cart-presentation.component';
+import { SearchComponent } from './search/search.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
+      imports: [RouterTestingModule, HttpClientModule ],
       declarations: [
         AppComponent,
         HeaderComponent,
@@ -23,7 +23,8 @@ describe('AppComponent', () => {
         ProductPresentationComponent,
         MoviesComponent,
         ShowCartComponent,
-        CartPresentationComponent
+        CartPresentationComponent,
+        SearchComponent
       ],
     }).compileComponents();
   }));
