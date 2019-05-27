@@ -6,7 +6,12 @@ header {
     width: 100%;
     z-index: 2;
     top: 0;
-    background: rgb(34, 34, 34);
+
+}
+
+i {
+    color: orange;
+    font-size: 1.2em;
 }
 
 nav ul li {
@@ -16,7 +21,6 @@ nav ul li {
 
 #toggleCartButton{
     background-color: transparent;
-    color: orange;
     border: none;
     font-size: 1.4em;
     border-radius: 4px;
