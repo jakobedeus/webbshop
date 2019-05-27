@@ -19,3 +19,9 @@ input {
     border-radius: 2px;
     border: 1px solid gray;
 }
+
+button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+  }

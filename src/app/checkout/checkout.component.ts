@@ -3,9 +3,10 @@ import { ICart } from '../interface/ICart';
 import * as moment from 'moment';
 import { IOrders } from '../interface/IOrders';
 import { IOrderrows } from '../interface/IOrderrows';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { InteractionService } from '../services/interaction.service';
+import { HttpClient } from '@angular/common/http';
 import { DataService } from '../services/data.service';
+import { FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-checkout',
@@ -14,7 +15,7 @@ import { DataService } from '../services/data.service';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private service: DataService, private httpClient: HttpClient) {}
+  constructor(private service: DataService, private httpClient: HttpClient, private fb: FormBuilder) {}
 
   cartItems: ICart[] = [];
 
@@ -23,6 +24,14 @@ export class CheckoutComponent implements OnInit {
   orderRows: IOrderrows[] = [];
 
   order: IOrders;
+
+  profileForm = this.fb.group({
+    name: [''],
+    email: ['', Validators.required],
+    address: [''],
+    phone: ['']
+  
+  });
 
 
   ngOnInit() {
@@ -44,11 +53,6 @@ export class CheckoutComponent implements OnInit {
     let status: true;
 
     let newOrder = { created: date, createdBy: email, paymentMethod: paymentMethod, totalPrice: totalCartPrice, status: status, orderRows: this.orderRows, companyId: companyId }
-
-    // const newOrder: IOrders = { newOrder } as IOrders;
-
-    // var newOrder = JSON.stringify(this.order);
-
 
     this.service.addOrder(newOrder)
       .subscribe(data => {
