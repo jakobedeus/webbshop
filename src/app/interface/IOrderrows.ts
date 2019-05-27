@@ -1,6 +1,6 @@
 import { IOrders } from './IOrders';
 
 export interface IOrderrows {
-    name: string;
+    productId: number;
     amount: number;
 }
