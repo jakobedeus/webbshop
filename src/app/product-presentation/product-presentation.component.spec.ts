@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { InteractionService } from '../services/interaction.service';
 import { ICart } from '../interface/ICart';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -17,7 +18,7 @@ describe('ProductPresentationComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ProductPresentationComponent, ShowProductsComponent, TestHostComponent ],
-      imports:[RouterTestingModule]
+      imports:[RouterTestingModule, HttpClientModule]
     })
     .compileComponents();
   }));
