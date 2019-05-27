@@ -3,7 +3,9 @@ import { ICart } from '../interface/ICart';
 import * as moment from 'moment';
 import { IOrders } from '../interface/IOrders';
 import { IOrderrows } from '../interface/IOrderrows';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { InteractionService } from '../services/interaction.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-checkout',
@@ -12,7 +14,7 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: DataService, private httpClient: HttpClient) {}
 
   cartItems: ICart[] = [];
 
@@ -20,7 +22,8 @@ export class CheckoutComponent implements OnInit {
 
   orderRows: IOrderrows[] = [];
 
-  order: IOrders[] = [];
+  order: IOrders;
+
 
   ngOnInit() {
     this.cartItems = JSON.parse(localStorage.getItem("cart"));
@@ -30,17 +33,27 @@ export class CheckoutComponent implements OnInit {
   submitOrder(totalCartPrice, email) {
 
     for (let i = 0; i < this.cartItems.length; i++) {
-      let orderName = this.cartItems[i].movie.name;
+      let orderId = this.cartItems[i].movie.id;
       let orderAmount = this.cartItems[i].amount;
 
-      this.orderRows.push({name: orderName, amount: orderAmount});
+      this.orderRows.push({ productId: orderId, amount: orderAmount });
     }
-    let companyId = 20;
-    var date = moment().format(); 
+    const companyId = 20;
+    let date = moment().format('YYYY-MM-DDTHH:mm:ss');
+    let paymentMethod: "Kort";
+    let status: true;
 
-    this.order.push({created: date, createdBy: email, totalPrice: totalCartPrice, orderRows: this.orderRows, companyId: companyId })
-    
-    console.log(this.order)
+    let newOrder = { created: date, createdBy: email, paymentMethod: paymentMethod, totalPrice: totalCartPrice, status: status, orderRows: this.orderRows, companyId: companyId }
+
+    // const newOrder: IOrders = { newOrder } as IOrders;
+
+    // var newOrder = JSON.stringify(this.order);
+
+
+    this.service.addOrder(newOrder)
+      .subscribe(data => {
+
+      });
   }
-  
+
 }

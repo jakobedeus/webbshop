@@ -4,4 +4,6 @@ export interface IOrders {
     createdBy: string;
     totalPrice: number;
     orderRows: any[];  
+    status: boolean;
+    paymentMethod: string;
 }

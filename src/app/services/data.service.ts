@@ -7,10 +7,19 @@ import { ICategory } from '../interface/ICategory';
 import { ICart } from '../interface/ICart';
 import { IOrders } from '../interface/IOrders';
 
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     'Content-Type':  'application/json',
+//     'Authorization': 'my-auth-token'
+//   })
+// };
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataService implements IDataService {
+
   constructor(private http: HttpClient) { }
 
   getProductData(): Observable<IMovie[]> {
@@ -26,19 +35,18 @@ export class DataService implements IDataService {
   }
 
   getOrderData(): Observable<IOrders[]> {
-    return this.http.get<IOrders[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders');
+    return this.http.get<IOrders[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=20');
+  }
+
+  addOrder(order): Observable<IOrders> {
+    console.log(order);
+    return this.http.post<IOrders>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', order);
   }
 
 
   movies: IMovie[];
   moviesUrl = 'api/movies';
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'my-auth-token'
-    })
-  };
 
   searchMovies(term: string): Observable<IMovie[]> {
     term = term.trim();
