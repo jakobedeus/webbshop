@@ -41,7 +41,6 @@ import { SearchComponent } from './search/search.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule,
     ReactiveFormsModule
   
   ],

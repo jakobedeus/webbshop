@@ -6,6 +6,7 @@ import { ICart } from '../interface/ICart';
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { CartPresentationComponent } from './cart-presentation.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // describe('CartPresentationComponent', () => {
 //   let component: CartPresentationComponent;
@@ -41,7 +42,7 @@ describe('CartPresentationComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ShowCartComponent, TestHostComponent, CartPresentationComponent ],
-      imports:[RouterTestingModule]
+      imports:[RouterTestingModule, HttpClientModule]
     })
     .compileComponents();
   }));

@@ -12,24 +12,24 @@
   <h3><b>Total price of order: {{ totalCartPrice }}:- </b></h3>
 
   <form [formGroup]="profileForm">
-    <label>
+    <label for="name">
       Name:
-      <input type="text" formControlName="name">
+      <input type="text" formControlName="name" id="name">
     </label>
 
-    <label>
+    <label for="email">
       Email:
-      <input type="text" formControlName="email" required #email>
+      <input type="text" formControlName="email" required #email id="email">
     </label>
 
-    <label>
+    <label for="phone">
       Phone:
-      <input type="text" formControlName="phone">
+      <input type="text" formControlName="phone" id="phone">
     </label>
 
-    <label>
+    <label for="address">
       Address:
-      <input type="text" formControlName="address">
+      <input type="text" formControlName="address" id="address">
     </label>
 
 

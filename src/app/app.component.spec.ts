@@ -10,6 +10,7 @@ import { ShowCartComponent } from './show-cart/show-cart.component';
 import { CartPresentationComponent } from './cart-presentation/cart-presentation.component';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
 
 
 describe('AppComponent', () => {
@@ -24,7 +25,8 @@ describe('AppComponent', () => {
         MoviesComponent,
         ShowCartComponent,
         CartPresentationComponent,
-        SearchComponent
+        SearchComponent,
+        AdminComponent
       ],
     }).compileComponents();
   }));
