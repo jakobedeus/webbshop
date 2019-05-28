@@ -1,27 +1,14 @@
-/* .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 75%;
-    margin: 6vh auto;
-} */
-
-.categoryContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 75%;
-    margin: 6vh auto;
+.container {
+    
 }
 
-.filter {
-    color:white;
+.categoryContainer {
+    overflow-x: scroll;
+    overflow-y: hidden;
     display: flex;
-    justify-content: space-between;
-    width: 75%;
-    margin: 16vh auto 0 auto;
+    height: 500px;
+    min-width: 100%;
+    
 }
 
 button {

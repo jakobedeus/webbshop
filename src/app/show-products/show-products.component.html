@@ -1,24 +1,29 @@
-<div class="filter">
-    <form>
-        <!-- <label for="category">Category: </label> -->
-        <!--  ng-model="selectedName" ng-options="category for category in categories" -->
-        <!-- onchange="getCategory()" -->
-        <!-- <select id="mySelect" (change)="loopCategory($event);" > -->
-            <!-- <option [value]="all" selected name="category">All</option> -->
-            <!-- <option [value]="category.id" *ngFor="let category of categories" name="category">{{category.name}}</option>
-        </select>    -->
-        <!-- <button (click)="loopCategory()">Loopa</button> -->
-    </form>
-    
-</div>
+<button (click)="loopCategory()">Loopa</button>
 
-<!-- <h2 style="color:white;">{{ categories[0].name}} </h2> -->
-<p> {{ newVal }}</p>
-<p> {{ movieCategoryId }}</p>
-<div class="categoryContainer">
-    <!--  *ngIf="categories[0].id === 5" -->
-    <!--  *ngIf="{{newVal}} === {{ movieCategoryId }}" -->
-    <!-- *ngIf="categories[0].id === category.categoryId" -->
-    <app-product-presentation [movie]="movie" *ngFor="let movie of movies">
-    </app-product-presentation>
+<div class="container">
+
+    <h2 style="color:white;">{{ categories[0].name}} </h2>
+    <div class="categoryContainer">
+        <app-product-presentation [movie]="movie" *ngFor="let movie of actionMovies">
+        </app-product-presentation>
+    </div>
+
+    <h2 style="color:white;">{{ categories[1].name}} </h2>
+    <div class="categoryContainer">
+        <app-product-presentation [movie]="movie" *ngFor="let movie of thrillerMovies">
+        </app-product-presentation>
+    </div>
+
+    <h2 style="color:white;">{{ categories[2].name}} </h2>
+    <div class="categoryContainer">
+        <app-product-presentation [movie]="movie" *ngFor="let movie of comedyMovies">
+        </app-product-presentation>
+    </div>
+
+    <h2 style="color:white;">{{ categories[3].name}} </h2>
+    <div class="categoryContainer">
+        <app-product-presentation [movie]="movie" *ngFor="let movie of sciFiMovies">
+        </app-product-presentation>
+    </div>
+    
 </div>
