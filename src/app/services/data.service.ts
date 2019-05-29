@@ -43,18 +43,7 @@ export class DataService implements IDataService {
     return this.http.post<IOrders>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', order);
   }
 
-
-  movies: IMovie[];
-  moviesUrl = 'api/movies';
-
-
-  searchMovies(term: string): Observable<IMovie[]> {
-    term = term.trim();
-
-    // Add safe, URL encoded search parameter if there is a search term
-    const options = term ?
-      { params: new HttpParams().set('name', term) } : {};
-
-    return this.http.get<IMovie[]>(this.moviesUrl, options)
+  searchMovies(searchTerm): Observable<IMovie[]> {
+    return this.http.get<IMovie[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/search?searchText='+ searchTerm);
   }
 }

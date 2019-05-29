@@ -13,12 +13,16 @@ export class ShowProductsComponent implements OnInit {
   movieCategoryId: number;
 
   constructor(service: DataService) {
-    service.getProductData().subscribe((productData) => { this.movies = productData; this.loopCategory() });
-    service.getCategoryData().subscribe((categoryData) => { this.categories = categoryData; });
+    
+    service.getCategoryData().subscribe((categoryData) => { 
+      this.categories = categoryData; 
+
+      service.getProductData().subscribe((productData) => { this.movies = productData; this.loopCategory() });
+    });
   }
 
   movies: IMovie[];
-  categories: ICategory[];
+  categories: ICategory[] = [];
   thrillerMovies: IMovie[] = [];
   sciFiMovies: IMovie[] = [];
   actionMovies: IMovie[] = [];
