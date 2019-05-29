@@ -3,6 +3,7 @@ import { DataService } from '../services/data.service';
 import { IMovie } from '../interface/IMovies';
 import { Observable } from 'rxjs';
 import { HttpParams, HttpClient } from '@angular/common/http';
+import { InteractionService } from '../services/interaction.service';
 
 @Component({
   selector: 'app-search',
@@ -11,7 +12,7 @@ import { HttpParams, HttpClient } from '@angular/common/http';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private service: DataService) { 
+  constructor(private service: DataService, private cartData: InteractionService) { 
   }
   movies: IMovie[];
 
@@ -28,13 +29,15 @@ export class SearchComponent implements OnInit {
         console.log(searchTerm);
         document.getElementById("searchResult").classList.add("showSearchResult");
         return searchTerm;
-    }
-
-    
+    }  
   }
-
 
   closeSearch() {
     document.getElementById("searchResult").classList.add("hideResults");
+  }
+
+  addMovieToCart(movie) {
+    document.getElementById("cart").classList.add("showCart");
+    this.cartData.sendMovie(movie);
   }
 }

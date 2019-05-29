@@ -7,12 +7,12 @@
 #searchResult {
     z-index: 2;
     background: white;
-    width: 400px;
+    width: 300px;
     position: absolute;
     color:  black;
     padding: 1em;
     overflow-y: scroll;
-    height: 400px; 
+    min-height: 600px; 
 }
 
 .showSearchResult {
