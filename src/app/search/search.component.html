@@ -1,17 +1,19 @@
 <p>
   <input #movieSearch />
   <button id="search" (click)="search(movieSearch.value)">
-      <i class="fas fa-search"></i>
+    <i class="fas fa-search"></i>
   </button>
 </p>
 
-<div id="searchResult" *ngFor="let item of movies">
+<div id="searchResult">
   <button id="closeSearch" (click)="closeSearch()">X</button>
-  <p>{{ item.name }}</p> 
-  <p>{{ item.description }}</p> 
-  <a [routerLink]="['/movies', item.id]"><img src="{{ item.imageUrl }}"  width="300px"></a>
+  <div *ngFor="let item of movies" id="searchItem">
+    <p>{{ item.name }}</p>
+    <p>{{ item.description }}</p>
+    <a [routerLink]="['/movies', item.id]"><img src="{{ item.imageUrl }}" width="300px"></a>
 
-  <p>{{ item.price }} :-
-        <button (click)="addMovieToCart(item)">Add to cart</button>
+    <p>{{ item.price }} :-
+      <button (click)="addMovieToCart(item)">Add to cart</button>
     </p>
+  </div>
 </div>

@@ -26,14 +26,14 @@ export class SearchComponent implements OnInit {
     if (searchTerm) {
         this.service.searchMovies(searchTerm)
         .subscribe(movies => this.movies = movies);
-        console.log(searchTerm);
+        console.log(this.movies);
         document.getElementById("searchResult").classList.add("showSearchResult");
         return searchTerm;
     }  
   }
 
   closeSearch() {
-    document.getElementById("searchResult").classList.add("hideResults");
+    document.getElementById("searchResult").classList.remove("showSearchResult");
   }
 
   addMovieToCart(movie) {
