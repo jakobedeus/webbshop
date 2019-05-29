@@ -4,3 +4,14 @@
       <i class="fas fa-search"></i>
   </button>
 </p>
+
+<div id="searchResult" *ngFor="let item of movies">
+  <button id="closeSearch" (click)="closeSearch()">X</button>
+  <p>{{ item.name }}</p> 
+  <p>{{ item.description }}</p> 
+  <p>{{ item.price }}:-</p> 
+  <p>{{ item.id }}</p> 
+  <!-- <img src="{{ item.imageUrl }}">  -->
+  <a [routerLink]="['/movies', item.id]"><img src="{{ item.imageUrl }}"  width="400px"></a>
+  <!-- <button (click)="addMovieToCart(item)">Add to cart</button> -->
+</div>

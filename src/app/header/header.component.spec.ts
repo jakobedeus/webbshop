@@ -6,6 +6,7 @@ import { CartPresentationComponent } from '../cart-presentation/cart-presentatio
 import { SearchComponent } from '../search/search.component';
 import { AdminComponent } from '../admin/admin.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -14,7 +15,7 @@ describe('HeaderComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeaderComponent, ShowCartComponent, CartPresentationComponent, SearchComponent, AdminComponent ],
-      imports: [HttpClientModule]
+      imports: [HttpClientModule, RouterTestingModule]
     })
     .compileComponents();
   }));

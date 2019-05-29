@@ -3,3 +3,22 @@
     color: orange;
     font-size: 1em;
 }
+
+#searchResult {
+    z-index: 2;
+    background: white;
+    width: 400px;
+    position: absolute;
+    color:  black;
+    padding: 1em;
+    overflow-y: scroll;
+    height: 400px; 
+}
+
+.showSearchResult {
+    display: block;
+}
+
+.hideResults {
+    display: none;
+}
