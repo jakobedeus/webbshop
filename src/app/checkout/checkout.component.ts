@@ -45,7 +45,7 @@ export class CheckoutComponent implements OnInit {
       let orderId = this.cartItems[i].movie.id;
       let orderAmount = this.cartItems[i].amount;
 
-      this.orderRows.push({ productId: orderId, amount: orderAmount });
+      this.orderRows.push({ productId: orderId, amount: orderAmount});
     }
     const companyId = 20;
     let date = moment().format('YYYY-MM-DDTHH:mm:ss');
