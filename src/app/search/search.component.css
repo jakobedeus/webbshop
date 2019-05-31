@@ -5,6 +5,7 @@
 }
 
 #searchResult {
+    display: none;
     z-index: 2;
     background: white;
     width: 300px;
@@ -16,5 +17,9 @@
 }
 
 .showSearchResult {
-    display: block;
+    display: block !important;
+}
+
+.hideResults {
+    display: none;
 }
