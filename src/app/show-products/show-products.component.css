@@ -1,5 +1,6 @@
 .container {
-    margin-top: 15vh;
+    width: 96%;
+    margin: 0 auto 0 auto;
 }
 
 .categoryContainer {
