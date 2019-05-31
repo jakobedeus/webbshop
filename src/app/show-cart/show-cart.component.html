@@ -1,18 +1,22 @@
-<h2>My movie cart</h2>
+<div id="cartContainer">
+   <h2>My movie cart</h2>
 
-<a routerLink="/checkout">
-<button id="pay">Pay</button>
-</a>
-<br />
+   <a routerLink="/checkout">
+      <button id="pay">Pay</button>
+   </a>
+   <br />
 
-<div *ngFor="let cartItem of cartItems">
-   <p>{{ cartItem.movie.name }} x {{ cartItem.amount }}<button (click)="removeFromCart(cartItem.movie)">-</button><button (click)="addMovieInCart(cartItem.movie)">+</button></p>
-   <p>Price: {{ cartItem.totalprice}} :-</p>
+   <div *ngFor="let cartItem of cartItems">
+      <p>{{ cartItem.movie.name }} x {{ cartItem.amount }}<button
+            (click)="removeFromCart(cartItem.movie)">-</button><button
+            (click)="addMovieInCart(cartItem.movie)">+</button></p>
+      <p>Price: {{ cartItem.totalprice}} :-</p>
+   </div>
+
+   <p><b>Total price: {{ totalCartPrice }}</b></p>
+
+
+   <button id="cartBtn" (click)="emptyCart()">Empty cart</button>
 </div>
-
-<p><b>Total price: {{ totalCartPrice }}</b></p>
-
-
-<button id="cartBtn" (click)="emptyCart()">Empty cart</button>
 
 <!-- <app-cart-presentation [cartItem]="cartItem" *ngFor="let cartItem of cartItems"></app-cart-presentation> -->

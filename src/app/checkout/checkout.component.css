@@ -1,11 +1,29 @@
-div {
+.order {
     color:black;
-    background: white;
+
     width: 40%;
     margin: 20vh auto 0 auto;
-    padding: 2em;
+
+
+    display: flex;
     border-radius: 4px;
+    justify-content: space-between;
 }
+
+.totalPrice {
+    background: white;
+    margin: 0 1em;
+    padding: 2em;
+}
+
+.orderItems {
+    background: white;
+    padding: 2em;
+}
+
+
+
+
 
 form {
     width: 100%;

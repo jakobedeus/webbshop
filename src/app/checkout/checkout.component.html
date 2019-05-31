@@ -1,46 +1,49 @@
 <div class="order">
 
-  <h2>Order</h2>
+  <div class="orderItems">
 
-  <ul *ngFor="let item of cartItems">
-    <li>
-      <p>{{ item.movie.name }} x {{ item.amount }}</p>
-      <p>Price: {{ item.totalprice }}:-</p>
-    </li>
-  </ul>
+    <h2>Order</h2>
 
-  <h3><b>Total price of order: {{ totalCartPrice }}:- </b></h3>
+    <ul *ngFor="let item of cartItems">
+      <li>
+        <p>{{ item.movie.name }} x {{ item.amount }}</p>
+        <p>Price: {{ item.totalprice }}:-</p>
+      </li>
+    </ul>
 
-  <form [formGroup]="profileForm">
-    <label for="name">
-      Name:
-      <input type="text" formControlName="name" id="name">
-    </label>
+    
 
-    <label for="email">
-      Email:
-      <input type="text" formControlName="email" required #email id="email">
-    </label>
+    <form [formGroup]="profileForm">
+      <label for="name">
+        Name:
+        <input type="text" formControlName="name" id="name">
+      </label>
 
-    <label for="phone">
-      Phone:
-      <input type="text" formControlName="phone" id="phone">
-    </label>
+      <label for="email">
+        Email:
+        <input type="text" formControlName="email" required #email id="email">
+      </label>
 
-    <label for="address">
-      Address:
-      <input type="text" formControlName="address" id="address">
-    </label>
+      <label for="phone">
+        Phone:
+        <input type="text" formControlName="phone" id="phone">
+      </label>
 
-
-    <button (click)="submitOrder(totalCartPrice, email.value)" type="submit" [disabled]="!profileForm.valid">Order</button>
-
-  </form>
+      <label for="address">
+        Address:
+        <input type="text" formControlName="address" id="address">
+      </label>
 
 
+      <button (click)="submitOrder(totalCartPrice, email.value)" type="submit"
+        [disabled]="!profileForm.valid">Order</button>
 
-  <div *ngFor="let price of totalPrice">
-    {{ price }}
+    </form>
+  </div>
+
+  <div class="totalPrice">
+    <h3><b>Total price of order: {{ totalCartPrice }}:- </b></h3>
+
   </div>
 
 </div>
