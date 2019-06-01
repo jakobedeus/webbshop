@@ -1,10 +1,8 @@
 .order {
     color:black;
-
-    width: 40%;
-    margin: 20vh auto 0 auto;
-
-
+    width: 70%;
+    margin: 0 auto 0 auto;
+    padding-top: 16vh;
     display: flex;
     border-radius: 4px;
     justify-content: space-between;
@@ -19,11 +17,8 @@
 .orderItems {
     background: white;
     padding: 2em;
+
 }
-
-
-
-
 
 form {
     width: 100%;
@@ -42,4 +37,42 @@ button:disabled {
     background-color: #eee;
     color: #ccc;
     cursor: auto;
-  }
+}
+
+ul {
+    list-style: none;
+}
+
+.checkoutItemImg img {
+    width: 100px;
+}
+
+.checkoutItemContainer {
+    display: flex;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    padding: 1em 0;
+}
+
+.checkoutInfoContainer {
+    padding: 0 1em;
+    display: flex;
+    
+}
+
+.adjustAmountCheckoutContainer {
+    padding: 0 1em;
+}
+
+.adjustAmountCheckout {
+    border: none;
+    background: transparent;
+    font-size: 1.2em;
+    margin: 0 .6em;
+    padding: 0;
+}
+
+.adjustAmoutCheckoutButtons {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}

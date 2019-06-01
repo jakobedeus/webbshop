@@ -1,18 +1,27 @@
 <header>
-  <h1>
-    <a routerLink="/">Angular movies</a>
-    <base>
-  </h1>
-  <a routerLink="/admin">Admin</a>
-  <app-search></app-search>
-  <nav>
-    <ul>
-      <li>
-        <button id="toggleCartButton" (click)="toggleCart()"><i class="fas fa-shopping-cart"></i></button>
-      </li>
-    </ul>
-  </nav>
-  <div id="cart">
-    <app-show-cart></app-show-cart>
+  <div class="headerContainer">
+    <div class="logo">
+      <p><a routerLink="/">Angular movies</a></p>
+      <base>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <app-search></app-search>
+        </li>
+        <li>
+          <p><a routerLink="/admin">Admin</a></p>
+        </li>
+        <li>
+          <button id="toggleCartButton" (click)="toggleCart()"><i class="fas fa-shopping-cart"></i></button>
+        </li>
+        <li>
+          <div id="cart">
+            <app-show-cart></app-show-cart>
+          </div>
+        </li>
+      </ul>
+    </nav>
   </div>
+
 </header>

@@ -1,23 +1,42 @@
 header {
-    display: flex;
-    justify-content: space-around;
-    color: white;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-    top: 0;
-    /* background-color: rgb(0, 0, 0, .9); */
 
+
+
+    position: fixed;
+    background: rgb(18, 18, 18);
+    left:0;
+    right:0;
+    z-index: 2;
+    /* top: 0; */
+    /* border-bottom: 1px solid black; */
+    /* background-color: rgb(0, 0, 0, .9); */
+}
+
+.headerContainer {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+nav {
+    display: flex;
+    right: 0;
 }
 
 i {
-    color: orange;
-    font-size: 1.2em;
+    color: white;
+    font-size: 1em;
+}
+
+nav ul {
+    margin:  0;
 }
 
 nav ul li {
     display: inline-block;
-    padding: 1em .6em 0 .6em;
+    /* padding: 1em .6em 0 .6em; */
 }
 
 #toggleCartButton{
@@ -34,10 +53,10 @@ nav ul li {
     color: black;
     position: fixed;
     z-index: 2;
-    top: 11vh;
+    top: 10vh;
     right: 10%;
     padding: .2em 1em;
-    border: 1px solid black;
+    border: 1px solid rgb(206, 206, 206);
     border-radius: 4px;
     min-width: 200px;
 }
@@ -48,4 +67,11 @@ nav ul li {
 
 header a{
     color: white;
+}
+
+.logo p {
+    margin-top: .6em;
+    font-family: 'Inconsolata', monospace;
+    /* font-weight: bold; */
+    font-size: 1.6em;
 }

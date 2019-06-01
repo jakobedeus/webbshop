@@ -1,7 +1,12 @@
 #search {
     background: transparent;
-    color: orange;
-    font-size: 1em;
+    color: white;
+    font-size: 1.4em;
+}
+input {
+    padding: 7px;
+
+    border: none;
 }
 
 #searchResult {
