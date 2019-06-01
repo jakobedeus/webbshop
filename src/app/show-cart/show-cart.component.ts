@@ -29,8 +29,9 @@ export class ShowCartComponent implements OnInit {
       document.getElementById("cartBtn").classList.add("showEmptyCartBtn");
     }
 
+    this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice"));
     if (localStorage.getItem("totalCartPrice") !== null) {
-      this.getCartPriceFromStorage(this.totalCartPrice);
+      
     }
 
 
@@ -127,10 +128,6 @@ export class ShowCartComponent implements OnInit {
 
   addToCartPriceFromStorage(cartItems) {
     localStorage.setItem("totalCartPrice", JSON.stringify(this.totalCartPrice));
-  }
-
-  getCartPriceFromStorage(cartItems) {
-    this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice"));
   }
 
 }

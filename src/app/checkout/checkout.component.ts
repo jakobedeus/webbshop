@@ -6,6 +6,7 @@ import { IOrderrows } from '../interface/IOrderrows';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from '../services/data.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { InteractionService } from '../services/interaction.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private service: DataService, private httpClient: HttpClient, private fb: FormBuilder) {}
+  constructor(private service: DataService, private httpClient: HttpClient, private fb: FormBuilder, private cartData: InteractionService) {}
 
   cartItems: ICart[] = [];
 
@@ -37,6 +38,11 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
     this.cartItems = JSON.parse(localStorage.getItem("cart"));
     this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice"));
+  }
+
+  addMovieToCart(movie) {
+    document.getElementById("cart").classList.add("showCart");
+    this.cartData.sendMovie(movie);
   }
 
   submitOrder(totalCartPrice, email) {

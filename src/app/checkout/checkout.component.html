@@ -23,7 +23,7 @@
         <div class="adjustAmountCheckoutContainer">
           <p>Amount: {{ item.amount}}</p>
           <div class="adjustAmoutCheckoutButtons">
-            <button (click)="addMovieInCart(item.movie)" class="adjustAmountCheckout">
+            <button (click)="addMovieToCart(item.movie)" class="adjustAmountCheckout">
               <i class="fas fa-plus-circle"></i>
             </button>
             <button (click)="removeFromCart(item.movie)" class="adjustAmountCheckout removeCheckoutItemAmount">
@@ -38,35 +38,36 @@
     </div>
 
 
-    <form [formGroup]="profileForm">
-      <label for="name">
-        Name:
-        <input type="text" formControlName="name" id="name">
-      </label>
 
-      <label for="email">
-        Email:
-        <input type="text" formControlName="email" required #email id="email">
-      </label>
-
-      <label for="phone">
-        Phone:
-        <input type="text" formControlName="phone" id="phone">
-      </label>
-
-      <label for="address">
-        Address:
-        <input type="text" formControlName="address" id="address">
-      </label>
-
-
-      <button (click)="submitOrder(totalCartPrice, email.value)" type="submit"
-        [disabled]="!profileForm.valid">Order</button>
-
-    </form>
   </div>
 
   <div class="totalPrice">
+      <form [formGroup]="profileForm">
+          <label for="name">
+            Name:
+            <input type="text" formControlName="name" id="name">
+          </label>
+    
+          <label for="email">
+            Email:
+            <input type="text" formControlName="email" required #email id="email">
+          </label>
+    
+          <label for="phone">
+            Phone:
+            <input type="text" formControlName="phone" id="phone">
+          </label>
+    
+          <label for="address">
+            Address:
+            <input type="text" formControlName="address" id="address">
+          </label>
+    
+    
+          <button (click)="submitOrder(totalCartPrice, email.value)" type="submit"
+            [disabled]="!profileForm.valid">Order</button>
+    
+        </form>
     <h3>Total price</h3>
     <p><b>{{ totalCartPrice }}kr </b></p>
   </div>
