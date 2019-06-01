@@ -1,8 +1,9 @@
 .singleProduct {
     color: white;
-    width: 75%;
-    margin: 16vh auto 0 auto;
+    /* width: 75%; */
+    margin: 0 auto 0 auto;
     display: flex;
+    padding-top: 16vh;
 }
 
 

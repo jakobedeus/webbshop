@@ -7,5 +7,64 @@
     display: block !important;
 }
 
+.adjustAmountCart{
+    border: none;
+    background: transparent;
+    font-size: 1.2em;
+    padding: 0;
+    /* color: green; */
+}
 
+.cartItemImg img{
+    width: 80px;
+}
+
+
+.cartItem {
+    border-bottom: 1px solid rgb(206, 206, 206);
+    min-width: 350px;
+    padding: 1em 0;
+    display: flex;
+
+}
+
+.emptyCartContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.emptyCartbtn {
+    cursor: pointer;
+    color:red;
+}
+
+.removeCartItemAmount {
+    /* color:red; */
+}
+
+.cartItemContainer {
+    overflow-y: scroll;
+    max-height: 400px;
+
+}
+
+.cartItem p {
+    margin: .6em 0;
+}
+
+.cartItemInfo {
+    padding-top: .8em 0;
+}
+
+.cartItemInfoContainer {
+
+    padding: 0 1em;
+}
+
+#pay {
+    width: 100%;
+    margin: 1em auto;
+    color: white;
+}
 

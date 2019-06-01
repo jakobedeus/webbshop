@@ -18,6 +18,7 @@ import { CartPresentationComponent } from './cart-presentation/cart-presentation
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AdminComponent } from './admin/admin.component';
 import { SearchComponent } from './search/search.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 
@@ -35,6 +36,7 @@ import { SearchComponent } from './search/search.component';
     CheckoutComponent,
     AdminComponent,
     SearchComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,22 +1,45 @@
 <div id="cartContainer">
-   <h2>My movie cart</h2>
+   <div class="emptyCartContainer">
+      <h2>Cart</h2>
+      <p (click)="emptyCart()" class="emptyCartbtn">Empty cart <i class="fas fa-trash"></i></p>
+   </div>
 
+   <div class="cartItemContainer">
+
+      <div *ngFor="let cartItem of cartItems" class="cartItem">
+         <div class="cartItemImg">
+            <a [routerLink]="['/movies', cartItem.movie.id]">
+               <img src="{{ cartItem.movie.imageUrl }}">
+            </a>
+         </div>
+
+         <div class="cartItemInfoContainer">
+            <div class="cartItemInfo">
+               <a [routerLink]="['/movies', cartItem.movie.id]">
+                  <p> {{ cartItem.movie.name }} </p>
+               </a>
+               <p><b>{{ cartItem.totalprice }} kr </b></p>
+            </div>
+
+            <div class="adjustAmountCartContainer">
+               <p>Amount: {{ cartItem.amount}}
+                  <button (click)="addMovieInCart(cartItem.movie)" class="adjustAmountCart">
+                     <i class="fas fa-plus-circle"></i>
+                  </button>
+                  <button (click)="removeFromCart(cartItem.movie)" class="adjustAmountCart removeCartItemAmount">
+                     <i class="fas fa-minus-circle"></i>
+                  </button>
+               </p>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+   <p><b>Total price: {{ totalCartPrice }} kr</b></p>
    <a routerLink="/checkout">
       <button id="pay">Pay</button>
    </a>
-   <br />
-
-   <div *ngFor="let cartItem of cartItems">
-      <p>{{ cartItem.movie.name }} x {{ cartItem.amount }}<button
-            (click)="removeFromCart(cartItem.movie)">-</button><button
-            (click)="addMovieInCart(cartItem.movie)">+</button></p>
-      <p>Price: {{ cartItem.totalprice}} :-</p>
-   </div>
-
-   <p><b>Total price: {{ totalCartPrice }}</b></p>
-
-
-   <button id="cartBtn" (click)="emptyCart()">Empty cart</button>
 </div>
 
 <!-- <app-cart-presentation [cartItem]="cartItem" *ngFor="let cartItem of cartItems"></app-cart-presentation> -->

@@ -1,12 +1,11 @@
 <div class="product">
-  <p *ngFor="let cartItem of cart">{{ cartItem }}</p>
-  <a [routerLink]="['/movies', movie.id]"><img src="{{ movie.imageUrl }}" style="width:250px;"></a>
+  <a [routerLink]="['/movies', movie.id]"><img src="{{ movie.imageUrl }}" style="height:400px;"></a>
   <div class="productInfo">
     <!-- <p>Category : <span *ngFor="let category of movie.productCategory"> {{ category.categoryId }}</span></p> -->
     <!-- <p>{{ categoryID.name }}</p> -->
-    <p>{{ movie.price }} :-</p>
-      <form action="">
-        <button (click)="addMovieToCart(movie)">Add to cart</button>
-      </form>
+    <p>{{ movie.price }} kr
+        <button (click)="addMovieToCart(movie)"><i class="fas fa-plus"></i></button>
+
+        <button><a [routerLink]="['/movies', movie.id]"><i class="fas fa-arrow-right"></i></a></button></p>
   </div>
 </div>
