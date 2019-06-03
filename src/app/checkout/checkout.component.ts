@@ -40,10 +40,12 @@ export class CheckoutComponent implements OnInit {
     this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice"));
   }
 
-  addMovieToCart(movie) {
+  addMovieToCheckout(movie) {
     document.getElementById("cart").classList.add("showCart");
-    this.cartData.sendMovie(movie);
+    this.cartData.sendAddedMovie(movie);
   }
+
+  
 
   submitOrder(totalCartPrice, email) {
 

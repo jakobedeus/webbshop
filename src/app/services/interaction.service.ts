@@ -19,7 +19,11 @@ export class InteractionService {
     
   }
 
-  sendMovie(movie: IMovie) {
+  sendAddedMovie(movie: IMovie) {
+    this.cartSource.next(movie);
+  }
+
+  sendRemovedMovie(movie: IMovie) {
     this.cartSource.next(movie);
   }
 
