@@ -33,7 +33,7 @@ export class MockDataService implements IDataService{
   ;
 
   categories: ICategory[] = [
-    { name: 'Action', id: 5},
+    { name: 'Action', id: 1},
     { name: 'Thriller', id: 2},
     { name: 'Comedy', id: 3},
     { name: 'Sci-fi', id: 4},

@@ -3,6 +3,7 @@ import { IMovie } from '../interface/IMovies';
 import { MockDataService } from '../services/mock-data.service';
 import { DataService } from '../services/data.service';
 import { ICategory } from '../interface/ICategory';
+import { InteractionService } from '../services/interaction.service';
 
 @Component({
   selector: 'app-show-products',
@@ -55,8 +56,6 @@ export class ShowProductsComponent implements OnInit {
           this.sciFiMovies.push(this.movies[a]);
         }
       }
-
-      
     }
   }
 }

@@ -36,25 +36,24 @@ nav ul li {
     /* padding: 1em .6em 0 .6em; */
 }
 
-#toggleCartButton{
+#toggleCartButton > button{
     background-color: transparent;
-    border: none;
     font-size: 1.4em;
     border-radius: 4px;
     cursor: pointer;
 }
 
-#toggleCartButton:hover p{
-    color: green;
+#toggleCartButton:hover #cart{
+    display: block;
 }
 
 #cart {
-    /* display: none; */
+    display: none;
     background-color: white;
     color: black;
     position: fixed;
     z-index: 2;
-    top: 10vh;
+    top: 8vh;
     right: 10%;
     padding: .2em 1em;
     border: 1px solid rgb(206, 206, 206);

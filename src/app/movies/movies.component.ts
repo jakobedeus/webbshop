@@ -5,6 +5,7 @@ import { DataService } from '../services/data.service';
 import { MockDataService } from '../services/mock-data.service';
 import { InteractionService } from '../services/interaction.service';
 import { ICart } from '../interface/ICart';
+import { ICategory } from '../interface/ICategory';
 
 
 @Component({
@@ -21,12 +22,17 @@ export class MoviesComponent implements OnInit {
       const id = pmap.get('id');
       service.getSingleProductData(id).subscribe((singleProductData) => { this.movie = singleProductData; });
       // this.cartData.cartSource$.subscribe(cartItems => this.cartItems = cartItems);
+
+      service.getCategoryData().subscribe((categoryData) => { this.categories = categoryData; });
      });
 
   }
+
+  categories;
   movie: IMovie;
 
   ngOnInit() {
+
   }
 
   addMovieToCart(movie) {

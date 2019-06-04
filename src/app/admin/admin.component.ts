@@ -16,14 +16,6 @@ export class AdminComponent implements OnInit {
   orders: IOrders[];
 
   ngOnInit() {
-
-    for (let i = 0; i < this.orders.length; i++) {
-      if(this.orders[i].companyId === 0) {
-        console.log("Hej");
-      }
-      
-    }
-
    
   }
 

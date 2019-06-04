@@ -19,8 +19,8 @@ export class BannerComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this.movies);
-    var bannerMovieImg = this.movies[0].imageUrl;
+    // console.log(this.movies);
+    // var bannerMovieImg = this.movies[0].imageUrl;
     
   }
 
