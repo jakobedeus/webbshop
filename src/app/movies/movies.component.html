@@ -5,8 +5,9 @@
   <div class="singleProductInfo">
     <h2>{{ movie.name }}</h2>
     <p>{{ movie.description }}</p>
-    <p>{{ movie.price }} kr
+    <p>{{ categories.name }}</p>
+    <p><b>{{ movie.price }} kr</b>
 
-      <button (click)="addMovieToCart(movie)">Add to cart</button></p>
+      <button (click)="addMovieToCart(movie)" class="addToCartBtn"><i class="fas fa-plus"></i></button></p>
   </div>
 </div>

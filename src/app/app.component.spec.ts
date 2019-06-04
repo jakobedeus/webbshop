@@ -11,6 +11,7 @@ import { CartPresentationComponent } from './cart-presentation/cart-presentation
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 describe('AppComponent', () => {
@@ -26,7 +27,9 @@ describe('AppComponent', () => {
         ShowCartComponent,
         CartPresentationComponent,
         SearchComponent,
-        AdminComponent
+        AdminComponent,
+        BannerComponent,
+        HeaderComponent
       ],
     }).compileComponents();
   }));

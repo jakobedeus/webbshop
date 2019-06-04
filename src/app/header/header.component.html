@@ -12,8 +12,8 @@
         <li>
           <p><a routerLink="/admin">Admin</a></p>
         </li>
-        <li>
-          <button id="toggleCartButton" (click)="toggleCart()"><i class="fas fa-shopping-cart"></i></button>
+        <li id="toggleCartButton">
+          <button (click)="toggleCart()"><i class="fas fa-shopping-cart"></i></button>
           <div id="cart">
             <app-show-cart></app-show-cart>
           </div>

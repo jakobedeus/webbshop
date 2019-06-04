@@ -95,8 +95,6 @@ export class InteractionService {
       localStorage.removeItem("totalCartPrice");
 
       this.cartSource.next();
-    // }
-
   }
 
 
@@ -119,9 +117,4 @@ export class InteractionService {
   addToCartPriceFromStorage(cartItems) {
     localStorage.setItem("totalCartPrice", JSON.stringify(this.totalCartPrice));
   }
-
-
-
-
-
 }

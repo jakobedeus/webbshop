@@ -5,6 +5,10 @@ import { ShowProductsComponent } from '../show-products/show-products.component'
 import { ProductPresentationComponent } from '../product-presentation/product-presentation.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BannerComponent } from '../banner/banner.component';
+import { HeaderComponent } from '../header/header.component';
+import { SearchComponent } from '../search/search.component';
+import { ShowCartComponent } from '../show-cart/show-cart.component';
 
 
 
@@ -14,7 +18,7 @@ describe('MainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainComponent, ShowProductsComponent, ProductPresentationComponent ],
+      declarations: [ MainComponent, ShowProductsComponent, ProductPresentationComponent, BannerComponent , HeaderComponent, SearchComponent, ShowCartComponent ],
       imports: [HttpClientModule, RouterTestingModule]
     })
     .compileComponents();
