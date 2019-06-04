@@ -1,7 +1,4 @@
 header {
-
-
-
     position: fixed;
     background: rgb(18, 18, 18);
     left:0;
@@ -47,8 +44,12 @@ nav ul li {
     cursor: pointer;
 }
 
+#toggleCartButton:hover p{
+    color: green;
+}
+
 #cart {
-    display: none;
+    /* display: none; */
     background-color: white;
     color: black;
     position: fixed;
@@ -59,10 +60,6 @@ nav ul li {
     border: 1px solid rgb(206, 206, 206);
     border-radius: 4px;
     min-width: 200px;
-}
-
-.showCart  {
-    display: block !important;
 }
 
 header a{

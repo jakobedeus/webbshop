@@ -14,120 +14,47 @@ export class ShowCartComponent implements OnInit {
 
   totalCartPrice: number;
 
-  constructor(private cartData: InteractionService) { }
+  constructor(private cartData: InteractionService) {}
 
   ngOnInit() {
 
     this.cartData.cartSource$.subscribe(
-      cartItems => {
-        this.addToCart(cartItems)
-      })
+      cartItems => { this.printCart(cartItems) })
 
     if (localStorage.getItem("cart") !== null) {
-      this.getCartFromStorage(this.cartItems);
+      this.cartData.getCartFromStorage(this.cartItems);
+      this.cartItems = this.cartData.cartItems;
 
       document.getElementById("cartBtn").classList.add("showEmptyCartBtn");
     }
-
-    this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice"));
+    
     if (localStorage.getItem("totalCartPrice") !== null) {
-      
+      this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice")); 
     }
+  }
 
-
+  printCart(cartItems) {
+    this.cartData.getCartFromStorage(this.cartItems);
+    this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice"));
+    this.cartData.loopCartPrice(cartItems);
+    this.cartItems = this.cartData.cartItems;
   }
 
   addToCart(movieToAdd: IMovie) {
 
-    let addedMovie = false;
-
-    for (let i = 0; i < this.cartItems.length; i++) {
-
-      if (movieToAdd.id === this.cartItems[i].movie.id) {
-        this.cartItems[i].amount++;
-
-
-        this.cartItems[i].totalprice = movieToAdd.price * this.cartItems[i].amount;
-
-        this.addToCartFromStorage(this.cartItems);
-        this.loopCartPrice(this.totalCartPrice);
-
-        addedMovie = true;
-      }
-    }
-
-    if (addedMovie === false) {
-
-      this.cartItems.push({ movie: movieToAdd, amount: 1, totalprice: movieToAdd.price });
-      this.addToCartFromStorage(this.cartItems);
-
-
-    }
-    this.loopCartPrice(this.totalCartPrice);
-    this.addToCartPriceFromStorage(this.totalCartPrice);
-
+    this.cartData.sendAddedMovie(movieToAdd);
   }
 
-
   removeFromCart(movieToRemove: IMovie) {
+    this.cartData.sendRemovedMovie(movieToRemove);
 
-    for (let i = 0; i < this.cartItems.length; i++) {
-
-      if (movieToRemove.id === this.cartItems[i].movie.id) {
-        if (this.cartItems[i].amount > 1) {
-          this.cartItems[i].amount--;
-          this.cartItems[i].totalprice = movieToRemove.price * this.cartItems[i].amount;
-          this.addToCartFromStorage(this.cartItems);
-          this.loopCartPrice(this.totalCartPrice);
-        } else {
-          this.cartItems.splice(i, 1);
-          this.addToCartFromStorage(this.cartItems);
-          this.loopCartPrice(this.totalCartPrice);
-        }
-      }
-    }
   }
 
   addMovieInCart(movieToAdd: IMovie) {
-
-    for (let i = 0; i < this.cartItems.length; i++) {
-
-      if (movieToAdd.id === this.cartItems[i].movie.id) {
-        this.cartItems[i].amount++;
-        this.cartItems[i].totalprice = movieToAdd.price * this.cartItems[i].amount;
-        this.addToCartFromStorage(this.cartItems);
-        this.loopCartPrice(this.totalCartPrice);
-      }
-    }
+    this.cartData.sedndAddMovieInCart(movieToAdd);
   }
 
   emptyCart() {
-
-    if (localStorage.getItem("cart") !== null) {
-      this.cartItems.splice(0, this.cartItems.length);
-      this.addToCartFromStorage(this.cartItems);
-      this.loopCartPrice(this.totalCartPrice);
-    }
+    this.cartData.sendEmptyCart();
   }
-
-  loopCartPrice(cartItems) {
-    this.totalCartPrice = 0;
-    for (let i = 0; i < this.cartItems.length; i++) {
-      this.totalCartPrice = this.totalCartPrice + this.cartItems[i].totalprice;
-    }
-    this.addToCartPriceFromStorage(this.totalCartPrice);
-  }
-
-  addToCartFromStorage(cartItems) {
-    localStorage.setItem("cart", JSON.stringify(this.cartItems));
-  }
-
-  getCartFromStorage(cartItems) {
-    this.cartItems = JSON.parse(localStorage.getItem("cart"));
-  }
-
-  addToCartPriceFromStorage(cartItems) {
-    localStorage.setItem("totalCartPrice", JSON.stringify(this.totalCartPrice));
-  }
-
 }

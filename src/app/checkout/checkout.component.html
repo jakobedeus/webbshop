@@ -3,7 +3,7 @@
   <div class="orderItems">
 
     <h2>Order</h2>
-
+    <p (click)="emptyCart()" class="emptyCartbtn">Empty cart <i class="fas fa-trash"></i></p>
     <div *ngFor="let item of cartItems" class="checkoutItemContainer">
 
       <div class="checkoutItemImg">
@@ -23,7 +23,7 @@
         <div class="adjustAmountCheckoutContainer">
           <p>Amount: {{ item.amount}}</p>
           <div class="adjustAmoutCheckoutButtons">
-            <button (click)="addMovieToCheckout(item.movie)" class="adjustAmountCheckout">
+            <button (click)="addToCart(item.movie)" class="adjustAmountCheckout">
               <i class="fas fa-plus-circle"></i>
             </button>
             <button (click)="removeFromCart(item.movie)" class="adjustAmountCheckout removeCheckoutItemAmount">
