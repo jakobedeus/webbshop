@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { DataService } from '../services/data.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { InteractionService } from '../services/interaction.service';
+import { IMovie } from '../interface/IMovies';
 
 
 @Component({
@@ -36,13 +37,37 @@ export class CheckoutComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this.cartData.cartSource$.subscribe(
+      cartItems => { this.printCart(cartItems) })
+      
     this.cartItems = JSON.parse(localStorage.getItem("cart"));
     this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice"));
   }
 
-  addMovieToCheckout(movie) {
-    document.getElementById("cart").classList.add("showCart");
-    this.cartData.sendAddedMovie(movie);
+  printCart(cartItems) {
+    this.cartData.getCartFromStorage(this.cartItems);
+    this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice"));
+    this.cartData.loopCartPrice(cartItems);
+    this.cartItems = this.cartData.cartItems;
+  }
+
+  addToCart(movieToAdd: IMovie) {
+
+    this.cartData.sendAddedMovie(movieToAdd);
+  }
+
+  removeFromCart(movieToRemove: IMovie) {
+    this.cartData.sendRemovedMovie(movieToRemove);
+
+  }
+
+  addMovieInCart(movieToAdd: IMovie) {
+    this.cartData.sedndAddMovieInCart(movieToAdd);
+  }
+
+  emptyCart() {
+    this.cartData.sendEmptyCart();
   }
 
   

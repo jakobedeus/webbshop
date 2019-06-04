@@ -1,10 +1,5 @@
-#cartBtn {
-    cursor: pointer;
-    display: none;
-}
-
 .showEmptyCartBtn {
-    display: block !important;
+    display: block;
 }
 
 .adjustAmountCart{
@@ -38,11 +33,6 @@
     cursor: pointer;
     color:red;
 }
-
-.removeCartItemAmount {
-    /* color:red; */
-}
-
 .cartItemContainer {
     overflow-y: scroll;
     max-height: 400px;

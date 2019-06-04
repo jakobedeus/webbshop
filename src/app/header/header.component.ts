@@ -11,10 +11,12 @@ export class HeaderComponent implements OnInit {
 
   cart: boolean = false;
 
-  toggleCart() {
-    document.getElementById("cart").classList.toggle("showCart");
-    this.cart = true;
-  }
+  // toggleCart() {
+  //   document.getElementById("cart").classList.toggle("showCart");
+  //   this.cart = true;
+  // }
+
+  
   
   constructor() { }
 
