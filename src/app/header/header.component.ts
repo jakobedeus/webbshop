@@ -7,14 +7,14 @@ import { InteractionService } from '../services/interaction.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title = 'webbshop-jakob-edeus';
+  // title = 'webbshop-jakob-edeus';
 
   cart: boolean = false;
 
-  // toggleCart() {
-  //   document.getElementById("cart").classList.toggle("showCart");
-  //   this.cart = true;
-  // }
+  toggleCart() {
+    document.getElementById("cart").classList.toggle("showCart");
+    this.cart = true;
+  }
 
   
   

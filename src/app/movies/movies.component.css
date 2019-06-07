@@ -24,17 +24,6 @@
     height: 100%;
 }
 
-
-/* .singleProductInfo button {
-    margin-left: 1em;
-    background-color: orange;
-    border: none;
-    color: black;
-    padding: 1em;
-    border-radius: 4px;
-    cursor: pointer;
-} */
-
 .addToCartBtn {
     background: rgb(16, 16, 16, 0.8);
     border-radius: 50% 50%;

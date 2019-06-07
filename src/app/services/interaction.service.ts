@@ -33,6 +33,7 @@ export class InteractionService {
 
         this.addToCartFromStorage(this.cartItems);
         this.loopCartPrice(this.totalCartPrice);
+        this.toggleCart();
 
         addedMovie = true;
       }
@@ -46,6 +47,7 @@ export class InteractionService {
 
     this.loopCartPrice(this.totalCartPrice);
     this.addToCartPriceFromStorage(this.totalCartPrice);
+    this.toggleCart();
 
 
     this.cartSource.next(movieToAdd);
@@ -116,5 +118,9 @@ export class InteractionService {
 
   addToCartPriceFromStorage(cartItems) {
     localStorage.setItem("totalCartPrice", JSON.stringify(this.totalCartPrice));
+  }
+
+    toggleCart() {
+    document.getElementById("cart").classList.toggle("showCart");
   }
 }
