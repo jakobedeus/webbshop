@@ -41,6 +41,10 @@ form {
     
 }
 
+.showCart {
+    display: block !important;
+}
+
 p {
     color: white;
     font-weight: bolder;

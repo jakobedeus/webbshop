@@ -14,7 +14,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MoviesComponent } from './movies/movies.component';
 import { ShowCartComponent } from './show-cart/show-cart.component';
-import { CartPresentationComponent } from './cart-presentation/cart-presentation.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AdminComponent } from './admin/admin.component';
 import { SearchComponent } from './search/search.component';
@@ -32,7 +31,6 @@ import { BannerComponent } from './banner/banner.component';
     PageNotFoundComponent,
     MoviesComponent,
     ShowCartComponent,
-    CartPresentationComponent,
     CheckoutComponent,
     AdminComponent,
     SearchComponent,
