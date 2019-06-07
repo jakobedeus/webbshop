@@ -72,6 +72,8 @@ header a{
     font-size: 1.6em;
 }
 
-.showCart {
-    border: 1px solid red;
+button {
+    color: white;
+    font-weight: bold;
 }
+
