@@ -3,7 +3,7 @@
   <div class="orderItems">
 
     <h2>Order</h2>
-    <p (click)="emptyCart()" class="emptyCartbtn">Empty cart <i class="fas fa-trash"></i></p>
+    <a href=""><p (click)="emptyCart()" class="emptyCartbtn">Empty cart <i class="fas fa-trash"></i></p></a> 
     <div *ngFor="let item of cartItems" class="checkoutItemContainer">
 
       <div class="checkoutItemImg">
@@ -59,7 +59,7 @@
             <input type="text" formControlName="address" id="address">
           </label>
 
-          <label for="paymentMethod">Payment method:</label>
+          <label for="paymentMethod">Payment method:</label> <br/>
           <select name="paymentMethod" id="paymentMethod" #paymentMethod>
             <option value="Card">Card</option>
             <option value="Swish">Swish</option>

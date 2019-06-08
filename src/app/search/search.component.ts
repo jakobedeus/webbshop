@@ -37,7 +37,7 @@ export class SearchComponent implements OnInit {
   }
 
   addMovieToCart(movie) {
-    document.getElementById("cart").classList.add("showCart");
+    // document.getElementById("cart").classList.add("showCart");
     this.cartData.sendAddedMovie(movie);
   }
 }

@@ -8,13 +8,18 @@ body{
 
 
 button {
-    margin-left: 1em;
-    background-color: rgb(227, 148, 1);
+    background-color: #E08A1E;
     border: none;
-    color: black;
+    color: white;
     padding: 1em;
     cursor: pointer;
     font-family: 'Open Sans', sans-serif;
+    transition: all .1s;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color:rgb(208, 127, 27);
 }
 
 p {
@@ -33,4 +38,16 @@ h1, h2, h3 {
 .logo {
     font-size: 1.4em;
     font-family: 'Inconsolata', monospace;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
 }

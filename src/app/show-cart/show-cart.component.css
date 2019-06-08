@@ -8,7 +8,9 @@
     font-size: 1.2em;
     padding: 0;
     /* color: green; */
+    margin-left: 1em;
 }
+
 
 .cartItemImg img{
     width: 80px;

@@ -1,7 +1,7 @@
 <div id="cartContainer">
    <div class="emptyCartContainer" id="cartBtn">
       <h2>Cart ({{ numberOfCartItems }}) items </h2>
-      <p (click)="emptyCart()" class="emptyCartbtn" >Empty cart <i class="fas fa-trash"></i></p>
+      <a href=""> <p (click)="emptyCart()" class="emptyCartbtn" >Empty cart <i class="fas fa-trash"></i></p></a>
    </div>
 
    <div class="cartItemContainer">
@@ -38,7 +38,7 @@
 
    <p><b>Total price: {{ totalCartPrice }} kr</b></p>
    <a routerLink="/checkout">
-      <button id="pay">Checkout</button>
+      <button id="pay">Checkout <i class="fas fa-angle-right"></i></button>
    </a>
 </div>
 
