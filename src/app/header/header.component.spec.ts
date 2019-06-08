@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
 import { ShowCartComponent } from '../show-cart/show-cart.component';
-import { CartPresentationComponent } from '../cart-presentation/cart-presentation.component';
 import { SearchComponent } from '../search/search.component';
 import { AdminComponent } from '../admin/admin.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +14,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent, ShowCartComponent, CartPresentationComponent, SearchComponent, AdminComponent, BannerComponent ],
+      declarations: [ HeaderComponent, ShowCartComponent, SearchComponent, AdminComponent, BannerComponent ],
       imports: [HttpClientModule, RouterTestingModule]
     })
     .compileComponents();

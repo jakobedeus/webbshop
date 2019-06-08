@@ -23,10 +23,7 @@ export class ShowCartComponent implements OnInit {
 
     if (localStorage.getItem("cart") !== null) {
       this.cartData.getCartFromStorage(this.cartItems);
-      this.cartItems = this.cartData.cartItems;
-
-      document.getElementById("cartBtn").classList.add("showEmptyCartBtn");
-    }
+      this.cartItems = this.cartData.cartItems;    }
     
     if (localStorage.getItem("totalCartPrice") !== null) {
       this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice")); 

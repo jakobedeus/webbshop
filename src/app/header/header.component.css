@@ -44,11 +44,13 @@ nav ul li {
 }
 
 #toggleCartButton:hover #cart{
-    display: block;
+    /* display: block; */
+    visibility: visible;
 }
 
 #cart {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
     background-color: white;
     color: black;
     position: fixed;
@@ -77,3 +79,10 @@ button {
     font-weight: bold;
 }
 
+#cart.showCart{
+    visibility: visible;
+}
+
+#cart .hideCart {
+    visibility: hidden !important;
+}

@@ -33,7 +33,7 @@ export class InteractionService {
 
         this.addToCartFromStorage(this.cartItems);
         this.loopCartPrice(this.totalCartPrice);
-        this.toggleCart();
+        // this.toggleCart();
 
         addedMovie = true;
       }
@@ -47,7 +47,7 @@ export class InteractionService {
 
     this.loopCartPrice(this.totalCartPrice);
     this.addToCartPriceFromStorage(this.totalCartPrice);
-    this.toggleCart();
+    // this.toggleCart();
 
 
     this.cartSource.next(movieToAdd);
@@ -95,6 +95,7 @@ export class InteractionService {
       this.addToCartFromStorage(this.cartItems);
       this.loopCartPrice(this.totalCartPrice);
       localStorage.removeItem("totalCartPrice");
+      localStorage.setItem("totalCartPrice", JSON.stringify('0'));
 
       this.cartSource.next();
   }
@@ -120,7 +121,7 @@ export class InteractionService {
     localStorage.setItem("totalCartPrice", JSON.stringify(this.totalCartPrice));
   }
 
-    toggleCart() {
-    document.getElementById("cart").classList.toggle("showCart");
-  }
+  //   toggleCart() {
+  //   document.getElementById("cart").classList.toggle("showCart");
+  // }
 }
