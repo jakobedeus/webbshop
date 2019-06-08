@@ -10,13 +10,21 @@ import { IOrders } from '../interface/IOrders';
 export class AdminComponent implements OnInit {
 
   constructor(service: DataService) { 
-      service.getOrderData().subscribe((orderData) => { this.orders = orderData; });
+      service.getOrderData().subscribe((orderData) => { this.orders = orderData;this.loopOrderAmout() });
   }
 
   orders: IOrders[];
 
+  numberOfOrders = 0;
+
+  loopOrderAmout() {
+    for (let i = 0; i < this.orders.length; i++) {
+      this.numberOfOrders++;
+      // console.log(this.numberOfOrders)
+    }
+  }
+
   ngOnInit() {
-   
   }
 
 }

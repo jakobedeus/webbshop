@@ -1,10 +1,14 @@
 <div class="orderContainer">
-  <div *ngFor="let order of orders">
-    <p>Id: {{ order.id }}, CompanyId: {{ order.companyId}} Created by: {{ order.createdBy }}, Created: {{ order.created }}, Total price:
-      {{ order.totalPrice}} </p>
-    <p *ngFor="let orderrow of order.orderRows">
-      Product ID: {{ orderrow.productId }}
-    </p>
-
+  <h1>({{ numberOfOrders }}) Orders</h1>
+  <div class="orderItemContainer">
+    <ul>
+      <li *ngFor="let order of orders" class="order">
+        <p><i class="fas fa-user"></i> {{ order.createdBy }} <i class="fas fa-clock"></i> {{ order.created }}</p>
+        <div *ngFor="let orderrow of order.orderRows">
+          <p>Product ID: {{ orderrow.productId }} * {{ orderrow.amount }} st</p>
+        </div>
+        <p>Total price: <b>{{ order.totalPrice}} :-</b></p>
+      </li>
+    </ul>
   </div>
 </div>
