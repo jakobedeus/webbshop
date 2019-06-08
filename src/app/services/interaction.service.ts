@@ -15,6 +15,8 @@ export class InteractionService {
 
   cartSource$ = this.cartSource.asObservable();
 
+  numberOfCartItems = 0;
+
   constructor(private http: HttpClient) {}
 
   totalCartPrice: number;
@@ -30,7 +32,8 @@ export class InteractionService {
       if (movieToAdd.id === this.cartItems[i].movie.id) {
         this.cartItems[i].amount++;
         this.cartItems[i].totalprice = movieToAdd.price * this.cartItems[i].amount;
-
+        this.numberOfCartItems++;
+        this.cartCounter(this.numberOfCartItems);
         this.addToCartFromStorage(this.cartItems);
         this.loopCartPrice(this.totalCartPrice);
         // this.toggleCart();
@@ -42,26 +45,34 @@ export class InteractionService {
     if (addedMovie === false) {
 
       this.cartItems.push({ movie: movieToAdd, amount: 1, totalprice: movieToAdd.price });
-      this.addToCartFromStorage(this.cartItems);
+      this.numberOfCartItems++;
+      this.cartCounter(this.numberOfCartItems);
+
     }
 
     this.loopCartPrice(this.totalCartPrice);
     this.addToCartPriceFromStorage(this.totalCartPrice);
+    this.addToCartFromStorage(this.cartItems);
+    
     // this.toggleCart();
 
 
     this.cartSource.next(movieToAdd);
   }
 
-  sedndAddMovieInCart(movieToAdd: IMovie) {
+  sendAddMovieInCart(movieToAdd: IMovie) {
 
     for (let i = 0; i < this.cartItems.length; i++) {
 
       if (movieToAdd.id === this.cartItems[i].movie.id) {
         this.cartItems[i].amount++;
+        
         this.cartItems[i].totalprice = movieToAdd.price * this.cartItems[i].amount;
+        this.numberOfCartItems++;
+        this.cartCounter(this.numberOfCartItems);
         this.addToCartFromStorage(this.cartItems);
         this.loopCartPrice(this.totalCartPrice);
+
       }
     }
 
@@ -76,12 +87,18 @@ export class InteractionService {
         if (this.cartItems[i].amount > 1) {
           this.cartItems[i].amount--;
           this.cartItems[i].totalprice = movieToRemove.price * this.cartItems[i].amount;
+          this.numberOfCartItems--;
+          this.cartCounter(this.numberOfCartItems);
           this.addToCartFromStorage(this.cartItems);
           this.loopCartPrice(this.totalCartPrice);
         } else {
+ 
           this.cartItems.splice(i, 1);
           this.addToCartFromStorage(this.cartItems);
           this.loopCartPrice(this.totalCartPrice);
+          this.numberOfCartItems--;
+          this.cartCounter(this.numberOfCartItems);
+          
         }
       }
     }
@@ -94,8 +111,10 @@ export class InteractionService {
       this.cartItems.splice(0, this.cartItems.length);
       this.addToCartFromStorage(this.cartItems);
       this.loopCartPrice(this.totalCartPrice);
-      localStorage.removeItem("totalCartPrice");
       localStorage.setItem("totalCartPrice", JSON.stringify('0'));
+      localStorage.setItem("cartCounter", JSON.stringify('0'));
+      this.numberOfCartItems = 0;
+
 
       this.cartSource.next();
   }
@@ -121,7 +140,19 @@ export class InteractionService {
     localStorage.setItem("totalCartPrice", JSON.stringify(this.totalCartPrice));
   }
 
+  cartCounter(numberOfCartItems) {
+    localStorage.setItem("cartCounter", JSON.stringify(this.numberOfCartItems));
+  }
+
   //   toggleCart() {
   //   document.getElementById("cart").classList.toggle("showCart");
   // }
+
+  sendLoopCartItemsAmount(numberOfCartItems) {
+    // this.numberOfCartItems = 0;
+    for (let i = 0; i < this.cartItems.length; i++) {
+      this.numberOfCartItems++;
+    }
+    this.cartSource.next();
+  }
 }

@@ -21,7 +21,7 @@ export class ProductPresentationComponent implements OnInit {
   }
 
   addMovieToCart(movie) {
-    document.getElementById("cart").classList.add("showCart"), 3000;
+    // document.getElementById("cart").classList.add("showCart"), 3000;
     // document.getElementById("cart").style.display= "block";
 
     this.cartData.sendAddedMovie(movie);
