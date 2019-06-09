@@ -86,6 +86,7 @@ select {
     font-size: 1.2em;
     margin: 0 .6em;
     padding: 0;
+    color: black;
 }
 
 .adjustAmoutCheckoutButtons {

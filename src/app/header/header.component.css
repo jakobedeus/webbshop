@@ -1,6 +1,6 @@
 header {
     position: fixed;
-    background: rgba(18, 18, 18, 0.8);
+    background: rgba(18, 18, 18);
     left:0;
     right:0;
     z-index: 2;
@@ -73,7 +73,7 @@ nav ul li {
     color: black;
     position: fixed;
     z-index: 2;
-    top: 65px;
+    top: 60px;
     right: 10%;
     padding: .2em 1em;
     border: 1px solid rgb(206, 206, 206);
@@ -104,3 +104,54 @@ li p a button {
 #cart .hideCart {
     visibility: hidden !important;
 }
+
+@media screen and (max-width: 900px) {
+    header {
+        /* width: 96%;
+        margin: 0 auto; */
+        position: inherit;
+    }
+    .headerContainer {
+        width: 90%;
+        /* min-width: 475px;
+        overflow: hidden; */
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        font-size: .8em;
+    }
+
+    .logo {
+        flex: 100%;
+        text-align: center;
+    }
+
+    nav {
+        flex: 100%;
+    }
+
+    ul {
+        padding: 0;
+        text-align: center;
+        flex: 100%;
+        margin: 0 auto;
+    }
+
+    #cartAmount {
+        color: white;
+        background-color: #E08A1E;
+        padding: .2em;
+        border-radius: 50% 50%;
+        font-size: .8em;
+        top: 90px;
+        margin-left: 12px;
+        text-align: center;
+        position: absolute;
+        width:20px;
+        height: 20px;
+        /* margin-left: .4em; */
+        font-family: 'Open Sans', sans-serif;
+    }
+
+  }

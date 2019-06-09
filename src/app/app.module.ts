@@ -9,7 +9,6 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductPresentationComponent } from './product-presentation/product-presentation.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MainComponent } from './main/main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MoviesComponent } from './movies/movies.component';
@@ -18,6 +17,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { AdminComponent } from './admin/admin.component';
 import { SearchComponent } from './search/search.component';
 import { BannerComponent } from './banner/banner.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -27,7 +27,6 @@ import { BannerComponent } from './banner/banner.component';
     ShowProductsComponent,
     HeaderComponent,
     ProductPresentationComponent,
-    MainComponent,
     PageNotFoundComponent,
     MoviesComponent,
     ShowCartComponent,
@@ -35,6 +34,7 @@ import { BannerComponent } from './banner/banner.component';
     AdminComponent,
     SearchComponent,
     BannerComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

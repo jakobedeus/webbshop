@@ -32,9 +32,9 @@ form {
     display: flex;
 }
 
-.product:hover img {
+/* .product:hover img {
     transform: scale(1.1);
-}
+} */
 
 .product:hover .productInfo {
     display: block;
@@ -55,7 +55,7 @@ p {
 }
 
 button {
-    background: rgb(16, 16, 16, 0.8);
+    background: rgba(213, 135, 0, 0.8);
     border-radius: 50% 50%;
     border: 1px solid white;
     color:white;
@@ -66,6 +66,7 @@ button {
     padding: .8em;
     transition: .1s;
     margin-left: 1em;
+    
 }
 
 button:hover {
