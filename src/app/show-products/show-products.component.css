@@ -1,17 +1,23 @@
 .container {
-    width: 96%;
+    width: 70%;
     margin: 0 auto 0 auto;
 }
 
 .categoryContainer {
     overflow-x: scroll;
     display: flex;
-    min-height: 500px;
+    min-height: 480px;
     min-width: 100%;
-    /* -webkit-appearance: none; */
     
 }
 
 button {
     margin-top: 20vh;
+}
+
+
+@media screen and (max-width: 900px) {
+    .container {
+        width: 95%;
+    }
 }

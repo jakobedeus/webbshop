@@ -14,6 +14,8 @@ export class ShowCartComponent implements OnInit {
 
   totalCartPrice: number;
 
+  numberOfCartItems: number;
+
   constructor(private cartData: InteractionService) {}
 
   ngOnInit() {
@@ -23,10 +25,11 @@ export class ShowCartComponent implements OnInit {
 
     if (localStorage.getItem("cart") !== null) {
       this.cartData.getCartFromStorage(this.cartItems);
-      this.cartItems = this.cartData.cartItems;    }
+      this.cartItems = this.cartData.cartItems;
+    }
     
     if (localStorage.getItem("totalCartPrice") !== null) {
-      this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice")); 
+      this.totalCartPrice = JSON.parse(localStorage.getItem("totalCartPrice"));
     }
   }
 
@@ -36,6 +39,7 @@ export class ShowCartComponent implements OnInit {
     this.cartData.loopCartPrice(cartItems);
     this.cartItems = this.cartData.cartItems;
   }
+
 
   addToCart(movieToAdd: IMovie) {
 
@@ -48,7 +52,7 @@ export class ShowCartComponent implements OnInit {
   }
 
   addMovieInCart(movieToAdd: IMovie) {
-    this.cartData.sedndAddMovieInCart(movieToAdd);
+    this.cartData.sendAddMovieInCart(movieToAdd);
   }
 
   emptyCart() {

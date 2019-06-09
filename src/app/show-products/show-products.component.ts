@@ -13,7 +13,7 @@ import { InteractionService } from '../services/interaction.service';
 export class ShowProductsComponent implements OnInit {
   movieCategoryId: number;
 
-  constructor(service: DataService) {
+  constructor(service: DataService, interactionService: InteractionService) {
     
     service.getCategoryData().subscribe((categoryData) => { 
       this.categories = categoryData; 
@@ -29,12 +29,19 @@ export class ShowProductsComponent implements OnInit {
   actionMovies: IMovie[] = [];
   comedyMovies: IMovie[] = [];
 
+  
+
   ngOnInit() {
+
+    let comedyLenght = this.comedyMovies.length;
+
+    // this.interactionService.cartSource$.subscribe(
+    //   cartItems => { this.printCart(cartItems) })
   }
 
   loopCategory() {
 
-    for (var a = 0; a < this.movies.length; a++) {
+        for (var a = 0; a < this.movies.length; a++) {
       var movieCategory = this.movies[a].productCategory;
 
       for (var b = 0; b < movieCategory.length; b++) {

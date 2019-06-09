@@ -50,7 +50,7 @@ table {
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 75%;
+    width: 80%;
     margin: 14vh auto 0 auto;
 }
 

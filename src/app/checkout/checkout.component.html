@@ -58,9 +58,15 @@
             Address:
             <input type="text" formControlName="address" id="address">
           </label>
-    
-    
-          <button (click)="submitOrder(totalCartPrice, email.value)" type="submit"
+
+          <label for="paymentMethod">Payment method:</label> <br/>
+          <select name="paymentMethod" id="paymentMethod" #paymentMethod>
+            <option value="Card">Card</option>
+            <option value="Swish">Swish</option>
+            <option value="Paypal">Paypal</option>
+          </select>
+
+          <button (click)="submitOrder(totalCartPrice, email.value, paymentMethod.value)" type="submit"
             [disabled]="!profileForm.valid">Order</button>
     
         </form>

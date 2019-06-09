@@ -7,8 +7,10 @@
     background: transparent;
     font-size: 1.2em;
     padding: 0;
-    /* color: green; */
+    color: black;
+    margin-left: 1em;
 }
+
 
 .cartItemImg img{
     width: 80px;

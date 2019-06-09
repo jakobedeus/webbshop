@@ -63,7 +63,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   addMovieInCart(movieToAdd: IMovie) {
-    this.cartData.sedndAddMovieInCart(movieToAdd);
+    this.cartData.sendAddMovieInCart(movieToAdd);
   }
 
   emptyCart() {
@@ -72,7 +72,7 @@ export class CheckoutComponent implements OnInit {
 
   
 
-  submitOrder(totalCartPrice, email) {
+  submitOrder(totalCartPrice, email, paymentMethod) {
 
     for (let i = 0; i < this.cartItems.length; i++) {
       let orderId = this.cartItems[i].movie.id;
@@ -82,8 +82,8 @@ export class CheckoutComponent implements OnInit {
     }
     const companyId = 20;
     let date = moment().format('YYYY-MM-DDTHH:mm:ss');
-    let paymentMethod: "Kort";
-    let status: true;
+    // let paymentMethod: "Kort";
+    let status: 1;
 
     let newOrder = { created: date, createdBy: email, paymentMethod: paymentMethod, totalPrice: totalCartPrice, status: status, orderRows: this.orderRows, companyId: companyId }
 

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 import { IMovie } from '../interface/IMovies';
 import { ICart } from '../interface/ICart';
-import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
-import { IOrders } from '../interface/IOrders';
+import { ICategory } from '../interface/ICategory';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +14,11 @@ export class InteractionService {
   private cartSource = new Subject<IMovie>();
 
   cartSource$ = this.cartSource.asObservable();
-
-  constructor(private http: HttpClient) {}
-
+  numberOfCartItems: number;
   totalCartPrice: number;
-
   cartItems: ICart[] = [];
+
+  constructor() {}
 
   sendAddedMovie(movieToAdd: IMovie) {
 
@@ -30,10 +29,11 @@ export class InteractionService {
       if (movieToAdd.id === this.cartItems[i].movie.id) {
         this.cartItems[i].amount++;
         this.cartItems[i].totalprice = movieToAdd.price * this.cartItems[i].amount;
-
+        this.getCartCounter(this.numberOfCartItems);
+        this.numberOfCartItems++;
+        this.setCartCounter(this.numberOfCartItems);
         this.addToCartFromStorage(this.cartItems);
         this.loopCartPrice(this.totalCartPrice);
-        // this.toggleCart();
 
         addedMovie = true;
       }
@@ -42,26 +42,32 @@ export class InteractionService {
     if (addedMovie === false) {
 
       this.cartItems.push({ movie: movieToAdd, amount: 1, totalprice: movieToAdd.price });
-      this.addToCartFromStorage(this.cartItems);
+      this.getCartCounter(this.numberOfCartItems);
+      this.numberOfCartItems++;
+      this.setCartCounter(this.numberOfCartItems);
+
     }
 
     this.loopCartPrice(this.totalCartPrice);
-    this.addToCartPriceFromStorage(this.totalCartPrice);
-    // this.toggleCart();
-
+    this.addToCartFromStorage(this.cartItems);
 
     this.cartSource.next(movieToAdd);
   }
 
-  sedndAddMovieInCart(movieToAdd: IMovie) {
+  sendAddMovieInCart(movieToAdd: IMovie) {
 
     for (let i = 0; i < this.cartItems.length; i++) {
 
       if (movieToAdd.id === this.cartItems[i].movie.id) {
         this.cartItems[i].amount++;
+        
         this.cartItems[i].totalprice = movieToAdd.price * this.cartItems[i].amount;
+        this.getCartCounter(this.numberOfCartItems);
+        this.numberOfCartItems++;
+        this.setCartCounter(this.numberOfCartItems);
         this.addToCartFromStorage(this.cartItems);
         this.loopCartPrice(this.totalCartPrice);
+
       }
     }
 
@@ -76,12 +82,20 @@ export class InteractionService {
         if (this.cartItems[i].amount > 1) {
           this.cartItems[i].amount--;
           this.cartItems[i].totalprice = movieToRemove.price * this.cartItems[i].amount;
+          this.getCartCounter(this.numberOfCartItems);
+          this.numberOfCartItems--;
+          this.setCartCounter(this.numberOfCartItems);
           this.addToCartFromStorage(this.cartItems);
           this.loopCartPrice(this.totalCartPrice);
         } else {
+ 
           this.cartItems.splice(i, 1);
           this.addToCartFromStorage(this.cartItems);
           this.loopCartPrice(this.totalCartPrice);
+          this.getCartCounter(this.numberOfCartItems);
+          this.numberOfCartItems--;
+          this.setCartCounter(this.numberOfCartItems);
+          
         }
       }
     }
@@ -90,13 +104,12 @@ export class InteractionService {
 
   sendEmptyCart() {
 
-    // if (localStorage.getItem("cart") !== null) {
       this.cartItems.splice(0, this.cartItems.length);
       this.addToCartFromStorage(this.cartItems);
       this.loopCartPrice(this.totalCartPrice);
-      localStorage.removeItem("totalCartPrice");
       localStorage.setItem("totalCartPrice", JSON.stringify('0'));
-
+      this.numberOfCartItems = 0;
+      localStorage.setItem("cartCounter", JSON.stringify(this.numberOfCartItems));
       this.cartSource.next();
   }
 
@@ -121,7 +134,54 @@ export class InteractionService {
     localStorage.setItem("totalCartPrice", JSON.stringify(this.totalCartPrice));
   }
 
-  //   toggleCart() {
-  //   document.getElementById("cart").classList.toggle("showCart");
+  setCartCounter(numberOfCartItems) {
+    localStorage.setItem("cartCounter", JSON.stringify(this.numberOfCartItems));
+  }
+
+  getCartCounter(numberOfCartItems) {
+    this.numberOfCartItems = JSON.parse(localStorage.getItem("cartCounter"));
+  }
+
+  sendLoopCartItemsAmount(numberOfCartItems) {
+    for (let i = 0; i < this.cartItems.length; i++) {
+      this.numberOfCartItems++;
+    }
+    this.cartSource.next();
+  }
+
+  // movies: IMovie[];
+  // categories: ICategory[] = [];
+  // thrillerMovies: IMovie[] = [];
+  // sciFiMovies: IMovie[] = [];
+  // actionMovies: IMovie[] = [];
+  // comedyMovies: IMovie[] = [];
+  // movieCategoryId: number;
+
+  // loopCategory() {
+
+  //   for (var a = 0; a < this.movies.length; a++) {
+  //     var movieCategory = this.movies[a].productCategory;
+
+  //     for (var b = 0; b < movieCategory.length; b++) {
+  //       this.movieCategoryId = movieCategory[b].categoryId;
+
+  //       if (this.movieCategoryId === this.categories[0].id) {
+  //         this.actionMovies.push(this.movies[a]);
+  //       }
+  
+  //       if (this.movieCategoryId === this.categories[1].id) {
+  //         this.thrillerMovies.push(this.movies[a]);
+  //       }
+  
+  //       if (this.movieCategoryId === this.categories[2].id) {
+  //         this.comedyMovies.push(this.movies[a]);
+  //       }
+  
+  //       if (this.movieCategoryId === this.categories[3].id) {
+  //         this.sciFiMovies.push(this.movies[a]);
+  //       }
+  //     }
+  //   }
+  //   this.cartSource.next();
   // }
 }
