@@ -155,9 +155,18 @@ export class InteractionService {
   // sciFiMovies: IMovie[] = [];
   // actionMovies: IMovie[] = [];
   // comedyMovies: IMovie[] = [];
+
+  // actionLength: number;
+
+  // thrillerLength:number;
+
+  // comedyLength:number;
+
+  // sciFiLength:number;
+
   // movieCategoryId: number;
 
-  // loopCategory() {
+  // sendLoopCategory() {
 
   //   for (var a = 0; a < this.movies.length; a++) {
   //     var movieCategory = this.movies[a].productCategory;

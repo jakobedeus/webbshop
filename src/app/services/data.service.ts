@@ -7,14 +7,6 @@ import { ICategory } from '../interface/ICategory';
 import { ICart } from '../interface/ICart';
 import { IOrders } from '../interface/IOrders';
 
-// const httpOptions = {
-//   headers: new HttpHeaders({
-//     'Content-Type':  'application/json',
-//     'Authorization': 'my-auth-token'
-//   })
-// };
-
-
 @Injectable({
   providedIn: 'root'
 })

@@ -9,19 +9,15 @@ import { IMovie } from '../interface/IMovies';
 })
 export class BannerComponent implements OnInit {
 
-  constructor(service: DataService) { 
+  constructor() {}
 
-    service.getProductData().subscribe((productData) => { this.movies = productData;});
-  }
 
-  movies: IMovie[];
+  
 
 
 
   ngOnInit() {
-    // console.log(this.movies);
-    // var bannerMovieImg = this.movies[0].imageUrl;
-    
+
   }
 
 }
