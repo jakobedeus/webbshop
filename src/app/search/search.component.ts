@@ -19,15 +19,17 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Lägg subscriben utanför constructor för att komma åt den på två ställen.
+  numberOfSearchResults: number;
+  searchTerm: string;
 
   search(searchTerm: string) {
 
     if (searchTerm) {
         this.service.searchMovies(searchTerm)
         .subscribe(movies => this.movies = movies);
-        console.log(this.movies);
+        this.numberOfSearchResults = this.movies.length;
         document.getElementById("searchResult").classList.add("showSearchResult");
+        this.searchTerm = searchTerm;
         return searchTerm;
     }  
   }

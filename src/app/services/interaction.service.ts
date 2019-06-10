@@ -151,46 +151,60 @@ export class InteractionService {
 
   // movies: IMovie[];
   // categories: ICategory[] = [];
-  // thrillerMovies: IMovie[] = [];
-  // sciFiMovies: IMovie[] = [];
-  // actionMovies: IMovie[] = [];
-  // comedyMovies: IMovie[] = [];
+  thrillerMovies: IMovie[] = [];
+  sciFiMovies: IMovie[] = [];
+  actionMovies: IMovie[] = [];
+  comedyMovies: IMovie[] = [];
 
-  // actionLength: number;
+  actionLength: number;
 
-  // thrillerLength:number;
+  thrillerLength:number;
 
-  // comedyLength:number;
+  comedyLength:number;
 
-  // sciFiLength:number;
+  sciFiLength:number;
 
-  // movieCategoryId: number;
+  movieCategoryId: number;
 
-  // sendLoopCategory() {
+  // sendLoopCategory(movies, categories) {
+  //   console.log(categories);
+  //   console.log(categories);
 
-  //   for (var a = 0; a < this.movies.length; a++) {
-  //     var movieCategory = this.movies[a].productCategory;
+  //   // this.movies = movies;
+  //   // this.categories = categories;
+
+  //   for (var a = 0; a < movies.length; a++) {
+  //     var movieCategory = movies[a].productCategory;
 
   //     for (var b = 0; b < movieCategory.length; b++) {
   //       this.movieCategoryId = movieCategory[b].categoryId;
 
-  //       if (this.movieCategoryId === this.categories[0].id) {
-  //         this.actionMovies.push(this.movies[a]);
+  //       if (this.movieCategoryId === categories[0].id) {
+  //         this.actionMovies.push(movies[a]);
+  //         this.actionLength = this.actionMovies.length;
+  //         console.log(this.actionMovies)
   //       }
   
-  //       if (this.movieCategoryId === this.categories[1].id) {
-  //         this.thrillerMovies.push(this.movies[a]);
+  //       if (this.movieCategoryId === categories[1].id) {
+  //         this.thrillerMovies.push(movies[a]);
   //       }
   
-  //       if (this.movieCategoryId === this.categories[2].id) {
-  //         this.comedyMovies.push(this.movies[a]);
+  //       if (this.movieCategoryId === categories[2].id) {
+  //         this.comedyMovies.push(movies[a]);
   //       }
   
-  //       if (this.movieCategoryId === this.categories[3].id) {
-  //         this.sciFiMovies.push(this.movies[a]);
+  //       if (this.movieCategoryId === categories[3].id) {
+  //         this.sciFiMovies.push(movies[a]);
   //       }
   //     }
   //   }
+
+    
+
+  //   // console.log(this.thrillerMovies)
+  //   // console.log(this.actionMovies)
+  //   // console.log(this.sciFiMovies)
+  //   // console.log(this.comedyMovies)
   //   this.cartSource.next();
   // }
 }
