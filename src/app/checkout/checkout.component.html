@@ -2,8 +2,10 @@
 
   <div class="orderItems">
 
-    <h2>Order</h2>
-    <p (click)="emptyCart()" class="emptyCartbtn">Empty cart <i class="fas fa-trash"></i></p>
+    <div class="topCheckoutContainer">
+      <h1>Order</h1>
+      <p (click)="emptyCart()" class="emptyCartbtn">Empty cart <i class="fas fa-trash"></i></p>
+    </div>
     <div *ngFor="let item of cartItems" class="checkoutItemContainer">
 
       <div class="checkoutItemImg">
@@ -38,40 +40,41 @@
   </div>
 
   <div class="totalPrice">
-      <form [formGroup]="profileForm">
-          <label for="name">
-            Name:
-            <input type="text" formControlName="name" id="name">
-          </label>
-    
-          <label for="email">
-            Email:
-            <input type="text" formControlName="email" required #email id="email">
-          </label>
-    
-          <label for="phone">
-            Phone:
-            <input type="text" formControlName="phone" id="phone">
-          </label>
-    
-          <label for="address">
-            Address:
-            <input type="text" formControlName="address" id="address">
-          </label>
+    <h2>Total price: {{ totalCartPrice }} kr</h2> <br/>
+    <!-- <p><b>{{ totalCartPrice }}kr </b></p> -->
+    <form [formGroup]="profileForm">
+      <label for="name">
+        Name:
+        <input type="text" formControlName="name" id="name">
+      </label>
 
-          <label for="paymentMethod">Payment method:</label> <br/>
-          <select name="paymentMethod" id="paymentMethod" #paymentMethod>
-            <option value="Card">Card</option>
-            <option value="Swish">Swish</option>
-            <option value="Paypal">Paypal</option>
-          </select>
+      <label for="email">
+        Email:
+        <input type="text" formControlName="email" required #email id="email">
+      </label>
 
-          <button (click)="submitOrder(totalCartPrice, email.value, paymentMethod.value)" type="submit"
-            [disabled]="!profileForm.valid">Order</button>
-    
-        </form>
-    <h3>Total price</h3>
-    <p><b>{{ totalCartPrice }}kr </b></p>
+      <label for="phone">
+        Phone:
+        <input type="text" formControlName="phone" id="phone">
+      </label>
+
+      <label for="address">
+        Address:
+        <input type="text" formControlName="address" id="address">
+      </label>
+
+      <label for="paymentMethod">Payment method:</label> <br />
+      <select name="paymentMethod" id="paymentMethod" #paymentMethod>
+        <option value="Card">Card</option>
+        <option value="Swish">Swish</option>
+        <option value="Paypal">Paypal</option>
+      </select>
+
+      <button (click)="submitOrder(totalCartPrice, email.value, paymentMethod.value)" type="submit"
+        [disabled]="!profileForm.valid">Order</button>
+
+    </form>
+
   </div>
 
 </div>

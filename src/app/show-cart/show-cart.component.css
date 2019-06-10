@@ -1,7 +1,3 @@
-.showEmptyCartBtn {
-    display: block;
-}
-
 .adjustAmountCart{
     border: none;
     background: transparent;
@@ -25,6 +21,11 @@
 
 }
 
+.totalPriceInCart {
+    /* padding: .4em 0; */
+    font-size: 1.1em;
+}
+
 .emptyCartContainer {
     display: flex;
     justify-content: space-between;
@@ -34,6 +35,7 @@
 .emptyCartbtn {
     cursor: pointer;
     color:red;
+    text-decoration: underline;
 }
 .cartItemContainer {
     overflow-y: scroll;
