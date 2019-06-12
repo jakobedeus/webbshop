@@ -31,6 +31,8 @@ input {
 .searchResultTop {
     display: flex;
     justify-content: space-between;
+    padding-bottom: .8em;
+    border-bottom: 1px solid gray;
 }
 
 #searchResult {
@@ -38,9 +40,14 @@ input {
     z-index: 2;
     background: white;
     width: 600px;
+    border-radius: 4px;
     position: absolute;
     color:  black;
     padding: 1.2em;
+
+}
+
+.searchItemContainer {
     overflow-y: scroll;
     max-height: 600px; 
 }
@@ -66,4 +73,8 @@ input {
     padding: .8em;
     transition: .1s;
     margin-left: 1em;
+}
+
+h2 {
+
 }

@@ -33,7 +33,7 @@
     margin-left: .4em;
 }
 
-.addToCartBtn {
+/* .addToCartBtn {
     background: rgba(40, 40, 40, 0.8);
     border-radius: 50% 50%;
     border: 1px solid white;
@@ -51,12 +51,8 @@
     background: white;
     color: black;
     opacity: 1;
-}
+} */
 
 .addToCartBtn:hover i {
     color: black;
-}
-
-i {
-    color:white;
 }

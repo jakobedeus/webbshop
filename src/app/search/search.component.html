@@ -10,16 +10,17 @@
     <h2>{{ numberOfSearchResults }} result(s) of search "{{ searchTerm }}"</h2>
     <button id="closeSearch" (click)="closeSearch()"><i class="far fa-times-circle"></i></button>
   </div>
-  <div *ngFor="let item of movies" id="searchItem">
-    <div class="searchItemImg">
-      <a [routerLink]="['/movies', item.id]"><img src="{{ item.imageUrl }}" width="100px"></a>
-    </div>
-    <div class="searchItemInfo">
-      <p><b>{{ item.name }}</b></p>
-      <p>{{ item.description }}</p>
-      <p>{{ item.price }} :-
-        <button (click)="addMovieToCart(item)" class="addToCartBtn"><i class="fas fa-plus"></i></button>
-      </p>
+  <div class="searchItemContainer">
+    <div *ngFor="let item of movies" id="searchItem">
+      <div class="searchItemImg">
+        <a [routerLink]="['/movies', item.id]"><img src="{{ item.imageUrl }}" width="80px"></a>
+      </div>
+      <div class="searchItemInfo">
+        <a [routerLink]="['/movies', item.id]">
+          <p><b>{{ item.name }}</b></p>
+        </a>
+        <p>{{ item.description }}</p>
+      </div>
     </div>
 
 

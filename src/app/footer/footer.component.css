@@ -1,6 +1,7 @@
 footer {
     height: 300px;
     background: rgb(29, 29, 29);
+    /* background: #8a3532; */
     border-top: 1px solid rgb(40, 40, 40);
     display: flex;
 }

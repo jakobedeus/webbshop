@@ -1,6 +1,6 @@
 header {
     position: fixed;
-    background: rgba(18, 18, 18);
+    background: rgb(23, 23, 23);
     left:0;
     right:0;
     z-index: 2;
@@ -86,9 +86,9 @@ header a{
     color: white;
 }
 
-li p a button {
+/* li p a button {
     color:white;
-}
+} */
 
 .logo p {
     margin-top: .6em;

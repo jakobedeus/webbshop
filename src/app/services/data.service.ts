@@ -7,6 +7,14 @@ import { ICategory } from '../interface/ICategory';
 import { ICart } from '../interface/ICart';
 import { IOrders } from '../interface/IOrders';
 
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': 'my-auth-token'
+  })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,9 +39,18 @@ export class DataService implements IDataService {
   }
 
   addOrder(order): Observable<IOrders> {
-    console.log(order);
     return this.http.post<IOrders>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', order);
   }
+
+  removeOrder(orderIdToRemove: number): Observable<IOrders>{
+    return this.http.delete<IOrders>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/' + orderIdToRemove);
+  }
+
+  // removeAllOrders(orders: IOrders[]): Observable<IOrders[]>{
+  //   return this.http.delete<IOrders[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/' + orders);
+  // }
+
+  
 
   searchMovies(searchTerm): Observable<IMovie[]> {
     return this.http.get<IMovie[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/search?searchText='+ searchTerm);
