@@ -5,9 +5,12 @@
   <div class="singleProductInfo">
     <h2>{{ movie.name }}</h2>
     <p>{{ movie.description }}</p>
-    <p>{{ categories.name }}</p>
+    <div class="categoryMovieContainer">
+      <p> Category:
+        <span class="categoryMovie" *ngFor="let categoryName of movieCategoryArray"> {{ categoryName }}</span>
+      </p>
+    </div>
     <p><b>{{ movie.price }} kr</b>
-
       <button (click)="addMovieToCart(movie)" class="addToCartBtn"><i class="fas fa-plus"></i></button></p>
   </div>
 </div>

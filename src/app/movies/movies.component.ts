@@ -20,22 +20,45 @@ export class MoviesComponent implements OnInit {
   constructor(private route: ActivatedRoute, service: DataService, private cartData: InteractionService) {
     this.route.paramMap.subscribe(pmap => {
       const id = pmap.get('id');
-      service.getSingleProductData(id).subscribe((singleProductData) => { this.movie = singleProductData; });
-      // this.cartData.cartSource$.subscribe(cartItems => this.cartItems = cartItems);
 
-      service.getCategoryData().subscribe((categoryData) => { this.categories = categoryData; });
-     });
+      service.getCategoryData().subscribe((categoryData) => {
+      this.categories = categoryData;
+
+        service.getSingleProductData(id).subscribe((singleProductData) => { this.movie = singleProductData; this.loopCategory() });
+        // this.cartData.cartSource$.subscribe(cartItems => this.cartItems = cartItems);
+
+      });
+    });
 
   }
-
-  categories;
+  movieCategoryId: number;
   movie: IMovie;
+  categories: ICategory[] = [];
+  movieCategoryArray: any[] = [];
+
 
   ngOnInit() {
 
   }
 
+  loopCategory() {
+
+    for (var b = 0; b < this.categories.length; b++) {
+
+      for (var a = 0; a < this.movie.productCategory.length; a++) {
+
+        if (this.movie.productCategory[a].categoryId === this.categories[b].id) {
+          this.movieCategoryArray.push(this.categories[b].name);
+          // console.log(movieCategoryName)
+
+        }
+      }
+    }
+  }
+
   addMovieToCart(movie) {
     this.cartData.sendAddedMovie(movie);
   }
+
+
 }

@@ -40,15 +40,11 @@ export class ShowProductsComponent implements OnInit {
 
 
   ngOnInit() {
-    
-    // this.interactionService.cartSource$.subscribe( cartItems => { this.loopCategory(this.movies, this.categories) })
+
   }
 
   loopCategory() {
-    // loopCategory(movies, categories) {
 
-
-    // this.interactionService.sendLoopCategory(this.movies, this.categories)
 
     for (var a = 0; a < this.movies.length; a++) {
       var movieCategory = this.movies[a].productCategory;
