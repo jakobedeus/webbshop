@@ -36,6 +36,11 @@ nav ul li {
     padding: 0 0 0 3em;
 }
 
+.checkOutBtn p a:hover {
+    text-decoration: none;
+    border-bottom: none;
+}
+
 #toggleCartButton > button{
     background-color: transparent;
     font-size: 1.4em;
@@ -64,13 +69,9 @@ nav ul li {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* #toggleCartButton:hover #cart{
-    display: block;
-} */
 
 #cart {
     display: none;
-    /* visibility: hidden; */
     background-color: white;
     color: black;
     position: fixed;
