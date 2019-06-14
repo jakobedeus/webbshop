@@ -9,22 +9,21 @@ import { ICart } from '../interface/ICart';
 })
 export class HeaderComponent implements OnInit {
   title = 'webbshop-jakob-edeus';
-
   cart: boolean = false;
 
   toggleCart() {
-    document.getElementById("cart").classList.add("showCart");
-    document.getElementById("cart").classList.add("hideCart"),1000;
+    document.getElementById("cart").classList.toggle("showCart");
     this.cart = true;
   }
 
-  
+  onClickedOutside(e: Event) {
+    document.getElementById("cart").classList.remove("showCart");
+  }
+
   constructor(private cartData: InteractionService) { }
 
   cartItems: ICart[] = [];
-
   numberOfCartItems: number;
-
   totalCartPrice: number;
 
   ngOnInit() {
@@ -32,14 +31,8 @@ export class HeaderComponent implements OnInit {
     this.cartData.cartSource$.subscribe(
       cartItems => { this.printCart(cartItems) })
 
-
-    // this.numberOfCartItems = 0;
-    // for (let i = 0; i < this.cartItems.length; i++) {
-    //   this.numberOfCartItems++;
-    // }
     this.numberOfCartItems = JSON.parse(localStorage.getItem("cartCounter"));
 
-    
   }
 
   printCart(cartItems) {

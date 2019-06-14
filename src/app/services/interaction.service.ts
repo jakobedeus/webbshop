@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { IMovie } from '../interface/IMovies';
 import { ICart } from '../interface/ICart';
-import { ICategory } from '../interface/ICategory';
-import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root'

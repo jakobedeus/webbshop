@@ -7,18 +7,15 @@
     padding: 160px 0;
 }
 
-
 .singleProductInfo {
     padding: 2em;
     flex: 1;
 }
 
-
 .singleProductImg {
     height: 80vh;
     flex: 1;
 }
-
 
 .singleProductImg img {
     height: 100%;
@@ -33,26 +30,6 @@
     margin-left: .6em;
     border-bottom: 2px solid orange;
 }
-
-/* .addToCartBtn {
-    background: rgba(40, 40, 40, 0.8);
-    border-radius: 50% 50%;
-    border: 1px solid white;
-    color:white;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2em;
-    padding: .8em;
-    transition: .1s;
-    margin-left: 1em;
-}
-
-.addToCartBtn:hover {
-    background: white;
-    color: black;
-    opacity: 1;
-} */
 
 .addToCartBtn:hover i {
     color: black;

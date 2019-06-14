@@ -8,13 +8,11 @@
     display: flex;
     padding: 0 0 4em 0;
     min-width: 100%;
-    
 }
 
 button {
     margin-top: 20vh;
 }
-
 
 @media screen and (max-width: 900px) {
     .container {

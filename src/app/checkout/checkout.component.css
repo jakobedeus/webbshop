@@ -6,7 +6,6 @@
     display: flex;
     border-radius: 4px;
     justify-content: space-between;
-    /* width: 600px; */
     position: relative;
 }
 
@@ -32,18 +31,12 @@ h2 {
     padding: 2em;
     flex:1;
     max-height: 500px;
-    /* display: flex; */
-    /* position: fixed;
-    left: 0;
-    right: 0; */
 }
 
 .orderItems {
     background: white;
     padding: 1em 2em;
     flex: 3;
-
-
 }
 
 form {

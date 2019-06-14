@@ -12,7 +12,7 @@
         <li>
           <p><a routerLink="/admin">Admin</a></p>
         </li>
-        <li id="toggleCartButton">
+        <li id="toggleCartButton" (clickOutside)="onClickedOutside($event)">
             <span id="cartAmount">{{ numberOfCartItems }}</span><button (click)="toggleCart()"><i class="fas fa-shopping-cart"></i></button>
           <div id="cart">
             <app-show-cart></app-show-cart>

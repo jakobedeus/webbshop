@@ -64,19 +64,18 @@ nav ul li {
     font-family: 'Open Sans', sans-serif;
 }
 
-#toggleCartButton:hover #cart{
-    /* display: block; */
-    visibility: visible;
-}
+/* #toggleCartButton:hover #cart{
+    display: block;
+} */
 
 #cart {
-    /* display: none; */
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden; */
     background-color: white;
     color: black;
     position: fixed;
     z-index: 2;
-    top: 60px;
+    top: 50px;
     right: 10%;
     padding: .2em 1em;
     border: 1px solid rgb(206, 206, 206);
@@ -89,10 +88,6 @@ header a{
     color: white;
 }
 
-/* li p a button {
-    color:white;
-} */
-
 .logo p {
     margin-top: .8em;
     padding: 0;
@@ -100,24 +95,16 @@ header a{
     font-size: 1.2em;
 }
 
-#cart.showCart{
-    visibility: visible;
-}
-
-#cart .hideCart {
-    visibility: hidden !important;
+.showCart{
+    display: block !important;
 }
 
 @media screen and (max-width: 900px) {
     header {
-        /* width: 96%;
-        margin: 0 auto; */
         position: inherit;
     }
     .headerContainer {
         width: 90%;
-        /* min-width: 475px;
-        overflow: hidden; */
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
@@ -153,7 +140,6 @@ header a{
         position: absolute;
         width:20px;
         height: 20px;
-        /* margin-left: .4em; */
         font-family: 'Open Sans', sans-serif;
     }
 

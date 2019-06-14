@@ -3,11 +3,14 @@
 <div class="bannerText">
 
     <div *ngFor="let text of interstellar">
-        <a [routerLink]="['/movies', text.id]"><h1>{{ text.name }}</h1></a>
+        <a [routerLink]="['/movies', text.id]">
+            <h1>{{ text.name }}</h1>
+        </a>
         <p>{{ text.description }}</p>
         <p>{{ text.price }} kr</p>
         <p>
-        <button (click)="addMovieToCart(movie)" class="addToCartBtn">Add to cart</button> 
-        <a class="readMoreBanner" [routerLink]="['/movies', text.id]">Read more</a></p>
+            <button (click)="addMovieToCart(text)" class="addToCartBtn">Add to cart</button>
+            <a class="readMoreBanner" [routerLink]="['/movies', text.id]">Read more</a>
+        </p>
     </div>
 </div>

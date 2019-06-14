@@ -2,17 +2,25 @@
     width: 80px;
 }
 
-
 .cartItem {
     border-bottom: 1px solid rgb(206, 206, 206);
     min-width: 350px;
     padding: 1em 0;
     display: flex;
+}
 
+.adjustAmountCart {
+    transition: all .1s;
+    
+}
+
+.adjustAmountCart:hover {
+    background: transparent;
+    color: black;
+    transform: scale(1.1);
 }
 
 .totalPriceInCart {
-    /* padding: .4em 0; */
     font-size: 1.1em;
 }
 
@@ -28,10 +36,10 @@
     color:red;
     text-decoration: underline;
 }
+
 .cartItemContainer {
     overflow-y: scroll;
     max-height: 400px;
-
 }
 
 .cartItem p {
@@ -43,7 +51,6 @@
 }
 
 .cartItemInfoContainer {
-
     padding: 0 1em;
 }
 

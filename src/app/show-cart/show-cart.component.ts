@@ -11,9 +11,7 @@ import { IMovie } from '../interface/IMovies';
 export class ShowCartComponent implements OnInit {
 
   cartItems: ICart[] = [];
-
   totalCartPrice: number;
-
   numberOfCartItems: number;
 
   constructor(private cartData: InteractionService) {}
@@ -42,13 +40,11 @@ export class ShowCartComponent implements OnInit {
 
 
   addToCart(movieToAdd: IMovie) {
-
     this.cartData.sendAddedMovie(movieToAdd);
   }
 
   removeFromCart(movieToRemove: IMovie) {
     this.cartData.sendRemovedMovie(movieToRemove);
-
   }
 
   addMovieInCart(movieToAdd: IMovie) {
@@ -58,4 +54,10 @@ export class ShowCartComponent implements OnInit {
   emptyCart() {
     this.cartData.sendEmptyCart();
   }
+
+  closeCart() {
+    document.getElementById('cart').classList.remove('showCart');
+  }
+
+  
 }

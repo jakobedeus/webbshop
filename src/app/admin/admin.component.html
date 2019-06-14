@@ -1,10 +1,10 @@
 <div class="orderContainer">
   <h1>{{ numberOfOrders }} Order(s)</h1>
-  
+
   <div class="orderItemContainer">
 
     <div *ngFor="let extOrder of extendedOrder" class="order">
-      
+
       <p>
         <i class="fas fa-user"></i> {{ extOrder.order.createdBy }}
         <i class="fas fa-clock"></i> {{ extOrder.order.created }},
@@ -12,8 +12,8 @@
       </p>
 
       <div *ngFor="let orderrow of extOrder.order.orderRows">
-        
-          <p>Product ID: {{ orderrow.productId }} * {{ orderrow.amount }} st</p>
+
+        <p>Product ID: {{ orderrow.productId }} * {{ orderrow.amount }} st</p>
       </div>
       <div *ngFor="let item of extOrder.movieName">
         <p>{{ item }}</p>

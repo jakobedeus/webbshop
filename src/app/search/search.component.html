@@ -1,11 +1,11 @@
-<div class="searchFieldContainer">
-  <input type="text" #movieSearch (keyup)="search(movieSearch.value)" placeholder="Search" />
+<div id="searchFieldContainer">
+  <input id="searchInput" type="text" #movieSearch (keyup)="search(movieSearch.value)" placeholder="Search" />
   <button id="search" (click)="search(movieSearch.value)">
     <i class="fas fa-search"></i>
   </button>
 </div>
 
-<div id="searchResult">
+<div id="searchResult" (clickOutside)="onClickedOutside($event)">
   <div class="searchResultTop">
     <h2>{{ numberOfSearchResults }} result(s) of search "{{ searchTerm }}"</h2>
     <button id="closeSearch" (click)="closeSearch()"><i class="far fa-times-circle"></i></button>
