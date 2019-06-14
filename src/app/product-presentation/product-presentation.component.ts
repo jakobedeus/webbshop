@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IMovie } from '../interface/IMovies';
+import { InteractionService } from '../services/interaction.service';
+import { ICart } from '../interface/ICart';
+import { ICategory } from '../interface/ICategory';
 
 @Component({
   selector: 'app-product-presentation',
@@ -7,11 +10,22 @@ import { IMovie } from '../interface/IMovies';
   styleUrls: ['./product-presentation.component.css']
 })
 export class ProductPresentationComponent implements OnInit {
-  @Input() movie: IMovie;
+  @Input() movie: IMovie[];
 
-  constructor() { }
+  constructor(private cartData: InteractionService) { }
+  
+  cartItem: ICart[];
 
   ngOnInit() {
+    
   }
+
+  addMovieToCart(movie) {
+    document.getElementById("cart").classList.add("showCart");
+    this.cartData.sendAddedMovie(movie);
+
+  }
+
+
 
 }

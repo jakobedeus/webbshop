@@ -6,13 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShowProductsComponent } from './show-products/show-products.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductPresentationComponent } from './product-presentation/product-presentation.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MainComponent } from './main/main.component';
-import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MoviesComponent } from './movies/movies.component';
+import { ShowCartComponent } from './show-cart/show-cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { AdminComponent } from './admin/admin.component';
+import { SearchComponent } from './search/search.component';
+import { BannerComponent } from './banner/banner.component';
+import { FooterComponent } from './footer/footer.component';
+import { ClickOutsideModule } from 'ng-click-outside';
+
 
 
 @NgModule({
@@ -21,16 +27,23 @@ import { MoviesComponent } from './movies/movies.component';
     ShowProductsComponent,
     HeaderComponent,
     ProductPresentationComponent,
-    MainComponent,
     PageNotFoundComponent,
-    MoviesComponent
+    MoviesComponent,
+    ShowCartComponent,
+    CheckoutComponent,
+    AdminComponent,
+    SearchComponent,
+    BannerComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    ReactiveFormsModule,
+    ClickOutsideModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

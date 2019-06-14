@@ -6,20 +6,30 @@ import { HeaderComponent } from './header/header.component';
 import { ShowProductsComponent } from './show-products/show-products.component';
 import { ProductPresentationComponent } from './product-presentation/product-presentation.component';
 import { MoviesComponent } from './movies/movies.component';
+import { ShowCartComponent } from './show-cart/show-cart.component';
+import { SearchComponent } from './search/search.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
+import { BannerComponent } from './banner/banner.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
+      imports: [RouterTestingModule, HttpClientModule ],
       declarations: [
         AppComponent,
         HeaderComponent,
         ShowProductsComponent,
         ProductPresentationComponent,
-        MoviesComponent
+        MoviesComponent,
+        ShowCartComponent,
+        SearchComponent,
+        AdminComponent,
+        BannerComponent,
+        HeaderComponent,
+        FooterComponent
       ],
     }).compileComponents();
   }));

@@ -1,17 +1,28 @@
-<div class="filter">
-    <div class="categorySelectContainer">
-        <label for="categorySelect">Category:</label>
-        <select name="categorySelect" id=""></select>
+<app-banner></app-banner>
+
+<div class="container">
+    <h2 style="color:white;">{{ categories[0].name }} - {{ actionLength }} st</h2>
+    <div class="categoryContainer">
+        <app-product-presentation [movie]="movie" *ngFor="let movie of actionMovies">
+        </app-product-presentation>
     </div>
 
-    <div class="searchContainer">
-        <form action="">
-            <input type="text" id="">
-            <button>Search</button>
-        </form>
+    <h2 style="color:white;">{{ categories[1].name}} - {{ thrillerLength }} st</h2>
+    <div class="categoryContainer">
+        <app-product-presentation [movie]="movie" *ngFor="let movie of thrillerMovies">
+        </app-product-presentation>
     </div>
-</div>
-<div class="container">
-    <app-product-presentation [movie]="movie" *ngFor="let movie of movies">
-    </app-product-presentation>
+
+    <h2 style="color:white;">{{ categories[2].name}} - {{ comedyLength }} st</h2>
+    <div class="categoryContainer">
+        <app-product-presentation [movie]="movie" *ngFor="let movie of comedyMovies">
+        </app-product-presentation>
+    </div>
+
+    <h2 style="color:white;">{{ categories[3].name}} - {{ sciFiLength }} st</h2>
+    <div class="categoryContainer">
+        <app-product-presentation [movie]="movie" *ngFor="let movie of sciFiMovies">
+        </app-product-presentation>
+    </div>
+    
 </div>

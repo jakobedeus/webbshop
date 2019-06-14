@@ -1,1 +1,17 @@
-<p>Hej</p>
+<div class="singleProduct">
+  <div class="singleProductImg">
+    <img src="{{ movie.imageUrl }}">
+  </div>
+  <div class="singleProductInfo">
+    <h2>{{ movie.name }}</h2>
+    <p>{{ movie.description }}</p>
+    <div class="categoryMovieContainer">
+      <p> Category:
+        <span class="categoryMovie" *ngFor="let categoryName of movieCategoryArray"> {{ categoryName }}</span>
+      </p>
+    </div>
+    <p>
+      <button (click)="addMovieToCart(movie)" class="addToCartBtn">Add to cart</button>
+      <b>{{ movie.price }} kr</b></p>
+  </div>
+</div>

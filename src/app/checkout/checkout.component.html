@@ -1,0 +1,79 @@
+<div class="order">
+
+  <div class="orderItems">
+
+    <div class="topCheckoutContainer">
+      <h1>Order</h1>
+      <p (click)="emptyCart()" class="emptyCartbtn">Empty cart <i class="fas fa-trash"></i></p>
+    </div>
+    <div *ngFor="let item of cartItems" class="checkoutItemContainer">
+
+      <div class="checkoutItemImg">
+        <a [routerLink]="['/movies', item.movie.id]">
+          <img src="{{ item.movie.imageUrl }}">
+        </a>
+      </div>
+
+      <div class="checkoutInfoContainer">
+        <div class="checkoutInfo">
+          <a [routerLink]="['/movies', item.movie.id]">
+            <p>{{ item.movie.name }}</p>
+          </a>
+          <p>{{ item.movie.description }}</p>
+        </div>
+
+        <div class="adjustAmountCheckoutContainer">
+          <p>Amount: {{ item.amount}}</p>
+          <div class="adjustAmoutCheckoutButtons">
+            <button (click)="addToCart(item.movie)" class="adjustAmountCheckout">
+              <i class="fas fa-plus-circle"></i>
+            </button>
+            <button (click)="removeFromCart(item.movie)" class="adjustAmountCheckout removeCheckoutItemAmount">
+              <i class="fas fa-minus-circle"></i>
+            </button>
+          </div>
+
+          <p><b> {{ item.totalprice }} kr</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="totalPrice">
+    <h2>Total price: {{ totalCartPrice }} kr</h2> <br />
+    <form [formGroup]="profileForm">
+      <label for="name">
+        Name:
+        <input type="text" formControlName="name" id="name">
+      </label>
+
+      <label for="email">
+        Email:
+        <input type="text" formControlName="email" required #email id="email">
+      </label>
+
+      <label for="phone">
+        Phone:
+        <input type="text" formControlName="phone" id="phone">
+      </label>
+
+      <label for="address">
+        Address:
+        <input type="text" formControlName="address" id="address">
+      </label>
+
+      <label for="paymentMethod">Payment method:</label> <br />
+      <select name="paymentMethod" id="paymentMethod" #paymentMethod>
+        <option value="Card">Card</option>
+        <option value="Swish">Swish</option>
+        <option value="Paypal">Paypal</option>
+      </select>
+
+      <button (click)="submitOrder(totalCartPrice, email.value, paymentMethod.value)" type="submit"
+        [disabled]="!profileForm.valid">Order</button>
+
+    </form>
+
+  </div>
+
+</div>

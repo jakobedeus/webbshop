@@ -5,6 +5,8 @@ import { ProductPresentationComponent } from '../product-presentation/product-pr
 import { DataService } from '../services/data.service';
 import { MockDataService } from '../services/mock-data.service';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { BannerComponent } from '../banner/banner.component';
 
 
 describe('ShowProductsComponent', () => {
@@ -13,10 +15,10 @@ describe('ShowProductsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowProductsComponent, ProductPresentationComponent ],
-      imports:[RouterTestingModule]
+      declarations: [ ShowProductsComponent, ProductPresentationComponent, BannerComponent ],
+      imports:[ RouterTestingModule, HttpClientModule ]
     })
-    .overrideComponent(ShowProductsComponent, { set: { providers: [ {provide: DataService, useClass: MockDataService}]}})
+    .overrideComponent(ShowProductsComponent, { set: { providers: [ { provide: DataService, useClass: MockDataService }]}})
     .compileComponents();
   }));
 
@@ -34,6 +36,12 @@ describe('ShowProductsComponent', () => {
     fixture = TestBed.createComponent(ShowProductsComponent);
     component = fixture.componentInstance;
     expect(component.movies.length).toBe(4);
+  });
+
+  it('should create 4 categories', () => {
+    fixture = TestBed.createComponent(ShowProductsComponent);
+    component = fixture.componentInstance;
+    expect(component.categories.length).toBe(4);
   });
 
 });

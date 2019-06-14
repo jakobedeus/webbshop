@@ -1,17 +1,14 @@
 <div class="product">
-  <a routerLink="/movies/{{ movie.id }}"><img src="{{ movie.imageUrl }}"  style="width:200px;height:300px"></a>
+  <a [routerLink]="['/movies', movie.id]"><img src="{{ movie.imageUrl }}" style="height:350px;"></a>
   <div class="productInfo">
-    <p>{{ movie.id }}</p>
-    <p>{{ movie.price }} :-
-    <!-- <form action="">
-      <input type="number" #productAmount />
-      <button value="Add to cart" (click)="addToCart({ movie.name })">Add to cart</button>
-      <button (click)="addToCart();">Add to cart</button>
-      , amount: productAmount.value, id: movie.id, price: movie.price}
-        amount: productAmout.value, name: movie.name, price:movie.price
-      productAmount.value = ''; 
-      <button (click)="sendMessage()">Send message</button>
-    </form> -->
-    <button>Add to cart</button></p>
+    <!-- <p>Category : <span *ngFor="let category of movie.productCategory"> {{ category.categoryId }}</span></p> -->
+    <!-- <p>{{ categoryID.name }}</p> -->
+    <p>{{ movie.price }} kr
+      <button (click)="addMovieToCart(movie)" class="addToCartBtn">Add to cart</button>
+    </p>
+    <p>
+
+      <a [routerLink]="['/movies', movie.id]">Read more</a>
+    </p>
   </div>
 </div>

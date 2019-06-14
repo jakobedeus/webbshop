@@ -1,18 +1,28 @@
 <header>
-  <h1>
-    <a href="/">Welcome to {{ title }}!</a>
-  </h1>
-  <nav>
-    <ul>
-      <li>
-        <button id="toggleCartButton" (click)="toggleCart()">Cart</button>
-      </li>
-    </ul>
-  </nav>
-  <div id="cart">
-    <p>My movie cart</p>
-    <button id="pay">Pay</button>
-    <br />
-    <!-- <button (click)="removeAll()">Remove all</button> -->
+  <div class="headerContainer">
+    <div class="logo">
+      <p><a routerLink="/">Angular movies</a></p>
+      <base>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <app-search></app-search>
+        </li>
+        <li>
+          <p><a routerLink="/admin">Admin</a></p>
+        </li>
+        <li id="toggleCartButton" (clickOutside)="onClickedOutside($event)">
+            <span id="cartAmount">{{ numberOfCartItems }}</span><button (click)="toggleCart()"><i class="fas fa-shopping-cart"></i></button>
+          <div id="cart">
+            <app-show-cart></app-show-cart>
+          </div>
+        </li>
+        <li class="checkOutBtn">
+         <p><a routerLink="/checkout"><button>Checkout <i class="fas fa-angle-right"></i></button></a></p>
+        </li>
+      </ul>
+    </nav>
   </div>
+
 </header>

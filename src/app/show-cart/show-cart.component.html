@@ -1,0 +1,43 @@
+<div id="cartContainer">
+   <div class="emptyCartContainer" id="cartBtn">
+      <h2>Cart</h2>
+      <p (click)="emptyCart()" class="emptyCartbtn" >Empty cart <i class="fas fa-trash"></i></p>
+   </div>
+
+   <div class="cartItemContainer">
+
+      <div *ngFor="let cartItem of cartItems" class="cartItem">
+         <div class="cartItemImg">
+            <a [routerLink]="['/movies', cartItem.movie.id]">
+               <img src="{{ cartItem.movie.imageUrl }}">
+            </a>
+         </div>
+
+         <div class="cartItemInfoContainer">
+            <div class="cartItemInfo">
+               <a [routerLink]="['/movies', cartItem.movie.id]">
+                  <p> {{ cartItem.movie.name }} </p>
+               </a>
+               <p><b>{{ cartItem.totalprice }} kr </b></p>
+            </div>
+
+            <div class="adjustAmountCartContainer">
+               <p>Amount: {{ cartItem.amount}}
+                  <button (click)="addMovieInCart(cartItem.movie)" class="adjustAmountCart">
+                     <i class="fas fa-plus-circle"></i>
+                  </button>
+                  <button (click)="removeFromCart(cartItem.movie)" class="adjustAmountCart">
+                     <i class="fas fa-minus-circle"></i>
+                  </button>
+               </p>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+   <p class="totalPriceInCart"><b>Total price: {{ totalCartPrice }} kr</b></p>
+   <a routerLink="/checkout">
+      <button id="pay" (click)="closeCart()">Checkout <i class="fas fa-angle-right"></i></button>
+   </a>
+</div>

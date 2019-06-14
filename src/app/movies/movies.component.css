@@ -1,0 +1,36 @@
+.singleProduct {
+    color: white;
+    width: 70%;
+    margin: 0 auto 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 160px 0;
+}
+
+.singleProductInfo {
+    padding: 2em;
+    flex: 1;
+}
+
+.singleProductImg {
+    height: 80vh;
+    flex: 1;
+}
+
+.singleProductImg img {
+    height: 100%;
+}
+
+.categoryMovieContainer {
+    margin: 2em 0;
+}
+
+.categoryMovie {
+    font-weight: bold;
+    margin-left: .6em;
+    border-bottom: 2px solid orange;
+}
+
+.addToCartBtn:hover i {
+    color: black;
+}

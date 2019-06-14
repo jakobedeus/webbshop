@@ -1,0 +1,32 @@
+p {
+    color: white;
+}
+
+.orderContainer {
+
+    padding-top: 16vh;
+}
+.orderItemContainer {
+    width: 600px;
+    height: 600px;
+    overflow-y: scroll;
+    margin: 0 auto 0 auto;
+}
+
+.order {
+    padding: 1em 0;
+    border-bottom: 1px solid gray;
+}
+
+ul {
+    list-style: none;
+}
+
+i {
+    margin: 0 0 0 .6em;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}

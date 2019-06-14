@@ -2,5 +2,136 @@
 
 body{
     margin: 0;
-    background-color: black;
+    background-color: #141414;
+    
+}
+
+button {
+    background: rgba(198, 129, 1, 0.9);
+    color:white;
+    right: 0;
+    border-radius: 2px;
+    font-size: .9em;
+    padding: .8em;
+    margin-right: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgba(198, 129, 1);
+    color: white;
+
+    /* opacity: 1; */
+}
+
+button:hover i {
+    
+}
+
+/* button {
+    background-color: #E08A1E;
+    border: none;
+    color: white;
+    padding: 1em;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    transition: all .2s;
+    border-radius: 2px;
+}
+
+button:hover {
+    background-color:rgb(157, 102, 36);
+    transform: scale(1.09); 
+} */
+
+.buttonInverted {
+    background-color: #E08A1E;
+    border: none;
+    color: white;
+    padding: 1em;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    transition: all .1s;
+    border-radius: 4px;
+}
+
+.buttonInverted:hover {
+    background-color:#b64541;
+}
+
+.addToCartBtn {
+    background: rgba(198, 129, 1, 0.9);
+    color:white;
+    right: 0;
+    border-radius: 2px;
+    font-size: .9em;
+    padding: .8em;
+    margin-right: 1em;
+}
+
+.addToCartBtn:hover {
+    background: rgba(198, 129, 1);
+    color: white;
+
+    /* opacity: 1; */
+}
+
+.addToCartBtnInverted {
+    background: transparent;
+    border-radius: 50% 50%;
+    border: 1px solid black;
+    color:black;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
+    padding: .8em;
+    transition: .1s;
+    margin-left: 1em;
+}
+
+.addToCartBtnInverted:hover {
+    background: black;
+    color: white;
+    opacity: 1;
+}
+
+.addToCartBtnInverted:hover i {
+    color: white;
+}
+
+.adjustAmountCart{
+    border: none;
+    background: transparent;
+    font-size: 1.2em;
+    padding: 0;
+    color: black;
+    margin-left: 1em;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .9em;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+
+    
+}
+
+h1, h2, h3 {
+    font-family: 'Inconsolata', monospace;
+}
+
+.logo {
+    font-size: 1.4em;
+    font-family: 'Inconsolata', monospace;
+}
+
+a:hover {
+    /* text-decoration: underline; */
+    border-bottom: 4px solid orange;
 }

@@ -5,20 +5,21 @@ import { ShowProductsComponent } from '../show-products/show-products.component'
 import { IMovie } from '../interface/IMovies';
 import { Component } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
+import { InteractionService } from '../services/interaction.service';
+import { ICart } from '../interface/ICart';
+import { HttpClientModule } from '@angular/common/http';
+import { BannerComponent } from '../banner/banner.component';
 
 
 
 describe('ProductPresentationComponent', () => {
   let testHostComponent: TestHostComponent;
   let testHostFixture: ComponentFixture<TestHostComponent>;
-  // let component: ProductPresentationComponent;
-  // let fixture: ComponentFixture<ProductPresentationComponent>;
   
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductPresentationComponent, ShowProductsComponent, TestHostComponent ],
-      imports:[RouterTestingModule]
+      declarations: [ ProductPresentationComponent, ShowProductsComponent, TestHostComponent, BannerComponent ],
+      imports:[RouterTestingModule, HttpClientModule]
     })
     .compileComponents();
   }));
@@ -35,7 +36,7 @@ describe('ProductPresentationComponent', () => {
 
   @Component({
     selector:'host-component',
-    template: '<app-product-presentation movie="movie"></app-product-presentation>'
+    template: '<app-product-presentation movie="movie"></app-product-presentation>'    
   })
 
   class TestHostComponent{
@@ -44,7 +45,18 @@ describe('ProductPresentationComponent', () => {
     setInput(newInput: IMovie[]) {
       this.movie = newInput;
     }
-  }
 
+    constructor(private cartData: InteractionService) { }
+    
+    cartItem: ICart[];
   
+    // ngOnInit() {
+    //   this.cartData.cartSource$.subscribe(cartItem => this.cartItem = cartItem);
+    // }
+  
+    // addToCart(movie, amount) {
+    //   this.cartData.newCart(movie, amount);
+    // }
+    
+  }
 });

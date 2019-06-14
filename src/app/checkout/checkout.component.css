@@ -1,0 +1,113 @@
+.order {
+    color:black;
+    width: 70%;
+    margin: 0 auto 0 auto;
+    padding-top: 140px;
+    display: flex;
+    border-radius: 4px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.emptyCartbtn {
+    color:red;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.topCheckoutContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.totalPrice {
+    background: white;
+    margin: 0 1em;
+    padding: 2em;
+    flex:1;
+    max-height: 500px;
+}
+
+.orderItems {
+    background: white;
+    padding: 1em 2em;
+    flex: 3;
+}
+
+form {
+    width: 100%;
+
+}
+
+input {
+    width: 100%;
+    margin: 1em 0;
+    padding: 8px 0;
+    border-radius: 2px;
+    border: 1px solid rgb(186, 186, 186);
+}
+
+label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8em;
+}
+
+button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+}
+
+button {
+    width: 100%;
+    margin: 20px auto;
+}
+
+ul {
+    list-style: none;
+}
+
+.checkoutItemImg img {
+    width: 100px;
+}
+
+.checkoutItemContainer {
+    display: flex;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    padding: 1em 0;
+}
+
+.checkoutInfoContainer {
+    padding: 0 1em;
+    display: flex;
+    
+}
+
+.adjustAmountCheckoutContainer {
+    padding: 0 1em;
+}
+
+select {
+    width: 100%;
+    margin-top: .8em;
+}
+
+.adjustAmountCheckout {
+    border: none;
+    background: transparent;
+    font-size: 1.2em;
+    margin-right:1em;
+    padding: 0;
+    color: black;
+}
+
+.adjustAmoutCheckoutButtons {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
