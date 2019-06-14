@@ -12,14 +12,14 @@
         <li>
           <p><a routerLink="/admin">Admin</a></p>
         </li>
-        <li id="toggleCartButton">
+        <li id="toggleCartButton" (clickOutside)="onClickedOutside($event)">
             <span id="cartAmount">{{ numberOfCartItems }}</span><button (click)="toggleCart()"><i class="fas fa-shopping-cart"></i></button>
           <div id="cart">
             <app-show-cart></app-show-cart>
           </div>
         </li>
         <li>
-          <p><a routerLink="/checkout"><button>Checkout <i class="fas fa-angle-right"></i></button></a></p>
+         <p><button class="buttonBorder"><a routerLink="/checkout">Checkout <i class="fas fa-angle-right"></i></a></button></p>
         </li>
       </ul>
     </nav>

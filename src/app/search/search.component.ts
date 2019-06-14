@@ -12,7 +12,7 @@ import { InteractionService } from '../services/interaction.service';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private service: DataService, private cartData: InteractionService) { 
+  constructor(private service: DataService, private cartData: InteractionService) {
   }
   movies: IMovie[];
 
@@ -25,13 +25,13 @@ export class SearchComponent implements OnInit {
   search(searchTerm: string) {
 
     if (searchTerm) {
-        this.service.searchMovies(searchTerm)
+      this.service.searchMovies(searchTerm)
         .subscribe(movies => this.movies = movies);
-        this.numberOfSearchResults = this.movies.length;
-        document.getElementById("searchResult").classList.add("showSearchResult");
-        this.searchTerm = searchTerm;
-        return searchTerm;
-    }  
+      this.numberOfSearchResults = this.movies.length;
+      document.getElementById("searchResult").classList.add("showSearchResult");
+      this.searchTerm = searchTerm;
+      return searchTerm;
+    }
   }
 
   closeSearch() {
@@ -39,7 +39,11 @@ export class SearchComponent implements OnInit {
   }
 
   addMovieToCart(movie) {
-    // document.getElementById("cart").classList.add("showCart");
     this.cartData.sendAddedMovie(movie);
+  }
+
+  onClickedOutside(e: Event) {
+    document.getElementById("searchResult").classList.remove("showSearchResult");
+    (<HTMLInputElement>document.getElementById('searchInput')).value = "";
   }
 }

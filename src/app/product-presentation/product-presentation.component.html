@@ -4,8 +4,11 @@
     <!-- <p>Category : <span *ngFor="let category of movie.productCategory"> {{ category.categoryId }}</span></p> -->
     <!-- <p>{{ categoryID.name }}</p> -->
     <p>{{ movie.price }} kr
-        <button (click)="addMovieToCart(movie)"><i class="fas fa-plus"></i></button>
+      <button (click)="addMovieToCart(movie)" class="addToCartBtn">Add to cart</button>
+    </p>
+    <p>
 
-        <button><a [routerLink]="['/movies', movie.id]"><i class="fas fa-angle-right"></i></a></button></p>
+      <a [routerLink]="['/movies', movie.id]">Read more</a>
+    </p>
   </div>
 </div>

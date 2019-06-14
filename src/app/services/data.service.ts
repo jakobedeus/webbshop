@@ -1,11 +1,11 @@
-import { Injectable, Input } from '@angular/core';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { IDataService } from '../interface/IDataService';
 import { Observable } from 'rxjs';
 import { IMovie } from '../interface/IMovies';
 import { ICategory } from '../interface/ICategory';
-import { ICart } from '../interface/ICart';
 import { IOrders } from '../interface/IOrders';
+
 
 @Injectable({
   providedIn: 'root'
@@ -31,9 +31,12 @@ export class DataService implements IDataService {
   }
 
   addOrder(order): Observable<IOrders> {
-    console.log(order);
     return this.http.post<IOrders>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', order);
   }
+
+  removeOrder(orderIdToRemove: number): Observable<IOrders>{
+    return this.http.delete<IOrders>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/' + orderIdToRemove);
+  }  
 
   searchMovies(searchTerm): Observable<IMovie[]> {
     return this.http.get<IMovie[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/search?searchText='+ searchTerm);

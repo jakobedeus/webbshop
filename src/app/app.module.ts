@@ -9,7 +9,6 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductPresentationComponent } from './product-presentation/product-presentation.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MoviesComponent } from './movies/movies.component';
 import { ShowCartComponent } from './show-cart/show-cart.component';
@@ -18,6 +17,7 @@ import { AdminComponent } from './admin/admin.component';
 import { SearchComponent } from './search/search.component';
 import { BannerComponent } from './banner/banner.component';
 import { FooterComponent } from './footer/footer.component';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 
 
@@ -41,7 +41,8 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ClickOutsideModule
   
   ],
   providers: [],

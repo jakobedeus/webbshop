@@ -15,22 +15,19 @@ import { ICategory } from '../interface/ICategory';
 })
 export class MoviesComponent implements OnInit {
 
-  // cartItems: IMovie[];
-
   constructor(private route: ActivatedRoute, service: DataService, private cartData: InteractionService) {
     this.route.paramMap.subscribe(pmap => {
       const id = pmap.get('id');
 
       service.getCategoryData().subscribe((categoryData) => {
-      this.categories = categoryData;
+        this.categories = categoryData;
 
         service.getSingleProductData(id).subscribe((singleProductData) => { this.movie = singleProductData; this.loopCategory() });
-        // this.cartData.cartSource$.subscribe(cartItems => this.cartItems = cartItems);
-
       });
     });
 
   }
+
   movieCategoryId: number;
   movie: IMovie;
   categories: ICategory[] = [];
@@ -38,7 +35,7 @@ export class MoviesComponent implements OnInit {
 
 
   ngOnInit() {
-
+    window.scrollTo(0, 0);
   }
 
   loopCategory() {
@@ -49,8 +46,6 @@ export class MoviesComponent implements OnInit {
 
         if (this.movie.productCategory[a].categoryId === this.categories[b].id) {
           this.movieCategoryArray.push(this.categories[b].name);
-          // console.log(movieCategoryName)
-
         }
       }
     }

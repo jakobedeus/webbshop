@@ -10,7 +10,8 @@
         <span class="categoryMovie" *ngFor="let categoryName of movieCategoryArray"> {{ categoryName }}</span>
       </p>
     </div>
-    <p><b>{{ movie.price }} kr</b>
-      <button (click)="addMovieToCart(movie)" class="addToCartBtn"><i class="fas fa-plus"></i></button></p>
+    <p>
+      <button (click)="addMovieToCart(movie)" class="addToCartBtn">Add to cart</button>
+      <b>{{ movie.price }} kr</b></p>
   </div>
 </div>

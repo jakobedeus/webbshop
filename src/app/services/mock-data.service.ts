@@ -3,7 +3,6 @@ import { IMovie } from '../interface/IMovies';
 import { of, Observable } from 'rxjs';
 import { IDataService } from '../interface/IDataService';
 import { ICategory } from '../interface/ICategory';
-import { ICart } from '../interface/ICart';
 
 @Injectable({
   providedIn: 'root'

@@ -20,11 +20,8 @@ export class CheckoutComponent implements OnInit {
   constructor(private service: DataService, private httpClient: HttpClient, private fb: FormBuilder, private cartData: InteractionService) {}
 
   cartItems: ICart[] = [];
-
   totalCartPrice: number;
-
   orderRows: IOrderrows[] = [];
-
   order: IOrders;
 
   profileForm = this.fb.group({
@@ -34,7 +31,6 @@ export class CheckoutComponent implements OnInit {
     phone: ['']
   
   });
-
 
   ngOnInit() {
 
@@ -53,13 +49,11 @@ export class CheckoutComponent implements OnInit {
   }
 
   addToCart(movieToAdd: IMovie) {
-
     this.cartData.sendAddedMovie(movieToAdd);
   }
 
   removeFromCart(movieToRemove: IMovie) {
     this.cartData.sendRemovedMovie(movieToRemove);
-
   }
 
   addMovieInCart(movieToAdd: IMovie) {
@@ -70,27 +64,23 @@ export class CheckoutComponent implements OnInit {
     this.cartData.sendEmptyCart();
   }
 
-  
-
   submitOrder(totalCartPrice, email, paymentMethod) {
 
     for (let i = 0; i < this.cartItems.length; i++) {
       let orderId = this.cartItems[i].movie.id;
       let orderAmount = this.cartItems[i].amount;
-
       this.orderRows.push({ productId: orderId, amount: orderAmount});
     }
+
     const companyId = 20;
     let date = moment().format('YYYY-MM-DDTHH:mm:ss');
-    // let paymentMethod: "Kort";
     let status: 1;
-
     let newOrder = { created: date, createdBy: email, paymentMethod: paymentMethod, totalPrice: totalCartPrice, status: status, orderRows: this.orderRows, companyId: companyId }
 
     this.service.addOrder(newOrder)
-      .subscribe(data => {
+      .subscribe(data => { });
 
-      });
+      this.emptyCart();
   }
 
 }
