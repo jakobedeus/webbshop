@@ -30,31 +30,25 @@ export class AdminComponent implements OnInit {
 
   emptyOrder(orderIdToRemove) {
     this.service.removeOrder(orderIdToRemove).subscribe((data) => { });
-    
   }
 
-  // emptyAllOrder(order) {
-  //   this.service.removeAllOrders(order);
-    
-  // }
-
   ngOnInit() {
-    
 
     this.service.getOrderData().subscribe((orderData) => {
-    this.orders = orderData; this.loopOrderAmout()
-
-    console.log(this.orders)
+    this.orders = orderData; this.loopOrderAmout();    
 
       for (let a = 0; a < this.orders.length; a++) {
 
         let orderRows = this.orders[a].orderRows;
+        this.extendedOrder.push({ order: this.orders[a], movieName: [], movieId: []})
 
         for (let b = 0; b < orderRows.length; b++) {
 
           let productId = orderRows[b].productId;
 
           this.extendedOrder.push({ order: this.orders[a], movieName: [], movieId: []})
+
+          
 
           this.service.getSingleProductData(productId).subscribe((productData) => {
           this.extendedOrder[a].movieName.push(productData.name);
@@ -63,9 +57,7 @@ export class AdminComponent implements OnInit {
           console.log(this.extendedOrder[a].movieId + " " + this.extendedOrder[a].movieName);
 
           });
-
         }
-
       }
     });
 

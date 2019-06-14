@@ -11,6 +11,7 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
 import { BannerComponent } from './banner/banner.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 describe('AppComponent', () => {
@@ -27,7 +28,8 @@ describe('AppComponent', () => {
         SearchComponent,
         AdminComponent,
         BannerComponent,
-        HeaderComponent
+        HeaderComponent,
+        FooterComponent
       ],
     }).compileComponents();
   }));

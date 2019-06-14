@@ -1,9 +1,9 @@
-<p>
-  <input #movieSearch (keyup)="search(movieSearch.value)" />
+<div class="searchFieldContainer">
+  <input type="text" #movieSearch (keyup)="search(movieSearch.value)" placeholder="Search" />
   <button id="search" (click)="search(movieSearch.value)">
     <i class="fas fa-search"></i>
   </button>
-</p>
+</div>
 
 <div id="searchResult">
   <div class="searchResultTop">

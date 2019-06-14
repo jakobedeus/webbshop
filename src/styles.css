@@ -2,30 +2,31 @@
 
 body{
     margin: 0;
-    background-color: rgb(18, 18, 18);
+    background-color: #141414;
     
 }
 
 button {
-    background-color: rgb(65, 65, 65);
-    /* border: 1px solid white; */
-    border: none;
-    color: white;
-    padding: 1em;
+    background: rgba(198, 129, 1, 0.9);
+    color:white;
+    right: 0;
+    border-radius: 2px;
     font-size: .9em;
+    padding: .8em;
+    margin-right: 1em;
+    border: none;
     cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
-    transition: all .1s;
-    border-radius: 4px;
 }
 
 button:hover {
-    background: white;
-    color: rgb(29, 29, 29);
+    background: rgba(198, 129, 1);
+    color: white;
+
+    /* opacity: 1; */
 }
 
 button:hover i {
-    color: rgb(29, 29, 29);
+    
 }
 
 /* button {
@@ -60,25 +61,20 @@ button:hover {
 }
 
 .addToCartBtn {
-    background: rgba(40, 40, 40, 0.8);
-    border-radius: 50% 50%;
+    background: rgba(198, 129, 1, 0.9);
     color:white;
     right: 0;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2em;
+    border-radius: 2px;
+    font-size: .9em;
     padding: .8em;
-    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .addToCartBtn:hover {
-    background: white;
-    color: black;
-    opacity: 1;
-}
+    background: rgba(198, 129, 1);
+    color: white;
 
-.addToCartBtn:hover i {
-    color: black;
+    /* opacity: 1; */
 }
 
 .addToCartBtnInverted {
@@ -114,8 +110,6 @@ button:hover {
     margin-left: 1em;
 }
 
-
-
 p {
     font-family: 'Open Sans', sans-serif;
     font-size: .9em;
@@ -123,6 +117,9 @@ p {
 
 a:link, a:visited {
     text-decoration: none;
+    color: black;
+
+    
 }
 
 h1, h2, h3 {
@@ -135,13 +132,6 @@ h1, h2, h3 {
 }
 
 a:hover {
-    text-decoration: underline;
-}
-
-a:link {
-    color: black;
-}
-
-a:visited {
-    color: black;
+    /* text-decoration: underline; */
+    border-bottom: 4px solid orange;
 }

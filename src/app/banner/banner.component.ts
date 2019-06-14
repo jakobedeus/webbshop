@@ -9,13 +9,21 @@ import { IMovie } from '../interface/IMovies';
 })
 export class BannerComponent implements OnInit {
 
-  constructor() {}
+  constructor(service: DataService) {
+    service.getProductData().subscribe((productData) => { this.movies = productData; this.loopBannerMovies() });
+  }
 
+  movies: IMovie[];
+
+  interstellar: any[] = [];
 
   
 
+  loopBannerMovies() {
 
-
+    this.interstellar.push(this.movies[1]);
+  }
+  
   ngOnInit() {
 
   }

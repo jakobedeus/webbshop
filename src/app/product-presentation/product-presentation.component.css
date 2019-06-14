@@ -2,7 +2,7 @@
     /* width: 400px; */
     /* background: rgb(33, 33, 33); */
     flex: 1;
-    margin: 0 .4em;
+    margin: 0 .2em;
     padding: 0;
     overflow: hidden;
     position: relative;
@@ -24,8 +24,20 @@
     z-index: 1;
     bottom: 0;
     width: 100%;
+    font-weight: bolder;
+    background-color:rgb(18, 18, 18, .9);
+    /* background-image: linear-gradient(transparent, rgb(21, 21, 21)  , rgb(18, 18, 18)); */
+    margin: 0;
     /* background: rgb(18, 18, 18, 0.8); */
     /* background-image: linear-gradient(transparent, rgb(18, 18, 18)); */
+}
+
+.productInfo a {
+    color:white;
+}
+
+.product button {
+    margin-left: .6em;
 }
 
 form {
@@ -46,12 +58,7 @@ form {
 }
 
 p {
-    color: white;
-    font-weight: bolder;
-    /* background-image: linear-gradient(transparent, rgb(18, 18, 18)); */
-    background-image: linear-gradient(transparent, rgb(21, 21, 21)  , rgb(18, 18, 18));
-    margin: 0;
-    padding: 1em;
+    
 }
 
 i {

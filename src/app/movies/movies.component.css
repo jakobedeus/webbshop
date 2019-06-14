@@ -30,7 +30,8 @@
 
 .categoryMovie {
     font-weight: bold;
-    margin-left: .4em;
+    margin-left: .6em;
+    border-bottom: 2px solid orange;
 }
 
 /* .addToCartBtn {

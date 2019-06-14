@@ -1,5 +1,5 @@
 .bannerMovie {
-    background-image: url("../../assets/images/bannerImg.jpg");
+    background-image: url("../../assets/images/bannerImg2_opacity.jpg");
     width: 100%;
     max-height: 80vh;
     min-height: 80vh;
@@ -10,14 +10,38 @@
     margin-bottom: 4%;
 }
 
-.bannerMovie {
-    
+
+.gradientBanner {
+    background-image: linear-gradient(transparent, #141414); 
+    width: 100%;
+    height: 80vh;
+    z-index: 1;
+    position: absolute;
 
 }
 
-.gradientBanner {
-    background-image: linear-gradient(transparent, rgb(18, 18, 18));
-    width: 100%;
-    height: 80vh;
+.bannerText {
+    position: absolute;
+    width: 400px;
+    z-index: 1;
+    left: 0; 
+    right: 0; 
+    top: 30%;
+    margin-left: auto; 
+    margin-right: auto; 
+    color: white;
+    /* background: #141414; */
+    padding: .8em .8em;
+}
 
+.readMoreBanner:hover {
+    border-bottom: 2px solid orange;
+    cursor: pointer;
+}
+
+.bannerText h1, a {
+
+    color:white;
+
+    /* text-align: center; */
 }
