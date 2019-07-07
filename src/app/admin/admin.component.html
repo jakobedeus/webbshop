@@ -3,26 +3,21 @@
 
   <div class="orderItemContainer">
 
-    <div *ngFor="let extOrder of extendedOrder" class="order">
+    <div *ngFor="let order of orders" class="order">
 
       <p>
-        <i class="fas fa-user"></i> {{ extOrder.order.createdBy }}
-        <i class="fas fa-clock"></i> {{ extOrder.order.created }},
-        Payment method: {{ extOrder.order.paymentMethod }}
+        <i class="fas fa-user"></i> {{ order.createdBy }}
+        <i class="fas fa-clock"></i> {{ order.created }},
+        Payment method: {{ order.paymentMethod }}
       </p>
 
-      <div *ngFor="let orderrow of extOrder.order.orderRows">
+      <p>Total price: <b>{{ order.totalPrice}} :-</b></p>
 
-        <p>Product ID: {{ orderrow.productId }} * {{ orderrow.amount }} st</p>
-      </div>
-      <div *ngFor="let item of extOrder.movieName">
-        <p>{{ item }}</p>
-      </div>
-
-      <p>Total price: <b>{{ extOrder.order.totalPrice}} :-</b></p>
-
-      <button (click)="emptyOrder(extOrder.order.id)">Remove order</button>
+      <button (click)="emptyOrder(order)">Remove order</button>
 
     </div>
+    <button><a routerLink="/">Buy more movies</a> </button>
   </div>
+
+
 </div>

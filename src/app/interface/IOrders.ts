@@ -1,4 +1,5 @@
 export interface IOrders {
+    id: number;
     companyId: number;
     created: string;
     createdBy: string;
